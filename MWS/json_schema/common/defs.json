@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/common/defs.json",
+  "title": "MWS pilot — shared definitions",
+  "description": "Only invariant tokens are centralised here; context-specific sentinels are inlined per field because their meanings differ by variable.",
+  "$defs": {
+    "not_on_questionnaire": {
+      "const": -1,
+      "title": "Not on questionnaire",
+      "description": "The source dictionary's own code: this field was not asked on the participant's questionnaire version (Aqua/Blue/Other). Adopted verbatim from the source, not invented — D001."
+    },
+    "missing_numeric": {
+      "const": -999,
+      "title": "Missing",
+      "description": "No value recorded, for a field the source dictionary documents no missing/unknown code for. Agent-decided generic sentinel, steward-confirmed as the package's policy for this gap — D002."
+    }
+  }
+}
