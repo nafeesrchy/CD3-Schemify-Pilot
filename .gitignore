@@ -1,0 +1,10 @@
+# Raw source dictionaries stay local, never committed — they're study-provided
+# data-dictionary files (often under data-use restrictions), not our deliverable.
+# Matches the upstream cd3-schemify-pilot repo's own convention: raw_data/ isn't
+# tracked there either, only each package's json_schema/ output is.
+*/raw_data/
+extracted_sheet_dump.json
+
+# OS junk
+.DS_Store
+Thumbs.db
