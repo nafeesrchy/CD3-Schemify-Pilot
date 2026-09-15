@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>MWS — RECRUITMENT table · data dictionary</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20class%3D%22brand-mark%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20height%3D%2224%22%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%3E%3Crect%20class%3D%22tile%22%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%226%22%20fill%3D%22%232563EB%22/%3E%3Cpath%20class%3D%22slash%22%20d%3D%22M14.8%205.4%209.2%2018.6%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222.7%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<!-- failsafe: keeps a stray single-file copy readable; the real stylesheet below overrides it -->
+<style>
+  body{margin:0;font:1rem/1.55 system-ui,sans-serif;color:#1F2328;background:#FAF9F6}
+  .page{max-width:76rem;margin:0 auto;padding:1rem 1.5rem 2.5rem}
+  .banner{border:1px solid #C99A2E;background:#FBF4E1;padding:.6rem 1rem;border-radius:8px}
+</style>
+<link rel="stylesheet" href="assets/schema-pages.css">
+<script defer src="assets/json-schema-data-dictionary.global.js"></script>
+</head>
+<body data-fingerprint="9eb5d577076a">
+<main class="page">
+
+  <header class="masthead">
+    <a class="brand" href="https://github.com/jeyabbalas/skills/tree/main/skills/schemify" title="Made with /schemify"><svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><rect class="tile" width="24" height="24" rx="6" fill="#2563EB"/><path class="slash" d="M14.8 5.4 9.2 18.6" fill="none" stroke="#FFFFFF" stroke-width="2.7" stroke-linecap="round"/></svg><span class="brand-name">schemify</span></a>
+    <nav class="pages chrome" aria-label="Pages"><a class="tab" href="dictionary.html" aria-current="page">Dictionary</a><a class="tab" href="playground.html">Playground</a></nav>
+  </header>
+
+  <div class="title-block">
+    <div class="titles">
+      <p class="eyebrow">Data dictionary</p>
+      <h1>MWS — RECRUITMENT table</h1>
+      <p class="subtitle"></p>
+    </div>
+    <div class="page-tools chrome">
+      <label class="switch" for="semantic-toggle"
+             title="Runs a small text-embedding model in your browser (Xenova/bge-small-en-v1.5, fetched once from huggingface.co).">
+        <input type="checkbox" id="semantic-toggle" role="switch" aria-describedby="semantic-note">
+        <span>Semantic search</span>
+      </label>
+      <span class="tools-note" id="semantic-note">Also finds related variables — “smoking” turns up the tobacco rows.
+        Downloads a 34 MB model once; nothing you type leaves your browser.</span>
+      <span class="tools-status" id="semantic-status" role="status"></span>
+    </div>
+  </div>
+
+<!-- render.py fills one .dict-section per table, each holding a #dict-<table> mount
+     (and, with several tables, a heading plus a link to that table's playground). -->
+  <section class="dict-section" data-table="recruitment">
+    <div class="dict-mount" id="dict-recruitment"></div>
+  </section>
+
+  <script type="application/json" class="schema-documents">[{"uri":"https://schema.local/common/defs.json","name":"common/defs.json","schema":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.example.org/cd3-mws-pilot/common/defs.json","title":"MWS pilot — shared definitions","description":"Only invariant tokens are centralised here; context-specific sentinels are inlined per field because their meanings differ by variable.","$defs":{"not_on_questionnaire":{"const":-1,"title":"Not on questionnaire","description":"The source dictionary's own code: this field was not asked on the participant's questionnaire version (Aqua/Blue/Other). Adopted verbatim from the source, not invented — D001."},"missing_numeric":{"const":-999,"title":"Missing","description":"No value recorded, for a field the source dictionary documents no missing/unknown code for. Agent-decided generic sentinel, steward-confirmed as the package's policy for this gap — D002."}}}},{"uri":"https://schema.local/recruitment/categories/demographics.json","name":"recruitment/categories/demographics.json","schema":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.example.org/cd3-mws-pilot/recruitment/categories/demographics.json","title":"MWS — Demographics","description":"Administrative and demographic fields recorded at recruitment: birth year, recruitment year, age, region of residence, and which questionnaire version the participant completed.","type":"object","x-variable-group":"demographics","properties":{"RYOB":{"title":"Year of birth","anyOf":[{"type":"integer","minimum":1880,"maximum":1953},{"$ref":"../../common/defs.json#/$defs/missing_numeric"}],"$comment":"Source states no explicit valid range for this field. Upper bound 1953 is derived from stated source facts: RAGE's own minimum (48) and the latest recruitment year across all questionnaire versions (2001) -- 2001-48=1953. Lower bound 1880 is an agent-decided plausibility floor, since the source states no maximum age -- D010."},"RYSUBMIT":{"title":"Year of recruitment into the MWS","anyOf":[{"type":"integer","minimum":1996,"maximum":2001},{"$ref":"../../common/defs.json#/$defs/missing_numeric"}],"$comment":"Range 1996-2001 combines the source's own per-version year metadata (Blue 1996-1998, Aqua 1997-2001, Other 1997-2000) into one bound -- source-derived, not invented -- D011."},"RAGE":{"title":"Age at recruitment","x-unit":"years","anyOf":[{"type":"integer","minimum":48,"maximum":120},{"$ref":"../../common/defs.json#/$defs/missing_numeric"}],"$comment":"Source states a valid range of From=48 only (To is blank/unstated). Minimum 48 is source-stated; maximum 120 is an agent-decided plausibility ceiling -- D012."},"RREGION":{"title":"Region of residence at recruitment","description":"Derived field; UK regional breast-screening-style catchment areas as recorded at recruitment.","oneOf":[{"const":1,"title":"Oxford"},{"const":2,"title":"East Anglia"},{"const":3,"title":"South West"},{"const":4,"title":"Thames"},{"const":5,"title":"West Midlands"},{"const":6,"title":"North Yorks"},{"const":7,"title":"Trent"},{"const":8,"title":"North West (Mersey)"},{"const":9,"title":"North West (Manc./Lancs.)"},{"const":10,"title":"Scotland"},{"$ref":"../../common/defs.json#/$defs/missing_numeric"}]},"RQTYPE":{"title":"Questionnaire version completed","description":"A code determining which version of the recruitment questionnaire the participant completed. Other fields' source-stated Availability columns (Aqua/Blue/Other) reference this same three-way split.","oneOf":[{"const":1,"title":"Blue"},{"const":2,"title":"Aqua"},{"const":3,"title":"Other"},{"$ref":"../../common/defs.json#/$defs/missing_numeric"}]}},"required":["RYOB","RYSUBMIT","RAGE","RREGION","RQTYPE"]}},{"uri":"https://schema.local/recruitment/recruitment.schema.json","name":"recruitment/recruitment.schema.json","schema":{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.example.org/cd3-mws-pilot/recruitment/recruitment.schema.json","title":"MWS — RECRUITMENT table","description":"Array of Million Women Study baseline records. One element is one participant's baseline recruitment-questionnaire data, spanning three source sheets: Basic information, Recruitment variables, Self-reported health at recruit. Later-wave resurvey sheets are out of scope for this package.","$comment":"This table has no participant-identifier field in the source dictionary at all (open item, see DECISIONS.md D007) -- uniqueItems is asserted as standing structural policy but cannot anchor to a real key here. Standard JSON Schema cannot enforce cross-row identifier uniqueness in any case; see the README's 'Documented but not enforced' section once written.","type":"array","minItems":1,"uniqueItems":true,"items":{"type":"object","title":"RECRUITMENT record","allOf":[{"$ref":"categories/demographics.json"}],"unevaluatedProperties":false}}}]</script>
+  <script type="application/json" class="page-config">{"package":"json_schema","generated":"2026-09-15","mounts":[{"table":"recruitment","title":"MWS — RECRUITMENT table","rootUri":"https://schema.local/recruitment/recruitment.schema.json"}]}</script>
+
+  <script>
+  /* classic script — no modules, no fetch: this page must open over file:// */
+  document.addEventListener('DOMContentLoaded', function () {
+    var docs   = JSON.parse(document.querySelector('.schema-documents').textContent);
+    var config = JSON.parse(document.querySelector('.page-config').textContent);
+    var lib = window.JsonSchemaDataDictionary;
+    var page = document.querySelector('.page');
+    if (!lib) {
+      var b = document.createElement('div');
+      b.className = 'banner';
+      b.textContent = 'assets/json-schema-data-dictionary.global.js is missing — ' +
+        'run `render.py refresh-assets` on this package to restore it.';
+      page.insertBefore(b, document.querySelector('.title-block'));
+      return;
+    }
+
+    /* ---------- the dictionaries: one mount per table ---------- */
+    var mounts = config.mounts.map(function (m) {
+      var table = lib.schemaDocumentsToTable(docs, {
+        rootUri: m.rootUri,
+        splitAllOfObjectCategories: true
+      });
+      if (table.warnings && table.warnings.length) {
+        console.warn('dictionary warnings for ' + m.table, table.warnings);
+      }
+      return { table: m.table, title: m.title, data: table,
+               container: document.getElementById('dict-' + m.table), element: null, cache: null };
+    });
+
+    /* ---------- semantic search: opt-in, keyword search never depends on it ----------
+       The embedding model runs in assets/embed-worker.js when the page is served over
+       http (workers cannot start from file://), otherwise on the main thread. The
+       embedder is created once and reused across re-renders; row vectors are cached in
+       IndexedDB, one store per table, so a revisit is instant and only edited rows are
+       re-embedded. Model weights are fetched from the Hugging Face Hub the first time;
+       nothing else leaves the browser. */
+    var SEMANTIC = {
+      transformers: 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.2.0',
+      model: 'Xenova/bge-small-en-v1.5',   /* 33M params, 384-d, MIT; ~34 MB quantized */
+      dtype: 'q8',
+      worker: 'assets/embed-worker.js'
+    };
+    var STORE_KEY = 'schemify:' + config.package + ':semantic';
+    var toggle = document.getElementById('semantic-toggle');
+    var statusEl = document.getElementById('semantic-status');
+    var embedder = null, worker = null, embedderPromise = null;
+
+    function renderAll() {
+      mounts.forEach(function (m) {
+        var options = { shadow: false, theme: 'auto', title: m.title, expandCategories: true };
+        /* shadow:false is load-bearing: the print rules in schema-pages.css must
+           reach the light-DOM .dd-* nodes the library renders. */
+        if (embedder) {
+          m.cache = m.cache || lib.createIndexedDbVectorCache({
+            dbName: 'schemify:' + config.package + ':' + m.table });
+          options.semanticSearch = { embedder: embedder, cache: m.cache };
+        }
+        if (m.element) m.element.options = options;       /* keeps the index across re-renders */
+        else m.element = lib.renderDataDictionary(m.container, m.data, options);
+      });
+    }
+
+    function setStatus(text, isError) {
+      statusEl.textContent = text || '';
+      statusEl.className = 'tools-status' + (isError ? ' error' : '');
+    }
+    function loadTransformers() {
+      return import(SEMANTIC.transformers).then(function (t) {
+        t.env.allowLocalModels = false;     /* never probe ./models/… on this origin */
+        return t;
+      });
+    }
+    function workerEmbedder() {
+      return new Promise(function (resolve, reject) {
+        var w;
+        var query = new URLSearchParams({ transformers: SEMANTIC.transformers,
+                                          model: SEMANTIC.model, dtype: SEMANTIC.dtype });
+        try { w = new Worker(SEMANTIC.worker + '?' + query.toString()); }
+        catch (err) { reject(err); return; }
+        var timer = setTimeout(function () { reject(new Error('worker did not respond')); }, 8000);
+        w.addEventListener('error', function (e) {
+          clearTimeout(timer); reject(new Error(e.message || 'worker failed to start'));
+        });
+        lib.createWorkerEmbedder(w).then(
+          function (emb) { clearTimeout(timer); worker = w; resolve(emb); },
+          function (err) { clearTimeout(timer); reject(err); });
+      }).catch(function (err) {
+        if (worker) { worker.terminate(); worker = null; }
+        throw err;
+      });
+    }
+    function getEmbedder() {
+      if (embedderPromise) return embedderPromise;
+      var canWorker = typeof Worker !== 'undefined' && location.protocol !== 'file:';
+      embedderPromise = (canWorker ? workerEmbedder() : Promise.reject(new Error('workers unavailable')))
+        .catch(function () {
+          /* fallback: the model on the main thread (also the file:// path) */
+          return lib.createTransformersEmbedder(loadTransformers,
+            { model: SEMANTIC.model, dtype: SEMANTIC.dtype, device: 'wasm' });
+        });
+      return embedderPromise;
+    }
+    function setSemantic(on) {
+      try { localStorage.setItem(STORE_KEY, on ? '1' : '0'); } catch (e) {}
+      if (!on) {
+        embedder = null; embedderPromise = null;
+        if (worker) { worker.terminate(); worker = null; }
+        setStatus('');
+        renderAll();
+        return;
+      }
+      setStatus('Starting…');
+      getEmbedder().then(function (emb) {
+        if (!toggle.checked) return;        /* switched off again while starting */
+        embedder = emb;
+        setStatus('');                      /* the table's own status chip takes over */
+        renderAll();
+      }, function (err) {
+        embedderPromise = null;
+        toggle.checked = false;
+        setStatus('Semantic search could not start (' + (err && err.message || err) +
+                  '). Keyword search still works.', true);
+      });
+    }
+
+    toggle.addEventListener('change', function () { setSemantic(toggle.checked); });
+    renderAll();
+    var saved = null;
+    try { saved = localStorage.getItem(STORE_KEY); } catch (e) {}
+    if (saved === '1') { toggle.checked = true; setSemantic(true); }
+  });
+  </script>
+
+  <footer class="colophon">Made with <a class="brand-name" href="https://github.com/jeyabbalas/skills/tree/main/skills/schemify">/schemify</a>
+  · 2026-09-15 · package json_schema · assets 246a56744ac4 · page 9eb5d577076a.
+  Written by an AI conversion assistant from the source dictionary, approved external sources, and steward interviews.
+  The JSON Schema files are the source of truth — this page is a disposable render; regenerate it rather than editing it.
+  Search runs in your browser; the optional semantic search downloads a model once and sends nothing else anywhere.
+  · <a href="README.md">Package README</a></footer>
+
+</main>
+</body>
+</html>

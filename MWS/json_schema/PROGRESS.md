@@ -31,7 +31,7 @@ same three cohorts).
 
 | # | category | file | vars | source slice | status | touched |
 |---|---|---|---|---|---|---|
-| 1 | Demographics | recruitment/categories/demographics.json | 5 | Basic information rows 8,9,10,11,14 | pending | 2026-09-15 |
+| 1 | Demographics | recruitment/categories/demographics.json | 5 | Basic information rows 8,9,10,11,14 | rendered, pending steward review | 2026-09-15 |
 | 2 | Socioeconomic | recruitment/categories/socioeconomic.json | 3 | Recruitment row 8; Basic information rows 12,13 | pending | 2026-09-15 |
 | 3 | Body/Lifestyle | recruitment/categories/body_lifestyle.json | 8 | Recruitment rows 9-16 | pending | 2026-09-15 |
 | 4 | Reproductive/Pregnancy | recruitment/categories/reproductive_pregnancy.json | 7 | Recruitment rows 17-23 | pending | 2026-09-15 |
@@ -47,7 +47,7 @@ same three cohorts).
 ## Package milestones
 
 - [x] intake: sources registered · grain confirmed · categories confirmed (10, derived from source structure + one steward correction — REDUC moved out of Body/Lifestyle)
-- [ ] common/defs.json + mother scaffold validate green — `common/defs.json` is written and structurally valid; the mother file (`recruitment/recruitment.schema.json`) is deliberately NOT yet created. `validate.py check` proved empirically that `allOf` must be non-empty (draft 2020-12 meta-schema) and every listed `$ref` must resolve — so a mother file can only validate green once it references at least one real category file. Per INTAKE.md step 6, ending intake before the first category exists is expected, not a shortfall; the mother file gets created as part of wiring the first category (CONVERT.md step 5)
+- [x] common/defs.json + mother scaffold validate green — mother file created when Demographics was wired in; `validate.py check` green (3 files, 6 refs resolved)
 - [ ] every category confirmed
 - [ ] cross-category skip audit (D008 open — RCIGSPD routing)
 - [ ] coverage audit 1:1
@@ -57,3 +57,4 @@ same three cohorts).
 ## Session log
 
 - 2026-09-15 · intake · Registered the MWS dictionary's three in-scope sheets (Basic information, Recruitment variables, Self-reported health at recruit — scope widened mid-session from Recruitment-only on the steward's instruction), surveyed all 65 variables into VARIABLES.csv, ran the interview (grain, sentinel policy adopting sibling pilots' -1/-999 convention, no real data, CEU Oxford external source consulted), proposed and confirmed a 10-category table after the steward corrected REDUC's placement (Body/Lifestyle → Socioeconomic), installed render.py's assets/tools, scaffolded common/defs.json (validates green on its own). Attempted to also pre-scaffold the mother file with all 10 category refs; validate.py check proved this can't validate green with no category files yet (allOf can't be empty, and empty allOf items make the meta-schema check fail; a fully-wired allOf makes every ref unresolved) — removed the premature mother file rather than leave a false-green claim in this file. · next: convert demographics (5 vars, smallest category) — this both drafts the first category file and creates the mother file for the first time, wiring its one real $ref.
+- 2026-09-15 · convert demographics · Drafted all 5 properties (RYOB, RYSUBMIT, RAGE, RREGION, RQTYPE), creating the mother file for the first time with its one real $ref. Logged 3 plausibility-bound decisions (D010-D012) — RYOB's upper bound and RYSUBMIT's whole bound are derived from stated source facts, RAGE's upper bound and RYOB's lower bound are pure agent-decided ceilings/floors since the source states none. Applied the D003 sentinel policy (-999) uniformly across all 5 fields. Authored 13 toy_valid rows (every bound, every categorical level, every sentinel) and 8 toy_invalid rows (one per relevant violation kind: range-break x2, unknown-level x2, invented-sentinel, wrong-type/null, missing-key, undeclared-column). Hit and fixed a real Windows bug: render.py's dictionary command crashed with a UnicodeDecodeError reading its own template under Windows' default cp1252 codec — fixed by setting PYTHONUTF8=1, not by editing the script. validate.py summary green (3 files · 6 refs resolve · 13/13 toy_valid pass · 8/8 toy_invalid caught on the right column · coverage 5/65 converted, 0 mismatches). Both pages rendered and spot-checked via a local HTTP server. · next: present demographics to the steward for confirmation; if confirmed, convert socioeconomic (3 vars) next.

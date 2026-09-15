@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/demographics.json",
+  "title": "MWS — Demographics",
+  "description": "Administrative and demographic fields recorded at recruitment: birth year, recruitment year, age, region of residence, and which questionnaire version the participant completed.",
+  "type": "object",
+  "x-variable-group": "demographics",
+  "properties": {
+    "RYOB": {
+      "title": "Year of birth",
+      "anyOf": [
+        { "type": "integer", "minimum": 1880, "maximum": 1953 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no explicit valid range for this field. Upper bound 1953 is derived from stated source facts: RAGE's own minimum (48) and the latest recruitment year across all questionnaire versions (2001) -- 2001-48=1953. Lower bound 1880 is an agent-decided plausibility floor, since the source states no maximum age -- D010."
+    },
+    "RYSUBMIT": {
+      "title": "Year of recruitment into the MWS",
+      "anyOf": [
+        { "type": "integer", "minimum": 1996, "maximum": 2001 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Range 1996-2001 combines the source's own per-version year metadata (Blue 1996-1998, Aqua 1997-2001, Other 1997-2000) into one bound -- source-derived, not invented -- D011."
+    },
+    "RAGE": {
+      "title": "Age at recruitment",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "integer", "minimum": 48, "maximum": 120 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states a valid range of From=48 only (To is blank/unstated). Minimum 48 is source-stated; maximum 120 is an agent-decided plausibility ceiling -- D012."
+    },
+    "RREGION": {
+      "title": "Region of residence at recruitment",
+      "description": "Derived field; UK regional breast-screening-style catchment areas as recorded at recruitment.",
+      "oneOf": [
+        { "const": 1, "title": "Oxford" },
+        { "const": 2, "title": "East Anglia" },
+        { "const": 3, "title": "South West" },
+        { "const": 4, "title": "Thames" },
+        { "const": 5, "title": "West Midlands" },
+        { "const": 6, "title": "North Yorks" },
+        { "const": 7, "title": "Trent" },
+        { "const": 8, "title": "North West (Mersey)" },
+        { "const": 9, "title": "North West (Manc./Lancs.)" },
+        { "const": 10, "title": "Scotland" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    },
+    "RQTYPE": {
+      "title": "Questionnaire version completed",
+      "description": "A code determining which version of the recruitment questionnaire the participant completed. Other fields' source-stated Availability columns (Aqua/Blue/Other) reference this same three-way split.",
+      "oneOf": [
+        { "const": 1, "title": "Blue" },
+        { "const": 2, "title": "Aqua" },
+        { "const": 3, "title": "Other" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    }
+  },
+  "required": ["RYOB", "RYSUBMIT", "RAGE", "RREGION", "RQTYPE"]
+}
