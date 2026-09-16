@@ -22,6 +22,12 @@
     { "row": 17, "column": "RBFNUM", "kind": "range-break", "value": 21, "reason": "above plausibility maximum 20" },
     { "row": 18, "column": "RHTTYPE", "kind": "unknown-level", "value": 6, "reason": "6 is not a declared HRT-type code (1-5)" },
     { "row": 19, "column": "RPSTOPAG", "kind": "skip-break", "value": 45, "reason": "RPSTOPYN=2 (No) but a real age is present (must be -777, not_applicable)" },
-    { "row": 20, "column": "RPSTOPAG", "kind": "applicability-break", "value": -777, "reason": "RPSTOPYN=1 (Yes) but the structural-NA code is recorded" }
+    { "row": 20, "column": "RPSTOPAG", "kind": "applicability-break", "value": -777, "reason": "RPSTOPYN=1 (Yes) but the structural-NA code is recorded" },
+    { "row": 21, "column": "RHYSTAG", "kind": "skip-break", "value": 45, "reason": "RHYST=2 (No) but a real age is present (must be -777, not_applicable)" },
+    { "row": 22, "column": "RHYSTAG", "kind": "applicability-break", "value": -777, "reason": "RHYST=1 (Yes) but the structural-NA code is recorded" },
+    { "row": 23, "column": "ROOPHAGE", "kind": "skip-break", "value": 45, "reason": "ROOPH=2 (No) but a real age is present (must be -777, not_applicable)" },
+    { "row": 24, "column": "ROOPHAGE", "kind": "applicability-break", "value": -777, "reason": "ROOPH=1 (Yes) but the structural-NA code is recorded" },
+    { "row": 25, "column": "RSTERAGE", "kind": "skip-break", "value": 25, "reason": "RSTER=2 (No) but a real age is present (must be -777, not_applicable)" },
+    { "row": 26, "column": "RSTERAGE", "kind": "applicability-break", "value": -777, "reason": "RSTER=1 (Yes) but the structural-NA code is recorded" }
   ]
 }

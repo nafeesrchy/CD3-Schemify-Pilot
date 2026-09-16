@@ -16,6 +16,68 @@
       { "$ref": "categories/anthropometric.json" },
       { "$ref": "categories/behavioral.json" },
       { "$ref": "categories/reproductive_hormonal.json" },
+      { "$ref": "categories/gynae_surgery.json" },
+
+      {
+        "$comment": "Skip pattern: no hysterectomy means age at hysterectomy is structurally not applicable -- D030, inferred routing, pending steward confirmation.",
+        "if": {
+          "required": ["RHYST"],
+          "properties": { "RHYST": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "RHYSTAG": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has had a hysterectomy must have a real age or an item-missing code for RHYSTAG, never the structural-NA code -- D030.",
+        "if": {
+          "required": ["RHYST"],
+          "properties": { "RHYST": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "RHYSTAG": { "not": { "const": -777 } } }
+        }
+      },
+      {
+        "$comment": "Skip pattern: no bilateral oophorectomy means age at oophorectomy is structurally not applicable -- D030, inferred routing, pending steward confirmation. Deliberately does NOT include ROOPH=3 (Not sure) -- whether that also forces not_applicable is an open question.",
+        "if": {
+          "required": ["ROOPH"],
+          "properties": { "ROOPH": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "ROOPHAGE": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has had a bilateral oophorectomy must have a real age or an item-missing code for ROOPHAGE, never the structural-NA code -- D030.",
+        "if": {
+          "required": ["ROOPH"],
+          "properties": { "ROOPH": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "ROOPHAGE": { "not": { "const": -777 } } }
+        }
+      },
+      {
+        "$comment": "Skip pattern: not sterilised means age sterilised is structurally not applicable -- D030, inferred routing, pending steward confirmation.",
+        "if": {
+          "required": ["RSTER"],
+          "properties": { "RSTER": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "RSTERAGE": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has been sterilised must have a real age or an item-missing code for RSTERAGE, never the structural-NA code -- D030.",
+        "if": {
+          "required": ["RSTER"],
+          "properties": { "RSTER": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "RSTERAGE": { "not": { "const": -777 } } }
+        }
+      },
 
       {
         "$comment": "Skip pattern: periods that have not stopped (or are irregular) mean age-periods-stopped is structurally not applicable -- D028, inferred routing, pending steward confirmation.",
