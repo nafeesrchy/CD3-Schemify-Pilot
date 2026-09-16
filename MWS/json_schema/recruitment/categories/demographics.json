@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/demographics.json",
-  "title": "MWS — Demographics",
+  "title": "MWS Recruitment — Demographics",
   "description": "Administrative and demographic fields recorded at recruitment: birth year, recruitment year, age, region of residence, and which questionnaire version the participant completed.",
   "type": "object",
   "x-variable-group": "demographics",

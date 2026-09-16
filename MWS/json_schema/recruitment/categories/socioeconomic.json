@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/socioeconomic.json",
-  "title": "MWS — Socioeconomic",
+  "title": "MWS Recruitment — Socioeconomic",
   "description": "Educational attainment and area-level deprivation (Townsend index) recorded at recruitment.",
   "type": "object",
   "x-variable-group": "socioeconomic",

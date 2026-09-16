@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/breast_health.json",
-  "title": "MWS — Breast Health",
+  "title": "MWS Recruitment — Breast Health",
   "description": "Breast screening attendance, family history of breast cancer, and personal history of breast cancer recorded at recruitment.",
   "type": "object",
   "x-variable-group": "breast_health",

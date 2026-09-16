@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/reproductive_hormonal.json",
-  "title": "MWS — Reproductive/Hormonal",
+  "title": "MWS Recruitment — Reproductive/Hormonal",
   "description": "Pregnancy and breastfeeding history, oral contraceptive use, menopausal hormone treatment (HRT), and menstrual history recorded at recruitment. Merges what were originally four smaller groupings (pregnancy, contraceptive, HRT, menstrual) into the CD3 target schema's own Reproductive/Hormonal domain.",
   "type": "object",
   "x-variable-group": "reproductive_hormonal",

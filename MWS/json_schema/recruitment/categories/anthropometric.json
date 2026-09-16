@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/anthropometric.json",
-  "title": "MWS — Anthropometric",
+  "title": "MWS Recruitment — Anthropometric",
   "description": "Body measurements at recruitment, calculated from self-reported feet/inches or stones/pounds.",
   "type": "object",
   "x-variable-group": "anthropometric",

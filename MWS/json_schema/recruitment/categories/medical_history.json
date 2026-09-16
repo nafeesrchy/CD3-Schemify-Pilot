@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/medical_history.json",
-  "title": "MWS — Medical History",
+  "title": "MWS Recruitment — Medical History",
   "description": "Self-reported medical conditions ever had, and conditions currently treated for, at recruitment. Audited for skip patterns before drafting: only 4 of the 12 'treated now' fields have a matching 'ever had' field in this sheet, and the steward confirmed even those need no skip logic -- a plain 'No' is a meaningful, standalone answer regardless of the 'ever had' response.",
   "type": "object",
   "x-variable-group": "medical_history",

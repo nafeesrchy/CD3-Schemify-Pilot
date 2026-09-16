@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/gynae_surgery.json",
-  "title": "MWS — Gynae Surgery",
+  "title": "MWS Recruitment — Gynae Surgery",
   "description": "Hysterectomy, bilateral oophorectomy, and sterilisation history recorded at recruitment.",
   "type": "object",
   "x-variable-group": "gynae_surgery",
