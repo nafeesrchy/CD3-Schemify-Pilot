@@ -1,0 +1,13 @@
+{
+  "$comment": "Ground truth for toy_invalid.json (resurvey_3yr table). Row indexes are 0-based array positions. One seeded violation per row.",
+  "rowIndexBase": 0,
+  "violations": [
+    { "row": 0, "column": "F1QTYPE", "kind": "unknown-level", "value": 5, "reason": "5 is not a declared questionnaire-version code (1-4)" },
+    { "row": 1, "column": "F1YSUBMT", "kind": "range-break", "value": 1997, "reason": "below plausibility minimum 1998" },
+    { "row": 2, "column": "F1YSUBMT", "kind": "range-break", "value": 2009, "reason": "above plausibility maximum 2008" },
+    { "row": 3, "column": "F1QTYPE", "kind": "invented-sentinel", "value": -1, "reason": "-1 (not_on_questionnaire) is not declared for F1QTYPE -- this field only declares 1-4 and -999" },
+    { "row": 4, "column": "F1YSUBMT", "kind": "wrong-type", "value": null, "reason": "bare null is never valid -- missingness must be the in-band sentinel -999" },
+    { "row": 5, "column": "F1QTYPE", "kind": "missing-key", "reason": "column omitted -- missingness must be in-band, every column required in every row" },
+    { "row": 6, "column": "F1NOTREAL", "kind": "undeclared-column", "reason": "not in the dictionary; rejected by the mother file's unevaluatedProperties: false" }
+  ]
+}

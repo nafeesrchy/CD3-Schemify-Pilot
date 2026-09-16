@@ -1,0 +1,9 @@
+[
+  { "F1QTYPE": 5, "F1YSUBMT": 2000 },
+  { "F1QTYPE": 1, "F1YSUBMT": 1997 },
+  { "F1QTYPE": 1, "F1YSUBMT": 2009 },
+  { "F1QTYPE": -1, "F1YSUBMT": 2000 },
+  { "F1QTYPE": 1, "F1YSUBMT": null },
+  { "F1YSUBMT": 2000 },
+  { "F1QTYPE": 1, "F1YSUBMT": 2000, "F1NOTREAL": 5 }
+]

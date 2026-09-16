@@ -64,8 +64,8 @@ RTRVV,recruitment,medical_history,converted,millionwomenstudydatadictionary-v1-2
 RTRCHOL,recruitment,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx Self-reported health row 25,R_TREATED_CHOLESTEROL; treated now; 1=Yes/2=No/-1=not on questionnaire (Other=No)
 RTRCLOT,recruitment,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx Self-reported health row 26,R_TREATED_CLOTTING; treated now clotting problems; 1=Yes/2=No/-1=not on questionnaire (Other=No)
 RTROPOR,recruitment,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx Self-reported health row 27,R_TREATED_OSTEOPOROSIS; treated now; 1=Yes/2=No/-1=not on questionnaire (Other=No)
-F1QTYPE,resurvey_3yr,demographics,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 8,F1_QUESTIONNAIRE_TYPE; A code to determine which version of the 1st resurvey questionnaire (yellow) was completed; codes: 1=9903/2=9907/3=9909/4=0012
-F1YSUBMT,resurvey_3yr,demographics,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 9,F1_YEAR_SUBMIT; Date questionnaire completed (year)
+F1QTYPE,resurvey_3yr,demographics,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 8,F1_QUESTIONNAIRE_TYPE; A code to determine which version of the 1st resurvey questionnaire (yellow) was completed; codes: 1=9903/2=9907/3=9909/4=0012
+F1YSUBMT,resurvey_3yr,demographics,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 9,F1_YEAR_SUBMIT; Date questionnaire completed (year)
 F1HDIS,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 10,F1_HEART_DISEASE; Illnesses during past 5 years: heart disease/problem; codes: 1=Yes
 F1STRK,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 11,F1_STROKE; Illnesses during past 5 years: stroke; codes: 1=Yes
 F1DIAB,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 12,F1_DIABETES; Illnesses during past 5 years: diabetes; codes: 1=Yes

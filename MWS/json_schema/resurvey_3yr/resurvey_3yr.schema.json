@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/resurvey_3yr.schema.json",
+  "title": "MWS — RESURVEY_3YR table",
+  "description": "Array of Million Women Study 3-year ('yellow') resurvey records. One element is one participant's 3-year follow-up record, combining the '3-year resurvey' sheet and the 'Dietary data at 3-year resurvey' sheet (same wave, same grain).",
+  "$comment": "This table has no participant-identifier field in the source dictionary at all, same as the recruitment table (open item, see DECISIONS.md D007/D047) -- uniqueItems is asserted as standing structural policy but cannot anchor to a real key here, and there is currently no way to link a resurvey_3yr row back to its recruitment row for the same participant.",
+  "type": "array",
+  "minItems": 1,
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "title": "RESURVEY_3YR record",
+    "allOf": [
+      { "$ref": "categories/demographics.json" }
+    ],
+    "unevaluatedProperties": false
+  }
+}

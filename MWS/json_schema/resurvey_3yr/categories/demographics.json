@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/demographics.json",
+  "title": "MWS 3-year resurvey — Demographics",
+  "description": "Administrative fields recorded at the 3-year ('yellow') resurvey: which questionnaire version was completed, and when.",
+  "type": "object",
+  "x-variable-group": "demographics",
+  "properties": {
+    "F1QTYPE": {
+      "title": "Questionnaire version completed (3-year resurvey)",
+      "description": "A code determining which version of the 1st resurvey questionnaire (yellow) was completed.",
+      "oneOf": [
+        { "const": 1, "title": "9903" },
+        { "const": 2, "title": "9907" },
+        { "const": 3, "title": "9909" },
+        { "const": 4, "title": "0012" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source coding: 1=9903, 2=9907, 3=9909, 4=0012 -- these are the study's own internal version/batch codes (not calendar dates), each with its own fielding-year window per SOURCES.md (9903: 1998-1999, 9907: 1999, 9909: 1999-2004, 0012: 2000-2005). A genuinely different versioning scheme from RQTYPE's Aqua/Blue/Other in the recruitment table, not just a relabeling."
+    },
+    "F1YSUBMT": {
+      "title": "Year questionnaire completed",
+      "anyOf": [
+        { "type": "integer", "minimum": 1998, "maximum": 2008 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no explicit range for this field directly. Minimum 1998 is derived from the source's own per-version fielding-year metadata (F1QTYPE's earliest version starts 1998). Maximum 2008 is steward-directed (the version windows alone only implied up to 2005, but actual completions ran later than the nominal fielding windows) -- D048."
+    }
+  },
+  "required": ["F1QTYPE", "F1YSUBMT"]
+}
