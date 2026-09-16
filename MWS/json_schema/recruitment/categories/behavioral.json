@@ -52,9 +52,10 @@
         { "const": 4, "title": "2-3 times a week" },
         { "const": 5, "title": "4-6 times a week" },
         { "const": 6, "title": "Every day" },
-        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" }
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source's own code list includes -1=Not on questionnaire for this field (Blue version = No availability) -- uses the source-documented sentinel, not the generic missing_numeric fallback."
+      "$comment": "Source's own code list includes -1=Not on questionnaire for this field (Blue version = No availability) -- kept as the source-documented sentinel. missing_numeric (-999) added alongside it per D020: -1 explains one specific reason a value is absent, not every possible one."
     },
     "REXSTREN": {
       "title": "Strenuous exercise (times per week)",

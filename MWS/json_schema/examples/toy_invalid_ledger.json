@@ -16,6 +16,6 @@
     { "row": 11, "column": "RHEIGHT", "kind": "range-break", "value": 119, "reason": "below plausibility minimum 120" },
     { "row": 12, "column": "RSMOKE", "kind": "unknown-level", "value": 5, "reason": "5 is not a declared smoking-status code (1-4)" },
     { "row": 13, "column": "RCIGSPD", "kind": "unknown-level", "value": 8, "reason": "8 is not a declared cigarettes-per-day code (1-7)" },
-    { "row": 14, "column": "REXANY", "kind": "invented-sentinel", "value": -999, "reason": "-999 (missing_numeric) is not declared for REXANY -- this field only declares -1 (not_on_questionnaire)" }
+    { "row": 14, "column": "REXANY", "kind": "invented-sentinel", "value": -777, "reason": "-777 is not a declared code for this field (REXANY declares 1-6, -1, and -999 per D020)" }
   ]
 }
