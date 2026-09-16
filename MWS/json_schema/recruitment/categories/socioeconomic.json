@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/socioeconomic.json",
+  "title": "MWS — Socioeconomic",
+  "description": "Educational attainment and area-level deprivation (Townsend index) recorded at recruitment.",
+  "type": "object",
+  "x-variable-group": "socioeconomic",
+  "properties": {
+    "REDUC": {
+      "title": "Highest educational attainment",
+      "description": "Derived from age left school, compulsory school leaving age, and qualifications.",
+      "oneOf": [
+        { "const": 1, "title": "Tertiary (college or university)" },
+        { "const": 2, "title": "Secondary (O levels or A levels)" },
+        { "const": 3, "title": "Technical qualifications (nursing, teaching, clerical or commercial)" },
+        { "const": 4, "title": "None; left at/after compulsory school leaving age" },
+        { "const": 5, "title": "None; left before compulsory school leaving age/no school" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    },
+    "RDEP5": {
+      "title": "Deprivation quintile (Townsend index)",
+      "oneOf": [
+        { "const": 1, "title": "Q1, least deprived" },
+        { "const": 2, "title": "Q2" },
+        { "const": 3, "title": "Q3" },
+        { "const": 4, "title": "Q4" },
+        { "const": 5, "title": "Q5, most deprived" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    },
+    "RDEP3": {
+      "title": "Deprivation tertile (Townsend index)",
+      "oneOf": [
+        { "const": 1, "title": "T1, least deprived" },
+        { "const": 2, "title": "T2" },
+        { "const": 3, "title": "T3, most deprived" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    }
+  },
+  "required": ["REDUC", "RDEP5", "RDEP3"],
+  "$comment": "Soft checks: RDEP5 and RDEP3 are both derived from the same underlying Townsend index and should be mutually consistent (e.g. RDEP5 in {1,2} implies RDEP3=1) -- JSON Schema cannot express this cross-field arithmetic. Not enforced; logged not-enforceable."
+}

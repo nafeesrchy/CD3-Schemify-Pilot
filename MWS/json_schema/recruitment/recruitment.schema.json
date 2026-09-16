@@ -11,7 +11,8 @@
     "type": "object",
     "title": "RECRUITMENT record",
     "allOf": [
-      { "$ref": "categories/demographics.json" }
+      { "$ref": "categories/demographics.json" },
+      { "$ref": "categories/socioeconomic.json" }
     ],
     "unevaluatedProperties": false
   }

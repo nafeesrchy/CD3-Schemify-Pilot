@@ -1,5 +1,5 @@
 {
-  "$comment": "Ground truth for toy_invalid.json. Row indexes are 0-based array positions. One seeded violation per row; tools/validate.py fixtures asserts each row FAILS with an error pointer on the named column. This is the first category (demographics) -- no conditionals exist yet, so no skip-break/applicability-break cases.",
+  "$comment": "Ground truth for toy_invalid.json. Row indexes are 0-based array positions. One seeded violation per row; tools/validate.py fixtures asserts each row FAILS with an error pointer on the named column. Covers demographics + socioeconomic categories -- no conditionals exist yet, so no skip-break/applicability-break cases.",
   "rowIndexBase": 0,
   "violations": [
     { "row": 0, "column": "RYOB", "kind": "range-break", "value": 1879, "reason": "below plausibility minimum 1880" },
@@ -9,6 +9,9 @@
     { "row": 4, "column": "RYOB", "kind": "invented-sentinel", "value": -1, "reason": "-1 (not_on_questionnaire) is not a sentinel this field declares; RYOB only declares -999" },
     { "row": 5, "column": "RAGE", "kind": "wrong-type", "value": null, "reason": "bare null is never valid -- missingness must be the in-band sentinel -999" },
     { "row": 6, "column": "RQTYPE", "kind": "missing-key", "reason": "column omitted -- missingness must be in-band, every column required in every row" },
-    { "row": 7, "column": "RNOTREAL", "kind": "undeclared-column", "reason": "not in the dictionary; rejected by the mother file's unevaluatedProperties: false" }
+    { "row": 7, "column": "RNOTREAL", "kind": "undeclared-column", "reason": "not in the dictionary; rejected by the mother file's unevaluatedProperties: false" },
+    { "row": 8, "column": "REDUC", "kind": "unknown-level", "value": 6, "reason": "6 is not a declared education code (1-5)" },
+    { "row": 9, "column": "RDEP5", "kind": "unknown-level", "value": 6, "reason": "6 is not a declared deprivation-quintile code (1-5)" },
+    { "row": 10, "column": "RDEP3", "kind": "unknown-level", "value": 4, "reason": "4 is not a declared deprivation-tertile code (1-3)" }
   ]
 }
