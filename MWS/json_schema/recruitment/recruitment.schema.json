@@ -166,7 +166,7 @@
       },
 
       {
-        "$comment": "Skip pattern: no hysterectomy means age at hysterectomy is structurally not applicable -- D030, inferred routing, pending steward confirmation.",
+        "$comment": "Skip pattern: no hysterectomy means age at hysterectomy is structurally not applicable -- D030, steward-confirmed.",
         "if": {
           "required": ["RHYST"],
           "properties": { "RHYST": { "const": 2 } }
@@ -186,7 +186,7 @@
         }
       },
       {
-        "$comment": "Skip pattern: no bilateral oophorectomy means age at oophorectomy is structurally not applicable -- D030, inferred routing, pending steward confirmation. Deliberately does NOT include ROOPH=3 (Not sure) -- whether that also forces not_applicable is an open question.",
+        "$comment": "Skip pattern: no bilateral oophorectomy means age at oophorectomy is structurally not applicable -- D030, steward-confirmed. Deliberately does NOT include ROOPH=3 (Not sure) -- whether that also forces not_applicable is an open question.",
         "if": {
           "required": ["ROOPH"],
           "properties": { "ROOPH": { "const": 2 } }
@@ -206,7 +206,7 @@
         }
       },
       {
-        "$comment": "Skip pattern: not sterilised means age sterilised is structurally not applicable -- D030, inferred routing, pending steward confirmation.",
+        "$comment": "Skip pattern: not sterilised means age sterilised is structurally not applicable -- D030, steward-confirmed.",
         "if": {
           "required": ["RSTER"],
           "properties": { "RSTER": { "const": 2 } }
