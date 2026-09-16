@@ -47,7 +47,7 @@ same three cohorts).
 - [x] intake: sources registered · grain confirmed · categories confirmed (10, derived from source structure + one steward correction — REDUC moved out of Body/Lifestyle)
 - [x] common/defs.json + mother scaffold validate green — mother file created when Demographics was wired in; `validate.py check` green (3 files, 6 refs resolved)
 - [ ] every category confirmed
-- [ ] cross-category skip audit (D008 open — RCIGSPD routing; D028 open — RPSTOPAG/RPSTOPYN skip pair drafted but inferred, pending steward confirmation)
+- [ ] cross-category skip audit (D008 open — RCIGSPD routing; D028 resolved — RPSTOPAG/RPSTOPYN skip pair steward-confirmed)
 - [ ] coverage audit 1:1
 - [ ] pages current for the whole package
 - [ ] review walked · cleanup decided
