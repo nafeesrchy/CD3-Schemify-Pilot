@@ -191,13 +191,15 @@
     "RPSTOPAG": {
       "title": "Age periods stopped",
       "x-unit": "years",
+      "x-universe": "Participants whose periods have stopped (RPSTOPYN=1).",
       "anyOf": [
         { "type": "integer", "minimum": 20, "maximum": 70 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 20-70 is an agent-decided plausibility bound -- D024."
+      "$comment": "Source states no valid range; 20-70 is an agent-decided plausibility bound -- D024. not_applicable branch enforced by a mother-file skip pair keyed on RPSTOPYN -- D028 (inferred routing, pending steward confirmation)."
     }
   },
   "required": ["RANYCHLD", "RNUMFTP", "RAGEFB", "RAGELB", "RBFYN", "RBFNUM", "RBFDUR", "ROC", "ROCSTART", "ROCSTOP", "ROCDUR", "RHTNPC", "RHRTSTA", "RHTDUR", "RHRTSTO", "RHRTMP", "RHTTYPE", "RHTLU", "RMENARCH", "RPSTOPYN", "RPSTOPAG"],
-  "$comment": "Soft checks (not enforceable in JSON Schema): RAGELB should be >= RAGEFB when both are substantive; ROCSTOP should be >= ROCSTART; RHRTSTO should be >= RHRTSTA; RPSTOPAG is only meaningful when RPSTOPYN=1."
+  "$comment": "Soft checks (not enforceable in JSON Schema -- cross-field numeric comparisons): RAGELB should be >= RAGEFB when both are substantive; ROCSTOP should be >= ROCSTART; RHRTSTO should be >= RHRTSTA. (RPSTOPAG's routing against RPSTOPYN is enforced as a real mother-file skip pair, not listed here -- D028.)"
 }

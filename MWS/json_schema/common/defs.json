@@ -13,6 +13,11 @@
       "const": -999,
       "title": "Missing",
       "description": "No value recorded, for a field the source dictionary documents no missing/unknown code for. Agent-decided generic sentinel, steward-confirmed as the package's policy for this gap — D002."
+    },
+    "not_applicable": {
+      "const": -777,
+      "title": "Not applicable",
+      "description": "The routing determined the variable is outside the respondent's universe (structural skip) — distinct from missing_numeric, which means no value was recorded for an unexplained reason. Agent-decided, D027."
     }
   }
 }

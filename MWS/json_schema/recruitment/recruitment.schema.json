@@ -15,7 +15,28 @@
       { "$ref": "categories/socioeconomic.json" },
       { "$ref": "categories/anthropometric.json" },
       { "$ref": "categories/behavioral.json" },
-      { "$ref": "categories/reproductive_hormonal.json" }
+      { "$ref": "categories/reproductive_hormonal.json" },
+
+      {
+        "$comment": "Skip pattern: periods that have not stopped (or are irregular) mean age-periods-stopped is structurally not applicable -- D028, inferred routing, pending steward confirmation.",
+        "if": {
+          "required": ["RPSTOPYN"],
+          "properties": { "RPSTOPYN": { "enum": [2, 3] } }
+        },
+        "then": {
+          "properties": { "RPSTOPAG": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant whose periods have stopped must have a real age or an item-missing code for RPSTOPAG, never the structural-NA code -- D028.",
+        "if": {
+          "required": ["RPSTOPYN"],
+          "properties": { "RPSTOPYN": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "RPSTOPAG": { "not": { "const": -777 } } }
+        }
+      }
     ],
     "unevaluatedProperties": false
   }

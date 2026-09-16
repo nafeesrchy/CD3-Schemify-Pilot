@@ -20,6 +20,8 @@
     { "row": 15, "column": "RNUMFTP", "kind": "range-break", "value": 11, "reason": "outside every branch: not in 0-9, not the top-code 10, not the sentinel" },
     { "row": 16, "column": "RAGEFB", "kind": "range-break", "value": 9, "reason": "below plausibility minimum 10" },
     { "row": 17, "column": "RBFNUM", "kind": "range-break", "value": 21, "reason": "above plausibility maximum 20" },
-    { "row": 18, "column": "RHTTYPE", "kind": "unknown-level", "value": 6, "reason": "6 is not a declared HRT-type code (1-5)" }
+    { "row": 18, "column": "RHTTYPE", "kind": "unknown-level", "value": 6, "reason": "6 is not a declared HRT-type code (1-5)" },
+    { "row": 19, "column": "RPSTOPAG", "kind": "skip-break", "value": 45, "reason": "RPSTOPYN=2 (No) but a real age is present (must be -777, not_applicable)" },
+    { "row": 20, "column": "RPSTOPAG", "kind": "applicability-break", "value": -777, "reason": "RPSTOPYN=1 (Yes) but the structural-NA code is recorded" }
   ]
 }
