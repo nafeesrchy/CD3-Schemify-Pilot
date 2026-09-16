@@ -17,6 +17,7 @@
       { "$ref": "categories/behavioral.json" },
       { "$ref": "categories/reproductive_hormonal.json" },
       { "$ref": "categories/gynae_surgery.json" },
+      { "$ref": "categories/medical_history.json" },
 
       {
         "$comment": "Skip pattern: no hysterectomy means age at hysterectomy is structurally not applicable -- D030, inferred routing, pending steward confirmation.",
