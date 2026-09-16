@@ -14,7 +14,8 @@
       { "$ref": "categories/demographics.json" },
       { "$ref": "categories/socioeconomic.json" },
       { "$ref": "categories/anthropometric.json" },
-      { "$ref": "categories/behavioral.json" }
+      { "$ref": "categories/behavioral.json" },
+      { "$ref": "categories/reproductive_hormonal.json" }
     ],
     "unevaluatedProperties": false
   }

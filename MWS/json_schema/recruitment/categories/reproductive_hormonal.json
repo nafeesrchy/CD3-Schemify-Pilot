@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/reproductive_hormonal.json",
+  "title": "MWS — Reproductive/Hormonal",
+  "description": "Pregnancy and breastfeeding history, oral contraceptive use, menopausal hormone treatment (HRT), and menstrual history recorded at recruitment. Merges what were originally four smaller groupings (pregnancy, contraceptive, HRT, menstrual) into the CD3 target schema's own Reproductive/Hormonal domain.",
+  "type": "object",
+  "x-variable-group": "reproductive_hormonal",
+  "properties": {
+    "RANYCHLD": {
+      "title": "Any children (yes/no)",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    },
+    "RNUMFTP": {
+      "title": "Number of full-term pregnancies",
+      "anyOf": [
+        { "type": "integer", "minimum": 0, "maximum": 9 },
+        { "const": 10, "title": "10 or more" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source's own code list only labels the top code (10=10 or more); 0-9 are plain unlabeled counts, not enumerated codes. 10 is a real top-coded substantive value, not a missingness sentinel -- D025."
+    },
+    "RAGEFB": {
+      "title": "Age at first birth",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "integer", "minimum": 10, "maximum": 55 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states valid range 10-55."
+    },
+    "RAGELB": {
+      "title": "Age at last birth",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "integer", "minimum": 10, "maximum": 55 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states valid range 10-55."
+    },
+    "RBFYN": {
+      "title": "Ever breastfed",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source's own code list includes -1=Not on questionnaire for this field (Blue version = No availability). missing_numeric added alongside per D020."
+    },
+    "RBFNUM": {
+      "title": "Number of children breastfed",
+      "anyOf": [
+        { "type": "integer", "minimum": 0, "maximum": 20 },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 0-20 is an agent-decided plausibility ceiling -- D024. Source's code list documents -1=Unable to derive (not asked on questionnaire) (Blue version = No availability), mapped to the shared not_on_questionnaire sentinel; missing_numeric added alongside per D020."
+    },
+    "RBFDUR": {
+      "title": "Total breastfeeding duration",
+      "x-unit": "months",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 240 },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 0-240 months (20 years) is an agent-decided plausibility ceiling -- D024. Source's code list documents -1=Unable to derive (not asked on questionnaire) (Blue version = No availability); missing_numeric added alongside per D020."
+    },
+    "ROC": {
+      "title": "Ever used oral contraceptives",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    },
+    "ROCSTART": {
+      "title": "Age started oral contraceptives",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "integer", "minimum": 10, "maximum": 60 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 10-60 is an agent-decided plausibility bound -- D024."
+    },
+    "ROCSTOP": {
+      "title": "Age stopped oral contraceptives",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "integer", "minimum": 10, "maximum": 60 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 10-60 is an agent-decided plausibility bound -- D024."
+    },
+    "ROCDUR": {
+      "title": "Total duration of oral contraceptive use",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 50 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 0-50 is an agent-decided plausibility ceiling -- D024."
+    },
+    "RHTNPC": {
+      "title": "HRT use: never/past/current",
+      "oneOf": [
+        { "const": 1, "title": "Never" },
+        { "const": 2, "title": "Past" },
+        { "const": 3, "title": "Current" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    },
+    "RHRTSTA": {
+      "title": "Age started HRT",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "integer", "minimum": 25, "maximum": 90 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states a valid range of From=25 only (To is blank/unstated). Minimum 25 is source-stated; maximum 90 is an agent-decided plausibility ceiling -- D024."
+    },
+    "RHTDUR": {
+      "title": "Total duration of HRT use",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 50 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 0-50 is an agent-decided plausibility ceiling -- D024."
+    },
+    "RHRTSTO": {
+      "title": "Age last used HRT",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "integer", "minimum": 25, "maximum": 90 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 25-90 is an agent-decided plausibility bound, matching RHRTSTA's floor -- D024."
+    },
+    "RHRTMP": {
+      "title": "Periods stopped before starting HRT",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    },
+    "RHTTYPE": {
+      "title": "Type of HRT",
+      "description": "From reported brand(s) last used.",
+      "oneOf": [
+        { "const": 1, "title": "Oestrogen only" },
+        { "const": 2, "title": "Oestrogen + progestagen" },
+        { "const": 3, "title": "Progestagen only" },
+        { "const": 4, "title": "Tibolone" },
+        { "const": 5, "title": "Other/mixed" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    },
+    "RHTLU": {
+      "title": "Time since HRT last used",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 50 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 0-50 is an agent-decided plausibility ceiling -- D024."
+    },
+    "RMENARCH": {
+      "title": "Age at menarche",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "integer", "minimum": 7, "maximum": 20 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states valid range 7-20."
+    },
+    "RPSTOPYN": {
+      "title": "Periods stopped now",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "Irregular" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ]
+    },
+    "RPSTOPAG": {
+      "title": "Age periods stopped",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "integer", "minimum": 20, "maximum": 70 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 20-70 is an agent-decided plausibility bound -- D024."
+    }
+  },
+  "required": ["RANYCHLD", "RNUMFTP", "RAGEFB", "RAGELB", "RBFYN", "RBFNUM", "RBFDUR", "ROC", "ROCSTART", "ROCSTOP", "ROCDUR", "RHTNPC", "RHRTSTA", "RHTDUR", "RHRTSTO", "RHRTMP", "RHTTYPE", "RHTLU", "RMENARCH", "RPSTOPYN", "RPSTOPAG"],
+  "$comment": "Soft checks (not enforceable in JSON Schema): RAGELB should be >= RAGEFB when both are substantive; ROCSTOP should be >= ROCSTART; RHRTSTO should be >= RHRTSTA; RPSTOPAG is only meaningful when RPSTOPYN=1."
+}
