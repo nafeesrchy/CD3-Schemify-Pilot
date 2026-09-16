@@ -53,22 +53,26 @@
     },
     "RBFNUM": {
       "title": "Number of children breastfed",
+      "x-universe": "Participants who have ever breastfed (RBFYN=1).",
       "anyOf": [
         { "type": "integer", "minimum": 0, "maximum": 20 },
         { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 0-20 is an agent-decided plausibility ceiling -- D024. Source's code list documents -1=Unable to derive (not asked on questionnaire) (Blue version = No availability), mapped to the shared not_on_questionnaire sentinel; missing_numeric added alongside per D020."
+      "$comment": "Source states no valid range; 0-20 is an agent-decided plausibility ceiling -- D024. Source's code list documents -1=Unable to derive (not asked on questionnaire) (Blue version = No availability), mapped to the shared not_on_questionnaire sentinel; missing_numeric added alongside per D020. not_applicable branch enforced by a mother-file skip pair keyed on RBFYN -- D037, steward-confirmed."
     },
     "RBFDUR": {
       "title": "Total breastfeeding duration",
       "x-unit": "months",
+      "x-universe": "Participants who have ever breastfed (RBFYN=1).",
       "anyOf": [
         { "type": "number", "minimum": 0, "maximum": 240 },
         { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 0-240 months (20 years) is an agent-decided plausibility ceiling -- D024. Source's code list documents -1=Unable to derive (not asked on questionnaire) (Blue version = No availability); missing_numeric added alongside per D020."
+      "$comment": "Source states no valid range; 0-240 months (20 years) is an agent-decided plausibility ceiling -- D024. Source's code list documents -1=Unable to derive (not asked on questionnaire) (Blue version = No availability); missing_numeric added alongside per D020. not_applicable branch enforced by a mother-file skip pair keyed on RBFYN -- D037, steward-confirmed."
     },
     "ROC": {
       "title": "Ever used oral contraceptives",
@@ -81,29 +85,35 @@
     "ROCSTART": {
       "title": "Age started oral contraceptives",
       "x-unit": "years",
+      "x-universe": "Participants who have ever used oral contraceptives (ROC=1).",
       "anyOf": [
         { "type": "integer", "minimum": 10, "maximum": 60 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 10-60 is an agent-decided plausibility bound -- D024."
+      "$comment": "Source states no valid range; 10-60 is an agent-decided plausibility bound -- D024. not_applicable branch enforced by a mother-file skip pair keyed on ROC -- D038, steward-confirmed (validated against the real questionnaire's own skip logic)."
     },
     "ROCSTOP": {
       "title": "Age stopped oral contraceptives",
       "x-unit": "years",
+      "x-universe": "Participants who have ever used oral contraceptives (ROC=1).",
       "anyOf": [
         { "type": "integer", "minimum": 10, "maximum": 60 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 10-60 is an agent-decided plausibility bound -- D024."
+      "$comment": "Source states no valid range; 10-60 is an agent-decided plausibility bound -- D024. not_applicable branch enforced by a mother-file skip pair keyed on ROC -- D038, steward-confirmed (validated against the real questionnaire's own skip logic)."
     },
     "ROCDUR": {
       "title": "Total duration of oral contraceptive use",
       "x-unit": "years",
+      "x-universe": "Participants who have ever used oral contraceptives (ROC=1).",
       "anyOf": [
         { "type": "number", "minimum": 0, "maximum": 50 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 0-50 is an agent-decided plausibility ceiling -- D024."
+      "$comment": "Source states no valid range; 0-50 is an agent-decided plausibility ceiling -- D024. not_applicable branch enforced by a mother-file skip pair keyed on ROC -- D038, steward-confirmed (validated against the real questionnaire's own skip logic)."
     },
     "RHTNPC": {
       "title": "HRT use: never/past/current",
@@ -117,58 +127,72 @@
     "RHRTSTA": {
       "title": "Age started HRT",
       "x-unit": "years",
+      "x-universe": "Participants who have ever used HRT (RHTNPC=2 Past or 3 Current).",
       "anyOf": [
         { "type": "integer", "minimum": 25, "maximum": 90 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states a valid range of From=25 only (To is blank/unstated). Minimum 25 is source-stated; maximum 90 is an agent-decided plausibility ceiling -- D024."
+      "$comment": "Source states a valid range of From=25 only (To is blank/unstated). Minimum 25 is source-stated; maximum 90 is an agent-decided plausibility ceiling -- D024. not_applicable branch enforced by a mother-file skip pair keyed on RHTNPC -- D039, steward-confirmed."
     },
     "RHTDUR": {
       "title": "Total duration of HRT use",
       "x-unit": "years",
+      "x-universe": "Participants who have ever used HRT (RHTNPC=2 Past or 3 Current).",
       "anyOf": [
         { "type": "number", "minimum": 0, "maximum": 50 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 0-50 is an agent-decided plausibility ceiling -- D024."
+      "$comment": "Source states no valid range; 0-50 is an agent-decided plausibility ceiling -- D024. not_applicable branch enforced by a mother-file skip pair keyed on RHTNPC -- D039, steward-confirmed."
     },
     "RHRTSTO": {
       "title": "Age last used HRT",
       "x-unit": "years",
+      "x-universe": "Participants who used HRT in the past but have stopped (RHTNPC=2 Past only) -- someone currently using has no 'last used' age.",
       "anyOf": [
         { "type": "integer", "minimum": 25, "maximum": 90 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 25-90 is an agent-decided plausibility bound, matching RHRTSTA's floor -- D024."
+      "$comment": "Source states no valid range; 25-90 is an agent-decided plausibility bound, matching RHRTSTA's floor -- D024. not_applicable branch enforced by a mother-file skip pair keyed on RHTNPC (Never AND Current both pin this NA) -- D039, steward-confirmed via the real questionnaire wording ('are you using HRT? If no, how old were you when you last used it?')."
     },
     "RHRTMP": {
       "title": "Periods stopped before starting HRT",
+      "x-universe": "Participants who have ever used HRT (RHTNPC=2 Past or 3 Current).",
       "oneOf": [
         { "const": 1, "title": "Yes" },
         { "const": 2, "title": "No" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
-      ]
+      ],
+      "$comment": "not_applicable branch enforced by a mother-file skip pair keyed on RHTNPC -- D039, steward-confirmed."
     },
     "RHTTYPE": {
       "title": "Type of HRT",
       "description": "From reported brand(s) last used.",
+      "x-universe": "Participants who have ever used HRT (RHTNPC=2 Past or 3 Current).",
       "oneOf": [
         { "const": 1, "title": "Oestrogen only" },
         { "const": 2, "title": "Oestrogen + progestagen" },
         { "const": 3, "title": "Progestagen only" },
         { "const": 4, "title": "Tibolone" },
         { "const": 5, "title": "Other/mixed" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
-      ]
+      ],
+      "$comment": "not_applicable branch enforced by a mother-file skip pair keyed on RHTNPC -- D039, steward-confirmed."
     },
     "RHTLU": {
       "title": "Time since HRT last used",
       "x-unit": "years",
+      "x-universe": "Participants who used HRT in the past but have stopped (RHTNPC=2 Past only), same as RHRTSTO.",
       "anyOf": [
         { "type": "number", "minimum": 0, "maximum": 50 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 0-50 is an agent-decided plausibility ceiling -- D024."
+      "$comment": "Source states no valid range; 0-50 is an agent-decided plausibility ceiling -- D024. not_applicable branch enforced by a mother-file skip pair keyed on RHTNPC (Never AND Current both pin this NA) -- D039, steward-confirmed."
     },
     "RMENARCH": {
       "title": "Age at menarche",

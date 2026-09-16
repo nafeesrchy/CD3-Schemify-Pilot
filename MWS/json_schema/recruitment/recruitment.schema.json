@@ -21,6 +21,119 @@
       { "$ref": "categories/medical_history.json" },
 
       {
+        "$comment": "Skip pattern: not currently/never breastfed means breastfeeding count and duration are structurally not applicable -- D037, steward-confirmed.",
+        "if": {
+          "required": ["RBFYN"],
+          "properties": { "RBFYN": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "RBFNUM": { "const": -777 }, "RBFDUR": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has ever breastfed must have a real value or an item-missing code for RBFNUM/RBFDUR, never the structural-NA code -- D037.",
+        "if": {
+          "required": ["RBFYN"],
+          "properties": { "RBFYN": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "RBFNUM": { "not": { "const": -777 } }, "RBFDUR": { "not": { "const": -777 } } }
+        }
+      },
+      {
+        "$comment": "Skip pattern: never used oral contraceptives means start age, stop age, and duration are structurally not applicable -- D038, steward-confirmed (validated against the real questionnaire's own skip logic).",
+        "if": {
+          "required": ["ROC"],
+          "properties": { "ROC": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "ROCSTART": { "const": -777 }, "ROCSTOP": { "const": -777 }, "ROCDUR": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has ever used oral contraceptives must have real values or item-missing codes for ROCSTART/ROCSTOP/ROCDUR, never the structural-NA code -- D038.",
+        "if": {
+          "required": ["ROC"],
+          "properties": { "ROC": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "ROCSTART": { "not": { "const": -777 } }, "ROCSTOP": { "not": { "const": -777 } }, "ROCDUR": { "not": { "const": -777 } } }
+        }
+      },
+      {
+        "$comment": "Skip pattern: never used HRT means start age, duration, last-used age, prior-periods-stopped flag, type, and time-since-last-used are all structurally not applicable -- D039, steward-confirmed.",
+        "if": {
+          "required": ["RHTNPC"],
+          "properties": { "RHTNPC": { "const": 1 } }
+        },
+        "then": {
+          "properties": {
+            "RHRTSTA": { "const": -777 },
+            "RHTDUR": { "const": -777 },
+            "RHRTSTO": { "const": -777 },
+            "RHRTMP": { "const": -777 },
+            "RHTTYPE": { "const": -777 },
+            "RHTLU": { "const": -777 }
+          }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has ever used HRT (Past or Current) must have real values for start age, duration, prior-periods-stopped, and type, never the structural-NA code -- D039.",
+        "if": {
+          "required": ["RHTNPC"],
+          "properties": { "RHTNPC": { "enum": [2, 3] } }
+        },
+        "then": {
+          "properties": {
+            "RHRTSTA": { "not": { "const": -777 } },
+            "RHTDUR": { "not": { "const": -777 } },
+            "RHRTMP": { "not": { "const": -777 } },
+            "RHTTYPE": { "not": { "const": -777 } }
+          }
+        }
+      },
+      {
+        "$comment": "HRT routing: a participant currently using HRT has not stopped, so age-last-used and time-since-last-used are structurally not applicable -- D039, steward-confirmed via the real questionnaire wording ('are you using HRT? If no, how old were you when you last used it?').",
+        "if": {
+          "required": ["RHTNPC"],
+          "properties": { "RHTNPC": { "const": 3 } }
+        },
+        "then": {
+          "properties": { "RHRTSTO": { "const": -777 }, "RHTLU": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who stopped using HRT in the past must have real values for age-last-used and time-since-last-used, never the structural-NA code -- D039.",
+        "if": {
+          "required": ["RHTNPC"],
+          "properties": { "RHTNPC": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "RHRTSTO": { "not": { "const": -777 } }, "RHTLU": { "not": { "const": -777 } } }
+        }
+      },
+      {
+        "$comment": "Skip pattern: periods that have not stopped (or are irregular) mean age-periods-stopped is structurally not applicable -- D028, steward-confirmed.",
+        "if": {
+          "required": ["RPSTOPYN"],
+          "properties": { "RPSTOPYN": { "enum": [2, 3] } }
+        },
+        "then": {
+          "properties": { "RPSTOPAG": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant whose periods have stopped must have a real age or an item-missing code for RPSTOPAG, never the structural-NA code -- D028.",
+        "if": {
+          "required": ["RPSTOPYN"],
+          "properties": { "RPSTOPYN": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "RPSTOPAG": { "not": { "const": -777 } } }
+        }
+      },
+
+      {
         "$comment": "Skip pattern: no hysterectomy means age at hysterectomy is structurally not applicable -- D030, inferred routing, pending steward confirmation.",
         "if": {
           "required": ["RHYST"],
@@ -78,27 +191,6 @@
         },
         "then": {
           "properties": { "RSTERAGE": { "not": { "const": -777 } } }
-        }
-      },
-
-      {
-        "$comment": "Skip pattern: periods that have not stopped (or are irregular) mean age-periods-stopped is structurally not applicable -- D028, inferred routing, pending steward confirmation.",
-        "if": {
-          "required": ["RPSTOPYN"],
-          "properties": { "RPSTOPYN": { "enum": [2, 3] } }
-        },
-        "then": {
-          "properties": { "RPSTOPAG": { "const": -777 } }
-        }
-      },
-      {
-        "$comment": "Applicability: a participant whose periods have stopped must have a real age or an item-missing code for RPSTOPAG, never the structural-NA code -- D028.",
-        "if": {
-          "required": ["RPSTOPYN"],
-          "properties": { "RPSTOPYN": { "const": 1 } }
-        },
-        "then": {
-          "properties": { "RPSTOPAG": { "not": { "const": -777 } } }
         }
       }
     ],

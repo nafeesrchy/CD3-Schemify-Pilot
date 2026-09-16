@@ -31,7 +31,7 @@
         { "const": 7, "title": "25 or more" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source description implies routing from RSMOKE (current smokers only), but the source gives no explicit not-applicable code for non-smokers here -- not enforced as a skip rule, open item D008."
+      "$comment": "Source description says 'in current smokers', but the real question wording (steward-confirmed) is asked independently of smoking status -- a non-smoker answers '1=None' directly, a real substantive value, not a skip. No not-applicable branch -- D035, resolves D008."
     },
     "RALCNUM": {
       "title": "Alcoholic drinks per week",
