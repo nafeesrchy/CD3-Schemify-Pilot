@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/anthropometric.json",
+  "title": "MWS — Anthropometric",
+  "description": "Body measurements at recruitment, calculated from self-reported feet/inches or stones/pounds.",
+  "type": "object",
+  "x-variable-group": "anthropometric",
+  "properties": {
+    "RHEIGHT": {
+      "title": "Height now",
+      "x-unit": "cm",
+      "x-derivation": "Calculated from self-reported feet/inches.",
+      "anyOf": [
+        { "type": "number", "minimum": 120, "maximum": 200 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states valid range 120-200. Type number (not integer): a feet/inches-to-cm conversion can yield a fractional value -- agent-decided, D017."
+    },
+    "RWGT": {
+      "title": "Weight now",
+      "x-unit": "kg",
+      "x-derivation": "Calculated from self-reported stones/pounds.",
+      "anyOf": [
+        { "type": "number", "minimum": 35, "maximum": 150 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states valid range 35-150. Type number, same reasoning as RHEIGHT -- D017."
+    },
+    "RBMI": {
+      "title": "Body mass index",
+      "x-unit": "kg/m2",
+      "x-derivation": "Calculated from RHEIGHT and RWGT (or their source components).",
+      "anyOf": [
+        { "type": "number", "minimum": 10, "maximum": 80 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range for this field. 10-80 is an agent-decided plausibility bound (rejects impossible BMI, e.g. negative or over 100) -- D018."
+    }
+  },
+  "required": ["RHEIGHT", "RWGT", "RBMI"],
+  "$comment": "Soft checks: RBMI should approximately equal RWGT / (RHEIGHT/100)^2 when all three are substantive values. JSON Schema cannot verify cross-field arithmetic -- not enforced, see DECISIONS.md."
+}

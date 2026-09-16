@@ -12,7 +12,9 @@
     "title": "RECRUITMENT record",
     "allOf": [
       { "$ref": "categories/demographics.json" },
-      { "$ref": "categories/socioeconomic.json" }
+      { "$ref": "categories/socioeconomic.json" },
+      { "$ref": "categories/anthropometric.json" },
+      { "$ref": "categories/behavioral.json" }
     ],
     "unevaluatedProperties": false
   }

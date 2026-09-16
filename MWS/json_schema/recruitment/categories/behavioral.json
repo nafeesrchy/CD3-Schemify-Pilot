@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/recruitment/categories/behavioral.json",
+  "title": "MWS — Behavioral",
+  "description": "Smoking, alcohol, and exercise behaviors reported at recruitment.",
+  "type": "object",
+  "x-variable-group": "behavioral",
+  "properties": {
+    "RSMOKE": {
+      "title": "Smoking status",
+      "description": "Derived cigarette-smoking status.",
+      "oneOf": [
+        { "const": 1, "title": "Never" },
+        { "const": 2, "title": "Past" },
+        { "const": 3, "title": "Current" },
+        { "const": 4, "title": "Not current" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source coding: 1 Never; 2 Past; 3 Current; 4 Not current. 'Past' and 'Not current' both appear in the source code list as distinct levels -- transcribed verbatim, not merged or interpreted."
+    },
+    "RCIGSPD": {
+      "title": "Cigarettes per day (current smokers)",
+      "x-universe": "Intended for current smokers (RSMOKE=3), per the source's own field description.",
+      "oneOf": [
+        { "const": 1, "title": "None" },
+        { "const": 2, "title": "Less than 5" },
+        { "const": 3, "title": "5-9" },
+        { "const": 4, "title": "10-14" },
+        { "const": 5, "title": "15-19" },
+        { "const": 6, "title": "20-24" },
+        { "const": 7, "title": "25 or more" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source description implies routing from RSMOKE (current smokers only), but the source gives no explicit not-applicable code for non-smokers here -- not enforced as a skip rule, open item D008."
+    },
+    "RALCNUM": {
+      "title": "Alcoholic drinks per week",
+      "x-unit": "drinks/week",
+      "x-derivation": "Derived from reported weekly drinks of wine, lager, cider, beer, and spirits.",
+      "anyOf": [
+        { "type": "integer", "minimum": 0, "maximum": 200 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range. 0-200 is an agent-decided plausibility ceiling (rejects impossible counts, permits rare heavy use) -- D019."
+    },
+    "REXANY": {
+      "title": "Any exercise (times per week)",
+      "oneOf": [
+        { "const": 1, "title": "Rarely/never" },
+        { "const": 2, "title": "Less than once a week" },
+        { "const": 3, "title": "Once a week" },
+        { "const": 4, "title": "2-3 times a week" },
+        { "const": 5, "title": "4-6 times a week" },
+        { "const": 6, "title": "Every day" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" }
+      ],
+      "$comment": "Source's own code list includes -1=Not on questionnaire for this field (Blue version = No availability) -- uses the source-documented sentinel, not the generic missing_numeric fallback."
+    },
+    "REXSTREN": {
+      "title": "Strenuous exercise (times per week)",
+      "oneOf": [
+        { "const": 1, "title": "Rarely/never" },
+        { "const": 2, "title": "Less than once a week" },
+        { "const": 3, "title": "Once a week" },
+        { "const": 4, "title": "2-3 times a week" },
+        { "const": 5, "title": "4-6 times a week" },
+        { "const": 6, "title": "Every day" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Unlike REXANY, the source's code list for this field has no -1 code (all versions = Yes availability) -- generic missing_numeric fallback applies instead."
+    }
+  },
+  "required": ["RSMOKE", "RCIGSPD", "RALCNUM", "REXANY", "REXSTREN"]
+}

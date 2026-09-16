@@ -12,6 +12,10 @@
     { "row": 7, "column": "RNOTREAL", "kind": "undeclared-column", "reason": "not in the dictionary; rejected by the mother file's unevaluatedProperties: false" },
     { "row": 8, "column": "REDUC", "kind": "unknown-level", "value": 6, "reason": "6 is not a declared education code (1-5)" },
     { "row": 9, "column": "RDEP5", "kind": "unknown-level", "value": 6, "reason": "6 is not a declared deprivation-quintile code (1-5)" },
-    { "row": 10, "column": "RDEP3", "kind": "unknown-level", "value": 4, "reason": "4 is not a declared deprivation-tertile code (1-3)" }
+    { "row": 10, "column": "RDEP3", "kind": "unknown-level", "value": 4, "reason": "4 is not a declared deprivation-tertile code (1-3)" },
+    { "row": 11, "column": "RHEIGHT", "kind": "range-break", "value": 119, "reason": "below plausibility minimum 120" },
+    { "row": 12, "column": "RSMOKE", "kind": "unknown-level", "value": 5, "reason": "5 is not a declared smoking-status code (1-4)" },
+    { "row": 13, "column": "RCIGSPD", "kind": "unknown-level", "value": 8, "reason": "8 is not a declared cigarettes-per-day code (1-7)" },
+    { "row": 14, "column": "REXANY", "kind": "invented-sentinel", "value": -999, "reason": "-999 (missing_numeric) is not declared for REXANY -- this field only declares -1 (not_on_questionnaire)" }
   ]
 }
