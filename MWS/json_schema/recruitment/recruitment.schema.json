@@ -21,6 +21,38 @@
       { "$ref": "categories/medical_history.json" },
 
       {
+        "$comment": "Skip pattern: never had children means number of full-term pregnancies, age at first/last birth, and the whole breastfeeding block are all structurally not applicable -- D041, steward-confirmed. This is the outer gate; RBFYN's own nested gate over RBFNUM/RBFDUR (below) still applies within the RANYCHLD=1 branch.",
+        "if": {
+          "required": ["RANYCHLD"],
+          "properties": { "RANYCHLD": { "const": 2 } }
+        },
+        "then": {
+          "properties": {
+            "RNUMFTP": { "const": -777 },
+            "RAGEFB": { "const": -777 },
+            "RAGELB": { "const": -777 },
+            "RBFYN": { "const": -777 },
+            "RBFNUM": { "const": -777 },
+            "RBFDUR": { "const": -777 }
+          }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has ever had children must have real values for RNUMFTP/RAGEFB/RAGELB/RBFYN, never the structural-NA code. RBFNUM/RBFDUR are deliberately excluded here -- their applicability is governed by the nested RBFYN=1 rule below, not directly by RANYCHLD (RANYCHLD=1 alone doesn't guarantee RBFYN=1) -- D041.",
+        "if": {
+          "required": ["RANYCHLD"],
+          "properties": { "RANYCHLD": { "const": 1 } }
+        },
+        "then": {
+          "properties": {
+            "RNUMFTP": { "not": { "const": -777 } },
+            "RAGEFB": { "not": { "const": -777 } },
+            "RAGELB": { "not": { "const": -777 } },
+            "RBFYN": { "not": { "const": -777 } }
+          }
+        }
+      },
+      {
         "$comment": "Skip pattern: not currently/never breastfed means breastfeeding count and duration are structurally not applicable -- D037, steward-confirmed.",
         "if": {
           "required": ["RBFYN"],

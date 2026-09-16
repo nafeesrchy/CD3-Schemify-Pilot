@@ -7,7 +7,8 @@
   "x-variable-group": "reproductive_hormonal",
   "properties": {
     "RANYCHLD": {
-      "title": "Any children (yes/no)",
+      "title": "Any children (ever)",
+      "description": "Real question wording: 'Have you ever had any children?' -- historical, same universe as RAGEFB/RAGELB, not a current-state question.",
       "oneOf": [
         { "const": 1, "title": "Yes" },
         { "const": 2, "title": "No" },
@@ -16,44 +17,52 @@
     },
     "RNUMFTP": {
       "title": "Number of full-term pregnancies",
+      "x-universe": "Participants who have ever had children (RANYCHLD=1).",
       "anyOf": [
         { "type": "integer", "minimum": 0, "maximum": 9 },
         { "const": 10, "title": "10 or more" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source's own code list only labels the top code (10=10 or more); 0-9 are plain unlabeled counts, not enumerated codes. 10 is a real top-coded substantive value, not a missingness sentinel -- D025."
+      "$comment": "Source's own code list only labels the top code (10=10 or more); 0-9 are plain unlabeled counts, not enumerated codes. 10 is a real top-coded substantive value, not a missingness sentinel -- D025. not_applicable branch enforced by a mother-file skip pair keyed on RANYCHLD -- D041, steward-confirmed."
     },
     "RAGEFB": {
       "title": "Age at first birth",
       "x-unit": "years",
+      "x-universe": "Participants who have ever had children (RANYCHLD=1).",
       "anyOf": [
         { "type": "integer", "minimum": 10, "maximum": 55 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states valid range 10-55."
+      "$comment": "Source states valid range 10-55. not_applicable branch enforced by a mother-file skip pair keyed on RANYCHLD -- D041, steward-confirmed (supersedes D036, which wrongly assumed RANYCHLD meant 'current children' rather than 'ever had children')."
     },
     "RAGELB": {
       "title": "Age at last birth",
       "x-unit": "years",
+      "x-universe": "Participants who have ever had children (RANYCHLD=1).",
       "anyOf": [
         { "type": "integer", "minimum": 10, "maximum": 55 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states valid range 10-55."
+      "$comment": "Source states valid range 10-55. not_applicable branch enforced by a mother-file skip pair keyed on RANYCHLD -- D041, steward-confirmed (supersedes D036)."
     },
     "RBFYN": {
       "title": "Ever breastfed",
+      "x-universe": "Participants who have ever had children (RANYCHLD=1).",
       "oneOf": [
         { "const": 1, "title": "Yes" },
         { "const": 2, "title": "No" },
         { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source's own code list includes -1=Not on questionnaire for this field (Blue version = No availability). missing_numeric added alongside per D020."
+      "$comment": "Source's own code list includes -1=Not on questionnaire for this field (Blue version = No availability). missing_numeric added alongside per D020. not_applicable branch enforced by a mother-file skip pair keyed on RANYCHLD -- D041, steward-confirmed."
     },
     "RBFNUM": {
       "title": "Number of children breastfed",
-      "x-universe": "Participants who have ever breastfed (RBFYN=1).",
+      "x-universe": "Participants who have ever breastfed (RBFYN=1) -- itself nested under RANYCHLD=1.",
       "anyOf": [
         { "type": "integer", "minimum": 0, "maximum": 20 },
         { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
@@ -65,7 +74,7 @@
     "RBFDUR": {
       "title": "Total breastfeeding duration",
       "x-unit": "months",
-      "x-universe": "Participants who have ever breastfed (RBFYN=1).",
+      "x-universe": "Participants who have ever breastfed (RBFYN=1) -- itself nested under RANYCHLD=1.",
       "anyOf": [
         { "type": "number", "minimum": 0, "maximum": 240 },
         { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
