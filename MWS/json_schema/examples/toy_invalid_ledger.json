@@ -30,6 +30,8 @@
     { "row": 25, "column": "RSTERAGE", "kind": "skip-break", "value": 25, "reason": "RSTER=2 (No) but a real age is present (must be -777, not_applicable)" },
     { "row": 26, "column": "RSTERAGE", "kind": "applicability-break", "value": -777, "reason": "RSTER=1 (Yes) but the structural-NA code is recorded" },
     { "row": 27, "column": "RBP", "kind": "unknown-level", "value": 3, "reason": "3 is not a declared code for this field (RBP declares 1, 2, -999)" },
-    { "row": 28, "column": "RTRAST", "kind": "invented-sentinel", "value": -1, "reason": "-1 (not_on_questionnaire) is not declared for RTRAST -- unlike RTRVV/RTRCHOL/RTRCLOT/RTROPOR, this field has no source-documented -1 code" }
+    { "row": 28, "column": "RTRAST", "kind": "invented-sentinel", "value": -1, "reason": "-1 (not_on_questionnaire) is not declared for RTRAST -- unlike RTRVV/RTRCHOL/RTRCLOT/RTROPOR, this field has no source-documented -1 code" },
+    { "row": 29, "column": "RMAMM", "kind": "unknown-level", "value": 4, "reason": "4 is not a declared code for this field (RMAMM declares 1, 2, -999)" },
+    { "row": 30, "column": "RFHBC", "kind": "invented-sentinel", "value": -1, "reason": "-1 is not declared for RFHBC -- this field only declares 1, 2, -999" }
   ]
 }

@@ -16,6 +16,7 @@
       { "$ref": "categories/anthropometric.json" },
       { "$ref": "categories/behavioral.json" },
       { "$ref": "categories/reproductive_hormonal.json" },
+      { "$ref": "categories/breast_health.json" },
       { "$ref": "categories/gynae_surgery.json" },
       { "$ref": "categories/medical_history.json" },
 
