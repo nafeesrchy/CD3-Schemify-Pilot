@@ -1,8 +1,16 @@
-# CD3 pilot — Million Women Study baseline variables — conversion progress
+# CD3 pilot — Million Women Study — conversion progress
 
-package: CD3_Schemify_Pilot/MWS/json_schema · started: 2026-09-15
-grain: One element is one participant's baseline recruitment-questionnaire record (Basic information + Recruitment variables + Self-reported health at recruit sheets)
-dictionary: millionwomenstudydatadictionary-v1-21.xlsx (3 of 6 sheets in scope) — full inventory in SOURCES.md
+package: CD3_Schemify_Pilot/MWS/json_schema · started: 2026-09-15 · 2 tables (added `resurvey_3yr` 2026-09-16, D045)
+dictionary: millionwomenstudydatadictionary-v1-21.xlsx (5 of 6 sheets in scope) — full inventory in SOURCES.md
+
+## Tables
+
+| Table | Grain | Sheets | Vars |
+|---|---|---|---|
+| `recruitment` | One participant's baseline recruitment-questionnaire record | Basic information, Recruitment variables, Self-reported health at recruit | 65 |
+| `resurvey_3yr` | One participant's 3-year follow-up ("yellow") resurvey record | 3-year resurvey, Dietary data at 3-year resurvey | 149 |
+
+`8-year resurvey` remains out of scope.
 
 ## How to continue
 
@@ -29,29 +37,55 @@ same three cohorts).
 
 ## Categories
 
-| # | category | file | vars | source slice | status | touched |
-|---|---|---|---|---|---|---|
-| 1 | Demographics | recruitment/categories/demographics.json | 5 | Basic information rows 8,9,10,11,14 | confirmed | 2026-09-16 |
-| 2 | Socioeconomic | recruitment/categories/socioeconomic.json | 3 | Recruitment row 8; Basic information rows 12,13 | confirmed | 2026-09-16 |
-| 3 | Anthropometric | recruitment/categories/anthropometric.json | 3 | Recruitment rows 9-11 | confirmed | 2026-09-16 |
-| 4 | Behavioral | recruitment/categories/behavioral.json | 5 | Recruitment rows 12-16 | confirmed | 2026-09-16 |
-| 5 | Reproductive/Hormonal | recruitment/categories/reproductive_hormonal.json | 21 | Recruitment rows 17-23, 31-42 (Contraceptive+HRT), 43-45 (Menstrual) | confirmed | 2026-09-16 |
-| 6 | Breast Health | recruitment/categories/breast_health.json | 3 | Recruitment rows 24,35; Self-reported health row 8 | confirmed | 2026-09-16 |
-| 7 | Gynae Surgery | recruitment/categories/gynae_surgery.json | 6 | Recruitment rows 25-30 | confirmed | 2026-09-16 |
-| 8 | Medical History | recruitment/categories/medical_history.json | 19 | Self-reported health rows 9-27 | confirmed | 2026-09-16 |
+| # | table | category | file | vars | source slice | status | touched |
+|---|---|---|---|---|---|---|---|
+| 1 | recruitment | Demographics | recruitment/categories/demographics.json | 5 | Basic information rows 8,9,10,11,14 | confirmed | 2026-09-16 |
+| 2 | recruitment | Socioeconomic | recruitment/categories/socioeconomic.json | 3 | Recruitment row 8; Basic information rows 12,13 | confirmed | 2026-09-16 |
+| 3 | recruitment | Anthropometric | recruitment/categories/anthropometric.json | 3 | Recruitment rows 9-11 | confirmed | 2026-09-16 |
+| 4 | recruitment | Behavioral | recruitment/categories/behavioral.json | 5 | Recruitment rows 12-16 | confirmed | 2026-09-16 |
+| 5 | recruitment | Reproductive/Hormonal | recruitment/categories/reproductive_hormonal.json | 21 | Recruitment rows 17-23, 31-42 (Contraceptive+HRT), 43-45 (Menstrual) | confirmed | 2026-09-16 |
+| 6 | recruitment | Breast Health | recruitment/categories/breast_health.json | 3 | Recruitment rows 24,35; Self-reported health row 8 | confirmed | 2026-09-16 |
+| 7 | recruitment | Gynae Surgery | recruitment/categories/gynae_surgery.json | 6 | Recruitment rows 25-30 | confirmed | 2026-09-16 |
+| 8 | recruitment | Medical History | recruitment/categories/medical_history.json | 19 | Self-reported health rows 9-27 | confirmed | 2026-09-16 |
+| 9 | resurvey_3yr | Demographics | resurvey_3yr/categories/demographics.json | 2 | 3-year resurvey rows 8-9 | pending | 2026-09-16 |
+| 10 | resurvey_3yr | Medical History | resurvey_3yr/categories/medical_history.json | 21 | 3-year resurvey rows 10-30 | pending | 2026-09-16 |
+| 11 | resurvey_3yr | Reproductive/Hormonal | resurvey_3yr/categories/reproductive_hormonal.json | 7 | 3-year resurvey rows 31-35, 119-120 | pending | 2026-09-16 |
+| 12 | resurvey_3yr | Medications | resurvey_3yr/categories/medications.json | 20 | 3-year resurvey rows 36-55 | pending | 2026-09-16 |
+| 13 | resurvey_3yr | Behavioral | resurvey_3yr/categories/behavioral.json | 9 | 3-year resurvey rows 56-62, 117-118 | pending | 2026-09-16 |
+| 14 | resurvey_3yr | Anthropometric | resurvey_3yr/categories/anthropometric.json | 7 | 3-year resurvey rows 63-69 | pending | 2026-09-16 |
+| 15 | resurvey_3yr | Early Life | resurvey_3yr/categories/early_life.json | 8 | 3-year resurvey rows 70-77 | pending | 2026-09-16 |
+| 16 | resurvey_3yr | Parental Mortality | resurvey_3yr/categories/parental_mortality.json | 12 | 3-year resurvey rows 78-87, 115-116 | pending | 2026-09-16 |
+| 17 | resurvey_3yr | Family History | resurvey_3yr/categories/family_history.json | 27 | 3-year resurvey rows 88-114 | pending | 2026-09-16 |
+| 18 | resurvey_3yr | Socioeconomic | resurvey_3yr/categories/socioeconomic.json | 15 | 3-year resurvey rows 121-135 | pending | 2026-09-16 |
+| 19 | resurvey_3yr | Wellbeing/Sleep | resurvey_3yr/categories/wellbeing_sleep.json | 7 | 3-year resurvey rows 136-142 | pending | 2026-09-16 |
+| 20 | resurvey_3yr | Dietary | resurvey_3yr/categories/dietary.json | 14 | Dietary data at 3-year resurvey rows 8-21 | pending | 2026-09-16 |
 
-65 of 65 in-scope variables assigned to a category (VARIABLES.csv reconciles). Now 8 categories: Body/Lifestyle was split into Anthropometric + Behavioral (D016); Reproductive/Pregnancy, Contraceptive, HRT, and Menstrual are now merged into one Reproductive/Hormonal category (21 vars) per the steward's re-plan (D023) — Gynae Surgery stays separate, not folded in. No category files drafted for the remaining 4 yet.
+`recruitment`: 65/65 variables assigned, all 8 categories confirmed (see history below). `resurvey_3yr`: 149/149 variables assigned across 12 categories (D046), none drafted yet — VARIABLES.csv reconciles for both tables (214 total). Body/Lifestyle was split into Anthropometric + Behavioral (D016); Reproductive/Pregnancy, Contraceptive, HRT, and Menstrual are merged into one Reproductive/Hormonal category in `recruitment` (D023) — Gynae Surgery stays separate. `resurvey_3yr` has no Gynae Surgery or Breast Health analogue in its own sheet, and got its own Medications, Early Life, Parental Mortality, Family History, and Wellbeing/Sleep categories that `recruitment` doesn't have — the two tables' category sets are not required to match.
 
 ## Package milestones
 
+### `recruitment` table — complete
+
 - [x] intake: sources registered · grain confirmed · categories confirmed (10, derived from source structure + one steward correction — REDUC moved out of Body/Lifestyle)
 - [x] common/defs.json + mother scaffold validate green — mother file created when Demographics was wired in; `validate.py check` green (3 files, 6 refs resolved)
-- [ ] every category confirmed
+- [x] every category confirmed (8/8) — this box was stale/unchecked for a while despite being true; fixed 2026-09-16
 - [x] cross-category skip audit — all found routing resolved: D008 resolved via D035 (no skip, RCIGSPD's own "None" code covers it); D028, D030, D036-D039 all steward-confirmed
 - [x] coverage audit 1:1 (65/65 converted, 0 pending, 0 mismatches)
-- [ ] pages current for the whole package
+- [x] pages current for the whole package — also stale/unchecked previously; fixed 2026-09-16
 - [x] review walked — 1 open item (D007, migrating to README) walked and acknowledged by the steward; 13 agent-decided items across 5 themes all accepted, flipped to user-confirmed (review 2026-09-16); Breast Health confirmed (D044), a gap caught during the completion check
 - [x] README written (`README.md`, 10 sections per REVIEW.md); also fixed 3 stale "pending steward confirmation" comments in the mother file left over from before D030 was confirmed
+- [x] cleanup decided — steward chose "keep" (state trio stays)
+
+### `resurvey_3yr` table — just started
+
+- [x] intake: sources registered (D045) · grain confirmed · categories confirmed (12, D046)
+- [ ] common/defs.json (shared, already exists) + mother scaffold validate green — mother file not yet created, same rule as before: needs at least one real category ref to validate
+- [ ] every category confirmed (0/12)
+- [ ] cross-category skip audit — not started; this sheet's 4-version questionnaire scheme and many mother/father family-history pairs haven't been checked for routing yet
+- [ ] coverage audit 1:1 (0/149 converted, 149 pending)
+- [ ] pages current
+- [ ] review walked
+- [ ] README updated for the second table
 - [ ] cleanup decided
 
 ## Session log
@@ -73,3 +107,4 @@ same three cohorts).
 - 2026-09-16 · review · Steward re-confirmed Behavioral (D042) and Reproductive/Hormonal (D043). Completion check caught one gap: Breast Health had never actually been confirmed (D044) -- the confirmation got skipped over when the session moved straight into skip-pattern work after it was drafted. Walked the ledger: D007 (no participant-identifier field) is the one surviving open item -- steward confirmed there's nothing to resolve from this side, MWS would need to be contacted directly; stays open, migrating to the README. Also caught and fixed a bookkeeping error found while assembling the walk: D026 had been wrongly marked "superseded-by D028" in full, when only the RPSTOPAG item that originally sat on that line was superseded -- the 3 remaining cross-field comparisons it documents are still genuinely not-enforceable and still live in the schema. Presented 13 agent-decided items in 5 themes (plausibility bounds, structural/type choices, not-enforceable cross-field rules, package formatting, one no-skip audit); steward accepted all 5 groups, all 13 flipped to user-confirmed (review 2026-09-16), including D012 and D011 which I'd initially missed flipping on the first pass. Every category now confirmed, ledger has zero open-and-unacknowledged lines. · next: write the package README (front door for a consumer who has neither this skill nor the steward on hand), then offer cleanup.
 - 2026-09-16 · README + cleanup offer · Wrote README.md (10 sections: study description, layout, value-encoding conventions, sentinel table, the 9 enforced routing rule families derived directly from the mother file's actual conditionals, 4 documented-not-enforced cross-field rules, known source issues (none found), provenance distilled from SOURCES.md, validate/browse instructions, and D007 as the one open item for the data provider). Also fixed 3 stale $comment strings in the mother file that still said "pending steward confirmation" for the gynae_surgery skip pairs, left over from before D030 was actually confirmed -- caught while cross-checking the README's routing section against the real schema. validate.py summary still green after the fix: 10 files, 100 refs resolve, 67/67 valid pass, 41/41 invalid caught, coverage 65/65. Offering cleanup next. · next: steward decides cleanup (fold PROGRESS/DECISIONS/SOURCES into the README and delete them, or keep the full working record).
 - 2026-09-16 · package complete · Steward chose to keep the working state trio (PROGRESS.md, DECISIONS.md, SOURCES.md) rather than delete them -- the full session-by-session record, including every correction along the way, stays in place alongside the deliverable. · next: — (complete)
+- 2026-09-16 · intake: second table `resurvey_3yr` · Steward asked to add the 3-year resurvey wave as a second table (D045) -- a re-plan, per LAYOUT.md ("several tables of one study stay in one package"), not a new package, since it's the same study at a different grain. Surveyed both the `3-year resurvey` sheet (135 vars, no participant-identifier field either -- D047 extends D007) and, per the steward's follow-up request, folded in `Dietary data at 3-year resurvey` (14 vars, all derived nutrient/food-intake measures, no stated ranges) as a 12th category rather than a third table, since it's the same wave and grain. Proposed and confirmed a 12-category table (D046): Demographics, Medical History, Reproductive/Hormonal, Medications, Behavioral, Anthropometric, Early Life, Parental Mortality, Family History, Socioeconomic, Wellbeing/Sleep, Dietary -- 149 variables, zero gaps or overlaps (verified programmatically). Extended VARIABLES.csv to 214 rows (backfilled the `table` column on the existing 65 `recruitment` rows now that the package is multi-table, per LAYOUT.md's convention) and SOURCES.md's dictionary entry to register both new sheets. Also caught two stale, unchecked milestone boxes for `recruitment` that were actually already true ("every category confirmed", "pages current") and fixed them while restructuring milestones into a per-table block. No category files drafted yet for `resurvey_3yr` -- deliberately stopping at the end of Intake, per its own guidance that ending early is a feature, not a quota to fill; this table alone (149 vars) is bigger than all of `recruitment`. · next: convert `resurvey_3yr`'s Demographics category (2 vars, smallest) -- this both drafts the first category and creates the second mother file for the first time. Family History (27) and Medications (20) are the two largest and most likely to need a skip-pattern audit given how many mother/father-pair and drug-specific fields they contain.
