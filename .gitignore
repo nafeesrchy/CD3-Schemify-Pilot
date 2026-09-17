@@ -5,6 +5,9 @@
 */raw_data/
 extracted_sheet_dump.json
 
+# BGS intake is still parked mid-interview -- kept locally, not pushed until further along
+/BGS/
+
 # OS junk
 .DS_Store
 Thumbs.db
