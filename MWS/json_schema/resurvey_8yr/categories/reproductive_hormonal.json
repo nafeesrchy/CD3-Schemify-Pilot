@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_8yr/categories/reproductive_hormonal.json",
+  "title": "MWS 8-year resurvey — Reproductive/Hormonal",
+  "description": "Menopausal hormone treatment (HRT) status, type, and duration recorded at the 8-year resurvey. No 'age started HRT' field exists in this wave -- the block is smaller than the other two tables' HRT blocks.",
+  "type": "object",
+  "x-variable-group": "reproductive_hormonal",
+  "properties": {
+    "F2HTNPC": {
+      "title": "HRT use: never/past/current/status not known",
+      "oneOf": [
+        { "const": 1, "title": "Never" },
+        { "const": 2, "title": "Past" },
+        { "const": 3, "title": "Current" },
+        { "const": 4, "title": "Ever, status not known" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Steward confirmed the same skip family already confirmed twice (recruitment's D039, resurvey_3yr's D052) applies here. F2HTNPC=4 ('Ever, status not known') deliberately left unconstrained by the skip pair below, same treatment as the other two tables -- D090."
+    },
+    "F2HTTYPE": {
+      "title": "Type of HRT",
+      "description": "From reported brand(s) last used.",
+      "x-universe": "Participants who have ever used HRT (F2HTNPC=2 Past or 3 Current).",
+      "oneOf": [
+        { "const": 1, "title": "Oestrogen only" },
+        { "const": 2, "title": "Oestrogen + progestagen" },
+        { "const": 3, "title": "Progestagen only" },
+        { "const": 4, "title": "Tibolone" },
+        { "const": 5, "title": "Other/mixed" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same code list as recruitment's RHTTYPE and resurvey_3yr's F1HTTYPE. not_applicable branch enforced by a mother-file skip pair keyed on F2HTNPC -- D090."
+    },
+    "F2HTLU": {
+      "title": "Time since HRT last used",
+      "x-unit": "years",
+      "x-universe": "Participants who used HRT in the past but have stopped (F2HTNPC=2 Past only) -- a current user has no 'last used' age.",
+      "anyOf": [
+        { "type": "integer", "minimum": 0, "maximum": 40 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Valid range 0-40 is source-stated (matches resurvey_3yr's F1HTLU, which also had this exact source-stated range). not_applicable branch enforced by a mother-file skip pair keyed on F2HTNPC -- D090."
+    },
+    "F2HTDUR": {
+      "title": "Total duration of HRT use",
+      "x-unit": "years",
+      "x-universe": "Participants who have ever used HRT (F2HTNPC=2 Past or 3 Current).",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 50 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 0-50 reuses recruitment's RHTDUR and resurvey_3yr's F1HTDUR bound (D051), for consistency across all three tables. not_applicable branch enforced by a mother-file skip pair keyed on F2HTNPC -- D090."
+    }
+  },
+  "required": ["F2HTNPC", "F2HTTYPE", "F2HTLU", "F2HTDUR"]
+}

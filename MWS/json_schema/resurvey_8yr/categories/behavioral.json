@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_8yr/categories/behavioral.json",
+  "title": "MWS 8-year resurvey — Behavioral",
+  "description": "Diet, alcohol, and smoking behaviors reported at the 8-year resurvey.",
+  "type": "object",
+  "x-variable-group": "behavioral",
+  "properties": {
+    "F2FQORGN": {
+      "title": "Frequency of eating organic food",
+      "oneOf": [
+        { "const": 1, "title": "Never" },
+        { "const": 2, "title": "Sometimes" },
+        { "const": 3, "title": "Usually" },
+        { "const": 4, "title": "Always" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version -- no -1 code here, unlike resurvey_3yr's F1FQORGN (which is unavailable on the two earliest 3-year-resurvey versions)."
+    },
+    "F25YDIET": {
+      "title": "Major diet changes in the last 5 years",
+      "oneOf": [
+        { "const": 1, "title": "Yes, because of illness" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "Yes, for some other reason" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version."
+    },
+    "F2ALCNUM": {
+      "title": "Alcoholic drinks per week",
+      "x-unit": "drinks/week",
+      "oneOf": [
+        { "type": "integer", "minimum": 0, "maximum": 96 },
+        { "const": 97, "title": "Unknown (lots/many/too much/97+ etc)" },
+        { "const": 99, "title": "Unknown (tick/?/varies etc)" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Steward gave the real questionnaire's printed skip instruction directly: 'If you have less than one drink a week, please go to question 60' -- unlike resurvey_3yr's F1ALCNUM (D058, confirmed no skip), this wave's questionnaire genuinely routes around the two follow-up questions when F2ALCNUM=0. This field itself is still answered directly (0 for a non-drinker, a real value) -- D092. Real-count ceiling 96 (not arbitrary -- follows from the source's own 97 code, '97+'), 97/99 kept as their own const branches, matching resurvey_3yr's F1ALCNUM treatment (D061)."
+    },
+    "F2ALCEAT": {
+      "title": "Drinks alcohol with meals",
+      "x-universe": "Participants who have at least one alcoholic drink per week (F2ALCNUM != 0).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "It varies" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "not_applicable branch enforced by a mother-file skip pair keyed on F2ALCNUM=0 -- D092, steward-confirmed real printed skip instruction ('go to question 60'). Unlike resurvey_3yr's F1ALCEAT (D058, confirmed genuinely not skipped) -- a real difference between waves, not assumed."
+    },
+    "F2ALCDAY": {
+      "title": "Number of drinking days per week",
+      "x-unit": "days/week",
+      "x-universe": "Participants who have at least one alcoholic drink per week (F2ALCNUM != 0).",
+      "anyOf": [
+        { "type": "integer", "minimum": 0, "maximum": 7 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "not_applicable branch enforced by the same mother-file skip pair as F2ALCEAT -- D092. Bound 0-7 follows from the field's own 'per week' framing, same reasoning as resurvey_3yr's F1ALCDAY (D061)."
+    },
+    "F2DRTEA": {
+      "title": "Tea consumption",
+      "x-unit": "cups or glasses/day",
+      "oneOf": [
+        { "type": "integer", "minimum": 0, "maximum": 30 },
+        { "const": 97, "title": "Unknown (lots/many/too much/97+ etc)" },
+        { "const": 99, "title": "Unknown (tick/?/varies etc)" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Steward confirmed the alcohol skip ('go to question 60') does not extend to the tea/coffee questions -- these are asked of every participant regardless of F2ALCNUM. Same bound/treatment as resurvey_3yr's F1DRTEA (D061)."
+    },
+    "F2DRCOF": {
+      "title": "Coffee consumption",
+      "x-unit": "cups or glasses/day",
+      "oneOf": [
+        { "type": "integer", "minimum": 0, "maximum": 30 },
+        { "const": 97, "title": "Unknown (lots/many/too much/97+ etc)" },
+        { "const": 99, "title": "Unknown (tick/?/varies etc)" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same structure and reasoning as F2DRTEA -- not skipped by the alcohol routing."
+    },
+    "F2SMOKE": {
+      "title": "Smoking status",
+      "oneOf": [
+        { "const": 1, "title": "Never" },
+        { "const": 2, "title": "Past" },
+        { "const": 3, "title": "Current" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source marks this field 'Derived' for every questionnaire version -- it is not asked directly; F2CIGSPD's own question wording is what's actually printed. Skip pair against F2CIGSPD enforced by the mother file -- D093."
+    },
+    "F2CIGSPD": {
+      "title": "Cigarettes per day",
+      "x-universe": "Participants who have ever smoked (F2SMOKE=2 Past or 3 Current).",
+      "oneOf": [
+        { "const": 1, "title": "None" },
+        { "const": 2, "title": "Less than 5" },
+        { "const": 3, "title": "5-9" },
+        { "const": 4, "title": "10-14" },
+        { "const": 5, "title": "15-19" },
+        { "const": 6, "title": "20-24" },
+        { "const": 7, "title": "25 or more" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Steward gave the real question wording directly: 'About how many cigarettes do you/did you smoke on average each day? (if you are an ex-smoker, how many did you smoke on average when you smoked?)' -- explicitly applicable to both current AND past smokers, unlike recruitment's simpler RCIGSPD wording. This is a real, different skip shape from either other table's smoking pair -- D093, not transplanted from D035 or D062."
+    }
+  },
+  "required": ["F2FQORGN", "F25YDIET", "F2ALCNUM", "F2ALCEAT", "F2ALCDAY", "F2DRTEA", "F2DRCOF", "F2SMOKE", "F2CIGSPD"]
+}

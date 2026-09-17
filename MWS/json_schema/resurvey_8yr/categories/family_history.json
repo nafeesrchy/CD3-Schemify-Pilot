@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_8yr/categories/family_history.json",
+  "title": "MWS 8-year resurvey — Family History",
+  "description": "Family history of breast cancer in the participant's mother, father, and sister, reported at the 8-year resurvey. Shrunk to breast-cancer-only compared to resurvey_3yr's 13-condition block, but adds a sister field not asked about in either other table.",
+  "type": "object",
+  "x-variable-group": "family_history",
+  "properties": {
+    "F2MCABR": {
+      "title": "Family history (mother): breast cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style: only '1=Yes' documented, no '2=No'. Available on every questionnaire version, no -1 code (unlike some of resurvey_3yr's mother/father family-history fields)."
+    },
+    "F2FCABR": {
+      "title": "Family history (father): breast cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2MCABR."
+    },
+    "F2SCABR": {
+      "title": "Family history (sister): breast cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2MCABR. New relative not asked about in recruitment or resurvey_3yr -- this wave is the only one of the three that surveys sisters."
+    }
+  },
+  "required": ["F2MCABR", "F2FCABR", "F2SCABR"]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_8yr/categories/demographics.json",
+  "title": "MWS 8-year resurvey — Demographics",
+  "description": "Questionnaire version and submission year for the 8-year ('lilac') resurvey.",
+  "type": "object",
+  "x-variable-group": "demographics",
+  "properties": {
+    "F2QTYPE": {
+      "title": "Questionnaire version",
+      "oneOf": [
+        { "const": 512, "title": "0512" },
+        { "const": 605, "title": "0605" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Third distinct questionnaire-version scheme in this package: the code value is the version tag itself (512, 605), not a small ordinal like recruitment's RQTYPE (1-3) or resurvey_3yr's F1QTYPE (1-4). Available on every version, as expected for a field whose own job is identifying the version."
+    },
+    "F2YSUBMT": {
+      "title": "Year questionnaire completed",
+      "anyOf": [
+        { "type": "integer", "minimum": 2006, "maximum": 2007 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range for this field directly; bound derived from F2QTYPE's own fielding-year metadata (0512 fielded 2006, 0605 fielded 2006-2007). Unlike resurvey_3yr's F1YSUBMT (D048), which the steward corrected because they had first-hand knowledge that real completions ran later than the nominal window, the steward has no such knowledge here -- kept as source-derived, D084."
+    }
+  },
+  "required": ["F2QTYPE", "F2YSUBMT"]
+}

@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_8yr/categories/medical_history.json",
+  "title": "MWS 8-year resurvey — Medical History",
+  "description": "Illnesses and operations in the past 5 years, and overall self-rated health, reported at the 8-year resurvey. No gating field or 'treated now' set exists in this wave -- all 15 illness/operation fields are independent checkboxes, confirmed with the steward before drafting.",
+  "type": "object",
+  "x-variable-group": "medical_history",
+  "properties": {
+    "F2HATK": {
+      "title": "Illness in past 5 years: heart attack",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style: only '1=Yes' documented, no '2=No', no skip pattern -- steward-confirmed. Available on every questionnaire version."
+    },
+    "F2STRK": {
+      "title": "Illness in past 5 years: stroke/TIA",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2DIAB": {
+      "title": "Illness in past 5 years: diabetes",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2CLEG": {
+      "title": "Illness in past 5 years: clot in leg",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2CLUN": {
+      "title": "Illness in past 5 years: clot in lung",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK. No analogue in the other two tables, which have 'clot (other)' rather than a lung-specific field."
+    },
+    "F2CHOL": {
+      "title": "Illness in past 5 years: high blood cholesterol",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2BP": {
+      "title": "Illness in past 5 years: high blood pressure",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2AST": {
+      "title": "Illness in past 5 years: asthma",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2THY": {
+      "title": "Illness in past 5 years: thyroid problems",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK. No analogue in the other two tables."
+    },
+    "F2OPOR": {
+      "title": "Illness in past 5 years: osteoporosis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2BRCA": {
+      "title": "Illness in past 5 years: breast cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2RA": {
+      "title": "Illness in past 5 years: rheumatoid arthritis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2OA": {
+      "title": "Illness in past 5 years: osteoarthritis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2DEP": {
+      "title": "Illness in past 5 years: depression/anxiety",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK."
+    },
+    "F2GALL": {
+      "title": "Operation in past 5 years: gall bladder removed",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F2HATK. Describes the operation specifically, unlike the other two tables' gallstones/gall-bladder-problems illness field (RGALL/F1GALL)."
+    },
+    "F2HEALTH": {
+      "title": "Overall health now",
+      "oneOf": [
+        { "const": 1, "title": "Excellent" },
+        { "const": 2, "title": "Good" },
+        { "const": 3, "title": "Fair" },
+        { "const": 4, "title": "Poor" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version -- unlike resurvey_3yr's F1HEALTH, which is unavailable on its two earliest versions and carries a -1 code, this field has no such gap. A genuine 4-level rating scale, not a checkbox."
+    }
+  },
+  "required": ["F2HATK", "F2STRK", "F2DIAB", "F2CLEG", "F2CLUN", "F2CHOL", "F2BP", "F2AST", "F2THY", "F2OPOR", "F2BRCA", "F2RA", "F2OA", "F2DEP", "F2GALL", "F2HEALTH"]
+}

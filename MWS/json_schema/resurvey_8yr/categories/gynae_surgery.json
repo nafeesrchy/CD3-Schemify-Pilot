@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_8yr/categories/gynae_surgery.json",
+  "title": "MWS 8-year resurvey — Gynae Surgery",
+  "description": "Hysterectomy recorded at the 8-year resurvey.",
+  "type": "object",
+  "x-variable-group": "gynae_surgery",
+  "properties": {
+    "F2HYST": {
+      "title": "Hysterectomy (operation during past 5 years)",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style: the source documents only '1=Yes', no '2=No', unlike recruitment's RHYST (which has both). Steward confirmed the semantic relationship to F2HYSTAG matches recruitment's confirmed RHYST/RHYSTAG pattern, but explicitly declined to enforce it as a schema rule -- with no explicit No code to key an if/then off of, enforcing either half would risk conflating 'no hysterectomy' with 'genuinely unrecorded', so both fields are left independent -- D088."
+    },
+    "F2HYSTAG": {
+      "title": "Age at hysterectomy",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "integer", "minimum": 10, "maximum": 90 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 10-90 reuses recruitment's RHYSTAG bound (D029) for consistency. not_applicable is included as a legal value (in case it's coded that way in practice) but deliberately not enforced by any mother-file conditional -- steward's call, D088."
+    }
+  },
+  "required": ["F2HYST", "F2HYSTAG"]
+}

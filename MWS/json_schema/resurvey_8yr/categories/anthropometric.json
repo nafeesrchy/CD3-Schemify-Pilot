@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_8yr/categories/anthropometric.json",
+  "title": "MWS 8-year resurvey — Anthropometric",
+  "description": "Weight and BMI at the 8-year resurvey.",
+  "type": "object",
+  "x-variable-group": "anthropometric",
+  "properties": {
+    "F2WGT": {
+      "title": "Weight now",
+      "x-unit": "kg",
+      "description": "Calculated from stones/pounds.",
+      "anyOf": [
+        { "type": "number", "minimum": 35, "maximum": 195 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range for this field. 35-195 reuses resurvey_3yr's already-confirmed F1WGT bound (D064's category) rather than re-deriving a fresh one, for consistency across the same measurement type -- note recruitment's RWGT used a narrower stated range (35-150), transcribed as its own source stated, not reconciled."
+    },
+    "F2BMI": {
+      "title": "Body mass index",
+      "x-unit": "kg/m2",
+      "anyOf": [
+        { "type": "number", "minimum": 10, "maximum": 80 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 10-80 reuses recruitment's RBMI bound (D018) and resurvey_3yr's F1BMI bound (D064), for consistency across all three tables rather than re-deriving a fresh one."
+    }
+  },
+  "required": ["F2WGT", "F2BMI"]
+}

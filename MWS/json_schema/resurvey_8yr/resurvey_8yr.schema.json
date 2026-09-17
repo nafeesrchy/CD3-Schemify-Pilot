@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_8yr/resurvey_8yr.schema.json",
+  "title": "MWS — RESURVEY_8YR table",
+  "description": "Array of Million Women Study 8-year ('lilac') resurvey records. One element is one participant's 8-year follow-up record.",
+  "$comment": "This table has no participant-identifier field in the source dictionary at all, same as the other two tables (open item, see DECISIONS.md D007/D047) -- uniqueItems is asserted as standing structural policy but cannot anchor to a real key here, and there is currently no way to link a resurvey_8yr row back to its recruitment or resurvey_3yr row for the same participant.",
+  "type": "array",
+  "minItems": 1,
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "title": "RESURVEY_8YR record",
+    "allOf": [
+      { "$ref": "categories/demographics.json" },
+      { "$ref": "categories/anthropometric.json" },
+      { "$ref": "categories/gynae_surgery.json" },
+      { "$ref": "categories/reproductive_hormonal.json" },
+
+      {
+        "$comment": "Skip pattern: never used HRT means type, duration, and time-since-last-used are structurally not applicable -- D090, mirrors the confirmed pattern from recruitment (D039) and resurvey_3yr (D052). Deliberately does NOT include F2HTNPC=4 ('Ever, status not known') -- steward-confirmed to stay unconstrained, D090.",
+        "if": {
+          "required": ["F2HTNPC"],
+          "properties": { "F2HTNPC": { "const": 1 } }
+        },
+        "then": {
+          "properties": {
+            "F2HTTYPE": { "const": -777 },
+            "F2HTDUR": { "const": -777 },
+            "F2HTLU": { "const": -777 }
+          }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has ever used HRT (Past or Current) must have real values for type and duration -- D090.",
+        "if": {
+          "required": ["F2HTNPC"],
+          "properties": { "F2HTNPC": { "enum": [2, 3] } }
+        },
+        "then": {
+          "properties": {
+            "F2HTTYPE": { "not": { "const": -777 } },
+            "F2HTDUR": { "not": { "const": -777 } }
+          }
+        }
+      },
+      {
+        "$comment": "HRT routing: a participant currently using HRT has not stopped, so time-since-last-used is structurally not applicable -- D090.",
+        "if": {
+          "required": ["F2HTNPC"],
+          "properties": { "F2HTNPC": { "const": 3 } }
+        },
+        "then": {
+          "properties": { "F2HTLU": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who stopped using HRT in the past must have a real value for time-since-last-used -- D090.",
+        "if": {
+          "required": ["F2HTNPC"],
+          "properties": { "F2HTNPC": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "F2HTLU": { "not": { "const": -777 } } }
+        }
+      },
+      { "$ref": "categories/behavioral.json" },
+      { "$ref": "categories/medical_history.json" },
+      { "$ref": "categories/family_history.json" },
+
+      {
+        "$comment": "Skip pattern: the steward gave the real printed instruction directly -- 'If you have less than one drink a week, please go to question 60' -- so F2ALCNUM=0 means the with-meals and days-per-week follow-ups are structurally not applicable -- D092. Genuinely different from resurvey_3yr's F1ALCNUM (D058, confirmed no skip there) -- not transplanted.",
+        "if": {
+          "required": ["F2ALCNUM"],
+          "properties": { "F2ALCNUM": { "const": 0 } }
+        },
+        "then": {
+          "properties": {
+            "F2ALCEAT": { "const": -777 },
+            "F2ALCDAY": { "const": -777 }
+          }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who drinks at least one drink per week (real value other than 0, including the 97/99 unknown-amount codes) must have real answers for the with-meals and days-per-week questions -- D092.",
+        "if": {
+          "required": ["F2ALCNUM"],
+          "properties": { "F2ALCNUM": { "not": { "enum": [0, -999] } } }
+        },
+        "then": {
+          "properties": {
+            "F2ALCEAT": { "not": { "const": -777 } },
+            "F2ALCDAY": { "not": { "const": -777 } }
+          }
+        }
+      },
+      {
+        "$comment": "Skip pattern: F2CIGSPD's own question wording is explicitly applicable to both current AND past smokers -- 'how many do/did you smoke... if ex-smoker, when you smoked'. A Never answer means cigarettes-per-day is structurally not applicable -- D093. A different shape from recruitment's D035 (no skip) and resurvey_3yr's D062 (Never-only skip, but confirmed independently, not transplanted here).",
+        "if": {
+          "required": ["F2SMOKE"],
+          "properties": { "F2SMOKE": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "F2CIGSPD": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has ever smoked (Past or Current) must have a real answer for cigarettes-per-day, per the question's own wording covering both -- D093.",
+        "if": {
+          "required": ["F2SMOKE"],
+          "properties": { "F2SMOKE": { "enum": [2, 3] } }
+        },
+        "then": {
+          "properties": { "F2CIGSPD": { "not": { "const": -777 } } }
+        }
+      }
+    ],
+    "unevaluatedProperties": false
+  }
+}

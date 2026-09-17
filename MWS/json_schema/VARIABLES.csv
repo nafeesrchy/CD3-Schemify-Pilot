@@ -213,3 +213,41 @@ F1NYOG,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx
 F1NEGG,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 19,"F1_NUTRIENT_EGGS; Derived foods: eggs (g/day); no stated range, all 'Derived'"
 F1NFRUIT,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 20,"F1_NUTRIENT_FRUIT; Derived foods: fruit (g/day); no stated range, all 'Derived'"
 F1NVEG,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 21,"F1_NUTRIENT_VEG; Derived foods: vegetables (g/day); no stated range, all 'Derived'"
+F2QTYPE,resurvey_8yr,demographics,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 8,"F2_QUESTIONNAIRE_TYPE; codes: 512=0512/605=0605 -- code value is the version tag itself, a third distinct versioning convention"
+F2YSUBMT,resurvey_8yr,demographics,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 9,F2_YEAR_SUBMIT; year questionnaire completed; no stated range
+F2HATK,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 10,F2_HEART_ATTACK; Illnesses during past 5 years: heart attack; codes: 1=Yes
+F2STRK,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 11,F2_STROKE; Illnesses during past 5 years: stroke/TIA; codes: 1=Yes
+F2DIAB,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 12,F2_DIABETES; Illnesses during past 5 years: diabetes; codes: 1=Yes
+F2CLEG,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 13,F2_CLOT_LEG; Illnesses during past 5 years: clot in leg; codes: 1=Yes
+F2CLUN,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 14,F2_CLOT_LUNG; Illnesses during past 5 years: clot in lung; codes: 1=Yes
+F2CHOL,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 15,F2_HIGH_CHOLESTEROL; Illnesses during past 5 years: high blood cholesterol; codes: 1=Yes
+F2BP,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 16,F2_HIGH_BP; Illnesses during past 5 years: high blood pressure; codes: 1=Yes
+F2AST,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 17,F2_ASTHMA; Illnesses during past 5 years: asthma; codes: 1=Yes
+F2THY,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 18,F2_THYROID; Illnesses during past 5 years: thyroid problems; codes: 1=Yes
+F2OPOR,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 19,F2_OSTEOPOROSIS; Illnesses during past 5 years: osteoporosis; codes: 1=Yes
+F2BRCA,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 20,F2_BREAST_CANCER; Illnesses during past 5 years: breast cancer; codes: 1=Yes
+F2RA,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 21,F2_RARTHRITIS; Illnesses during past 5 years: rheumatoid arthritis; codes: 1=Yes
+F2OA,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 22,F2_OARTHRITIS; Illnesses during past 5 years: osteoarthritis; codes: 1=Yes
+F2DEP,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 23,F2_DEPRESSION; Illnesses during past 5 years: depression/anxiety; codes: 1=Yes
+F2GALL,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 24,F2_GALLBLADDER; Operations during past 5 years: gall bladder removed; codes: 1=Yes
+F2HEALTH,resurvey_8yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 27,"F2_HEALTH_NOW; Health now: overall; codes: 1=Excellent/2=Good/3=Fair/4=Poor -- no -1 documented, unlike F1HEALTH"
+F2HYST,resurvey_8yr,gynae_surgery,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 25,F2_HYSTERECTOMY; Operations during past 5 years: hysterectomy; codes: 1=Yes
+F2HYSTAG,resurvey_8yr,gynae_surgery,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 26,F2_HYSTERECTOMY_AGE; no stated range
+F2HTNPC,resurvey_8yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 28,"F2_HRT_NPC; never/past/current; derived; codes: 1=Never/2=Past/3=Current/4=Ever, status NK"
+F2HTTYPE,resurvey_8yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 29,F2_HRT_TYPE; derived; codes: 1-5
+F2HTLU,resurvey_8yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 30,F2_HRT_LAST_USE years since; derived; valid range 0-40 (source-stated)
+F2HTDUR,resurvey_8yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 31,F2_HRT_DURATION years; derived; no stated range
+F2FQORGN,resurvey_8yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 32,F2_FREQ_ORGANIC; How often: eat organic food; codes: 1=Never/2=Sometimes/3=Usually/4=Always
+F25YDIET,resurvey_8yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 33,"F2_NEWDIET; Major diet changes in last 5 years?; codes: 1=Yes, because of illness/2=No/3=Yes, for some other reason"
+F2ALCNUM,resurvey_8yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 34,F2_ALCOHOL_DRINKS; Alcohol: number of alcoholic drinks per week; codes: 97=Unknown (lots/many/too much/97+ etc)/99=Unknown (tick/?/varies etc)
+F2ALCEAT,resurvey_8yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 35,F2_ALCOHOL_WITHMEAL; Alcohol: drink with meals; codes: 1=Yes/2=No/3=It varies
+F2ALCDAY,resurvey_8yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 36,F2_ALCOHOL_FREQ; Alcohol: number of drinking days per week; no stated range
+F2DRTEA,resurvey_8yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 37,F2_QTY_TEA; Drinks (cups/glasses per day): tea; codes: 97=Unknown (lots/many/too much/97+ etc)/99=Unknown (tick/?/varies etc)
+F2DRCOF,resurvey_8yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 38,F2_QTY_COFFEE; Drinks (cups/glasses per day): coffee; codes: 97=Unknown (lots/many/too much/97+ etc)/99=Unknown (tick/?/varies etc)
+F2WGT,resurvey_8yr,anthropometric,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 39,F2_WEIGHT; Weight now: kg (calculated from stones/pounds); no stated range
+F2BMI,resurvey_8yr,anthropometric,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 40,F2_BMI; Body mass index (kg/m2); no stated range
+F2MCABR,resurvey_8yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 41,F2_MOTHER_BREASTCA; Family history (mother): breast cancer; codes: 1=Yes
+F2FCABR,resurvey_8yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 42,F2_FATHER_BREASTCA; Family history (father): breast cancer; codes: 1=Yes
+F2SCABR,resurvey_8yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 43,"F2_SISTER_BREASTCA; Family history (sister): breast cancer; codes: 1=Yes -- new relative, not asked about in recruitment or resurvey_3yr"
+F2SMOKE,resurvey_8yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 44,F2_SMOKING_STATUS; derived; codes: 1=Never/2=Past/3=Current
+F2CIGSPD,resurvey_8yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 8-year resurvey row 45,"F2_CIGS_PER_DAY; Smoking: number of cigarettes per day, in current smokers; codes: 1=None/2=Less than 5/3=5-9/4=10-14/5=15-19/6=20-24/7=25 or more"
