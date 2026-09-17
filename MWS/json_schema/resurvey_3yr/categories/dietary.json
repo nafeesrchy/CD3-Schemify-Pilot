@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/dietary.json",
+  "title": "MWS 3-year resurvey — Dietary",
+  "description": "Derived daily nutrient and food-group intakes from the 3-year resurvey's dietary questionnaire (Dietary data at 3-year resurvey sheet). All 14 fields are machine-derived from participants' reported diet, not directly asked, and are available (marked 'Derived') for every questionnaire version -- no not_on_questionnaire sentinel applies to this category.",
+  "type": "object",
+  "x-variable-group": "dietary",
+  "properties": {
+    "F1NKJ": {
+      "title": "Energy",
+      "x-unit": "kJ/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 20000 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived nutrient. Source states no valid range; 0-20000 kJ/day is an agent-decided plausibility ceiling (~4780 kcal/day, well above typical intake but not physiologically impossible) -- D056."
+    },
+    "F1NPROT": {
+      "title": "Protein",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 300 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived nutrient. Source states no valid range; 0-300 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NTFAT": {
+      "title": "Total fat",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 300 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived nutrient. Source states no valid range; 0-300 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NCARB": {
+      "title": "Carbohydrate",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 600 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived nutrient. Source states no valid range; 0-600 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NSFAT": {
+      "title": "Saturated fatty acids",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 150 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived nutrient. Source states no valid range; 0-150 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NEFIB": {
+      "title": "Englyst fibre",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 100 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived nutrient, Englyst method fibre. Source states no valid range; 0-100 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NFSUG": {
+      "title": "Free sugar",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 300 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived nutrient. Source states no valid range; 0-300 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NMEAT": {
+      "title": "Meat",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 500 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived food group. Source states no valid range; 0-500 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NMILK": {
+      "title": "Milk",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 2000 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived food group. Source states no valid range; 0-2000 g/day (~2 litres) agent-decided plausibility ceiling -- D056."
+    },
+    "F1NCHEES": {
+      "title": "Cheese",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 300 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived food group. Source states no valid range; 0-300 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NYOG": {
+      "title": "Yogurt",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 1000 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived food group. Source states no valid range; 0-1000 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NEGG": {
+      "title": "Eggs",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 300 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived food group. Source states no valid range; 0-300 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NFRUIT": {
+      "title": "Fruit",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 2000 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived food group. Source states no valid range; 0-2000 g/day agent-decided plausibility ceiling -- D056."
+    },
+    "F1NVEG": {
+      "title": "Vegetables",
+      "x-unit": "g/day",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 2000 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Derived food group. Source states no valid range; 0-2000 g/day agent-decided plausibility ceiling -- D056."
+    }
+  },
+  "required": ["F1NKJ", "F1NPROT", "F1NTFAT", "F1NCARB", "F1NSFAT", "F1NEFIB", "F1NFSUG", "F1NMEAT", "F1NMILK", "F1NCHEES", "F1NYOG", "F1NEGG", "F1NFRUIT", "F1NVEG"],
+  "$comment": "Not-enforceable: F1NPROT + F1NTFAT*9/4 + F1NCARB roughly relates to F1NKJ (macronutrient energy contributions), but the exact conversion factors and rounding are not documented in the source and JSON Schema cannot express an approximate arithmetic identity -- left as a cross-field note, no rule added, D056."
+}

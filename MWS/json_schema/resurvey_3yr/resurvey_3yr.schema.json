@@ -11,7 +11,187 @@
     "type": "object",
     "title": "RESURVEY_3YR record",
     "allOf": [
-      { "$ref": "categories/demographics.json" }
+      { "$ref": "categories/demographics.json" },
+      { "$ref": "categories/reproductive_hormonal.json" },
+      { "$ref": "categories/dietary.json" },
+      { "$ref": "categories/behavioral.json" },
+      { "$ref": "categories/anthropometric.json" },
+      { "$ref": "categories/early_life.json" },
+      { "$ref": "categories/wellbeing_sleep.json" },
+      { "$ref": "categories/parental_mortality.json" },
+      { "$ref": "categories/socioeconomic.json" },
+      { "$ref": "categories/medications.json" },
+      { "$ref": "categories/family_history.json" },
+      { "$ref": "categories/medical_history.json" },
+
+      {
+        "$comment": "Skip pattern: never used HRT means start age, duration, and type are structurally not applicable -- D052, mirrors the recruitment table's confirmed D039 pattern. Deliberately does NOT include F1HTNPC=4 ('Ever, status not known') -- steward-confirmed to stay unconstrained, D052.",
+        "if": {
+          "required": ["F1HTNPC"],
+          "properties": { "F1HTNPC": { "const": 1 } }
+        },
+        "then": {
+          "properties": {
+            "F1HRTSTA": { "const": -777 },
+            "F1HTTYPE": { "const": -777 },
+            "F1HTDUR": { "const": -777 },
+            "F1HTLU": { "const": -777 }
+          }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has ever used HRT (Past or Current) must have real values for start age, duration, and type -- D052.",
+        "if": {
+          "required": ["F1HTNPC"],
+          "properties": { "F1HTNPC": { "enum": [2, 3] } }
+        },
+        "then": {
+          "properties": {
+            "F1HRTSTA": { "not": { "const": -777 } },
+            "F1HTTYPE": { "not": { "const": -777 } },
+            "F1HTDUR": { "not": { "const": -777 } }
+          }
+        }
+      },
+      {
+        "$comment": "HRT routing: a participant currently using HRT has not stopped, so time-since-last-used is structurally not applicable -- D052.",
+        "if": {
+          "required": ["F1HTNPC"],
+          "properties": { "F1HTNPC": { "const": 3 } }
+        },
+        "then": {
+          "properties": { "F1HTLU": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who stopped using HRT in the past must have a real value for time-since-last-used -- D052.",
+        "if": {
+          "required": ["F1HTNPC"],
+          "properties": { "F1HTNPC": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "F1HTLU": { "not": { "const": -777 } } }
+        }
+      },
+      {
+        "$comment": "Skip pattern: the real questionnaire's smoking-status question is 'have you ever been a smoker?' -- a Never answer means the participant skips the cigarettes-per-day follow-up entirely, so it is structurally not applicable -- D062, corrects D060.",
+        "if": {
+          "required": ["F1SMOKE"],
+          "properties": { "F1SMOKE": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "F1CIGSPD": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who has ever smoked (Past or Current) must have a real answer for cigarettes-per-day -- D062. '1=None' remains a valid real answer here, e.g. a past/current smoker who reports zero on average -- steward-confirmed this is left untouched, not remapped.",
+        "if": {
+          "required": ["F1SMOKE"],
+          "properties": { "F1SMOKE": { "enum": [2, 3] } }
+        },
+        "then": {
+          "properties": { "F1CIGSPD": { "not": { "const": -777 } } }
+        }
+      },
+      {
+        "$comment": "Skip pattern: mother alive means age-when-died and all 7 cause-of-death fields are structurally not applicable -- D071. Deliberately does NOT include F1MALIVE=3 ('Do not know') -- steward-confirmed to stay unconstrained, D071.",
+        "if": {
+          "required": ["F1MALIVE"],
+          "properties": { "F1MALIVE": { "const": 1 } }
+        },
+        "then": {
+          "properties": {
+            "F1MDAGE": { "const": -777 },
+            "F1MDHRT": { "const": -777 },
+            "F1MDSTR": { "const": -777 },
+            "F1MDPNU": { "const": -777 },
+            "F1MDOLD": { "const": -777 },
+            "F1MDCABR": { "const": -777 },
+            "F1MDCAWO": { "const": -777 },
+            "F1MDCAOV": { "const": -777 }
+          }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant whose mother is alive must have a real answer for mother's current age -- D071.",
+        "if": {
+          "required": ["F1MALIVE"],
+          "properties": { "F1MALIVE": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "F1MAGE": { "not": { "const": -777 } } }
+        }
+      },
+      {
+        "$comment": "Skip pattern: mother deceased means her current age is structurally not applicable -- D071.",
+        "if": {
+          "required": ["F1MALIVE"],
+          "properties": { "F1MALIVE": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "F1MAGE": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant whose mother has died must have a real answer for her age at death -- D071. The 7 cause-of-death fields are deliberately NOT required non-777 here -- checkbox semantics mean most are legitimately non-1 for any given deceased mother.",
+        "if": {
+          "required": ["F1MALIVE"],
+          "properties": { "F1MALIVE": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "F1MDAGE": { "not": { "const": -777 } } }
+        }
+      },
+      {
+        "$comment": "Skip pattern: no partner means whether the partner smokes is structurally not applicable -- D073.",
+        "if": {
+          "required": ["F1PART"],
+          "properties": { "F1PART": { "const": 2 } }
+        },
+        "then": {
+          "properties": { "F1PARTSM": { "const": -777 } }
+        }
+      },
+      {
+        "$comment": "Applicability: a participant who currently has a partner must have a real answer for whether that partner smokes -- D073.",
+        "if": {
+          "required": ["F1PART"],
+          "properties": { "F1PART": { "const": 1 } }
+        },
+        "then": {
+          "properties": { "F1PARTSM": { "not": { "const": -777 } } }
+        }
+      },
+      {
+        "$comment": "Skip pattern: no medication used in the last 4 weeks means all 19 specific medication fields are structurally not applicable -- D075, same shape as parental_mortality's F1MALIVE gate (D071). No applicability rule is added in the other direction -- checkbox semantics mean most of the 19 fields are legitimately non-1 for any given participant even when F1MED=1, same reasoning as the cause-of-death block.",
+        "if": {
+          "required": ["F1MED"],
+          "properties": { "F1MED": { "const": 2 } }
+        },
+        "then": {
+          "properties": {
+            "F1MEDTHY": { "const": -777 },
+            "F1MEDIBU": { "const": -777 },
+            "F1MEDASP": { "const": -777 },
+            "F1MEDTAM": { "const": -777 },
+            "F1MEDBEN": { "const": -777 },
+            "F1MEDAML": { "const": -777 },
+            "F1MEDDIG": { "const": -777 },
+            "F1MEDPAR": { "const": -777 },
+            "F1MEDPRO": { "const": -777 },
+            "F1MEDATN": { "const": -777 },
+            "F1MEDWAR": { "const": -777 },
+            "F1MEDPRE": { "const": -777 },
+            "F1MEDLOS": { "const": -777 },
+            "F1MEDPRZ": { "const": -777 },
+            "F1MEDINS": { "const": -777 },
+            "F1MEDCOP": { "const": -777 },
+            "F1MEDAMI": { "const": -777 },
+            "F1MEDSLE": { "const": -777 },
+            "F1MEDLIT": { "const": -777 }
+          }
+        }
+      }
     ],
     "unevaluatedProperties": false
   }

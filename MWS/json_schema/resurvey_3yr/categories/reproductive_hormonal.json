@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/reproductive_hormonal.json",
+  "title": "MWS 3-year resurvey — Reproductive/Hormonal",
+  "description": "Menopausal hormone treatment (HRT) and menopause status recorded at the 3-year resurvey.",
+  "type": "object",
+  "x-variable-group": "reproductive_hormonal",
+  "properties": {
+    "F1HRTSTA": {
+      "title": "Age started HRT",
+      "x-unit": "years",
+      "x-universe": "Participants who have ever used HRT (F1HTNPC=2 Past or 3 Current).",
+      "anyOf": [
+        { "type": "integer", "minimum": 25, "maximum": 90 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range at all for this field (unlike recruitment's RHRTSTA, which had a source-stated minimum of 25) -- 25-90 is a fully agent-decided plausibility bound, chosen to match RHRTSTA's for consistency -- D051. not_applicable branch enforced by a mother-file skip pair keyed on F1HTNPC -- D052."
+    },
+    "F1HTTYPE": {
+      "title": "Type of HRT",
+      "description": "From reported brand(s) last used.",
+      "x-universe": "Participants who have ever used HRT (F1HTNPC=2 Past or 3 Current).",
+      "oneOf": [
+        { "const": 1, "title": "Oestrogen only" },
+        { "const": 2, "title": "Oestrogen + progestagen" },
+        { "const": 3, "title": "Progestagen only" },
+        { "const": 4, "title": "Tibolone" },
+        { "const": 5, "title": "Other/mixed" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same code list as recruitment's RHTTYPE. not_applicable branch enforced by a mother-file skip pair keyed on F1HTNPC -- D052."
+    },
+    "F1HTNPC": {
+      "title": "HRT use: never/past/current/status not known",
+      "oneOf": [
+        { "const": 1, "title": "Never" },
+        { "const": 2, "title": "Past" },
+        { "const": 3, "title": "Current" },
+        { "const": 4, "title": "Ever, status not known" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source coding: 1 Never; 2 Past; 3 Current; 4 'Ever, status NK' [source wording]. A 4th level not present in recruitment's RHTNPC (which only had 1-3) -- deliberately NOT wired into either the Never-gate skip or the ever-used applicability rule below, same open-question treatment as ROOPH=3 in the recruitment table (D030); steward confirmed this stays unconstrained -- D052."
+    },
+    "F1HTDUR": {
+      "title": "Total duration of HRT use",
+      "x-unit": "years",
+      "x-universe": "Participants who have ever used HRT (F1HTNPC=2 Past or 3 Current).",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 50 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 0-50 agent-decided, matching recruitment's RHTDUR -- D051. not_applicable branch enforced by a mother-file skip pair keyed on F1HTNPC -- D052."
+    },
+    "F1HTLU": {
+      "title": "Time since HRT last used",
+      "x-unit": "years",
+      "x-universe": "Participants who used HRT in the past but have stopped (F1HTNPC=2 Past only) -- someone currently using has no 'last used' age, same reasoning as recruitment's RHTLU.",
+      "anyOf": [
+        { "type": "integer", "minimum": 0, "maximum": 40 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states valid range 0-40 (recruitment's RHTLU had no stated range at all -- this one is source-stated). not_applicable branch enforced by a mother-file skip pair keyed on F1HTNPC -- D052."
+    },
+    "F1MENO": {
+      "title": "Menopause yet",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "Not sure (because periods irregular, taking HRT etc)" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source's own code list includes -1=Not on questionnaire for this field. missing_numeric added alongside per D020. Not the same question as recruitment's RPSTOPYN ('periods stopped now') -- this asks about menopause specifically, a related but distinct concept, so kept as its own field rather than merged."
+    },
+    "F1MENOAG": {
+      "title": "Age at menopause",
+      "x-unit": "years",
+      "x-universe": "Not restricted to F1MENO=1 -- steward confirmed participants answering F1MENO=3 (Not sure) may still report an age, so no skip pair against F1MENO is warranted (D053, resolved).",
+      "oneOf": [
+        { "type": "integer", "minimum": 30, "maximum": 65 },
+        { "const": 77, "title": "Turner syndrome / never had periods" },
+        { "const": 99, "title": "Unknown (tick/?/varies etc)" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source's own codes: -1='Not asked on questionnaire' (mapped to the shared not_on_questionnaire sentinel), 77='Turners syndrome/Never had periods' (a real substantive answer, not a missingness sentinel -- kept as its own const branch, not mapped onto not_applicable), 99='Unknown (tick/?/varies etc)' (source's own field-specific unknown code, kept as its own const branch rather than mapped onto the shared missing_numeric). missing_numeric added alongside anyway per D020, for any gap none of these three cover. Numeric range 30-65 is an agent-decided plausibility bound (source states none) -- D051. No skip pair against F1MENO -- steward confirmed this is correct, D053 resolved."
+    }
+  },
+  "required": ["F1HRTSTA", "F1HTTYPE", "F1HTNPC", "F1HTDUR", "F1HTLU", "F1MENO", "F1MENOAG"]
+}

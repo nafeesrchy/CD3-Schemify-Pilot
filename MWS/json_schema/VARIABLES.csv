@@ -66,150 +66,150 @@ RTRCLOT,recruitment,medical_history,converted,millionwomenstudydatadictionary-v1
 RTROPOR,recruitment,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx Self-reported health row 27,R_TREATED_OSTEOPOROSIS; treated now; 1=Yes/2=No/-1=not on questionnaire (Other=No)
 F1QTYPE,resurvey_3yr,demographics,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 8,F1_QUESTIONNAIRE_TYPE; A code to determine which version of the 1st resurvey questionnaire (yellow) was completed; codes: 1=9903/2=9907/3=9909/4=0012
 F1YSUBMT,resurvey_3yr,demographics,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 9,F1_YEAR_SUBMIT; Date questionnaire completed (year)
-F1HDIS,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 10,F1_HEART_DISEASE; Illnesses during past 5 years: heart disease/problem; codes: 1=Yes
-F1STRK,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 11,F1_STROKE; Illnesses during past 5 years: stroke; codes: 1=Yes
-F1DIAB,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 12,F1_DIABETES; Illnesses during past 5 years: diabetes; codes: 1=Yes
-F1CLEG,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 13,F1_CLOT_LEG; Illnesses during past 5 years: clot in leg; codes: 1=Yes
-F1COTH,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 14,F1_CLOT_OTHER; Illnesses during past 5 years: clot (other); codes: 1=Yes
-F1CHOL,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 15,F1_HIGH_CHOLESTEROL; Illnesses during past 5 years: high blood cholesterol; codes: 1=Yes
-F1BP,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 16,F1_HIGH_BP; Illnesses during past 5 years: high blood pressure; codes: 1=Yes
-F1AST,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 17,F1_ASTHMA; Illnesses during past 5 years: asthma; codes: 1=Yes
-F1GALL,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 18,F1_GALLSTONES; Illnesses during past 5 years: gallstones / gall bladder problems; codes: 1=Yes
-F1OPOR,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 19,F1_OSTEOPOROSIS; Illnesses during past 5 years: osteoporosis; codes: 1=Yes
-F1BRCA,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 20,F1_BREAST_CANCER; Illnesses during past 5 years: breast cancer; codes: 1=Yes
-F1OTCA,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 21,F1_OTHER_CANCER; Illnesses during past 5 years: other cancer; codes: 1=Yes
-F1TRBP,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 22,F1_TREATED_HIGH_BP; Treated now: high blood pressure; codes: 1=Yes
-F1TRHDIS,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 23,F1_TREATED_HEART; Treated now: heart disease; codes: 1=Yes
-F1TRDIAB,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 24,F1_TREATED_DIABETES; Treated now: diabetes; codes: 1=Yes
-F1TRAST,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 25,F1_TREATED_ASTHMA; Treated now: asthma; codes: 1=Yes
-F1TRRA,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 26,F1_TREATED_RARTHRITIS; Treated now: rheumatoid arthritis; codes: 1=Yes
-F1TROA,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 27,F1_TREATED_OARTHRITIS; Treated now: osteoarthritis; codes: 1=Yes
-F1TROPOR,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 28,F1_TREATED_OSTEOPOROSIS; Treated now: osteoporosis; codes: 1=Yes
-F1TRDEP,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 29,F1_TREATED_DEPRESSION; Treated now: depression/anxiety; codes: 1=Yes
-F1HEALTH,resurvey_3yr,medical_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 30,F1_HEALTH_NOW; Health now: overall; codes: 1=Excellent/2=Good/3=Fair/4=Poor/-1=Not on questionnaire
-F1HRTSTA,resurvey_3yr,reproductive_hormonal,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 31,F1_HRT_START; HRT: age start
-F1HTTYPE,resurvey_3yr,reproductive_hormonal,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 32,"F1_HRT_TYPE; HRT: Type of HRT, from reported brand(s) last used; codes: 1=Oestrogen only/2=Oestrogen + progestagen/3=Progestagen only/4=Tibolone/5=Other"
-F1HTNPC,resurvey_3yr,reproductive_hormonal,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 33,"F1_HRT_NPC; HRT: never/past/current; codes: 1=Never/2=Past/3=Current/4=Ever, status NK"
-F1HTLU,resurvey_3yr,reproductive_hormonal,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 34,F1_HRT_LAST_USE; HRT: time since last use (years); range [0-40]
-F1HTDUR,resurvey_3yr,reproductive_hormonal,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 35,F1_HRT_DURATION; HRT: total duration (years)
-F1MED,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 36,"F1_MEDS; Medications/drugs: used for most of the last 4 weeks (not HRT), yes/no; codes: 1=Yes/2=No"
-F1MEDTHY,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 37,F1_MEDS_THYROXINE; Medications/drugs: thyroxine; codes: 1=Yes
-F1MEDIBU,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 38,F1_MEDS_IBUPROFEN; Medications/drugs: ibuprofen; codes: 1=Yes
-F1MEDASP,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 39,F1_MEDS_ASPIRIN; Medications/drugs: aspirin; codes: 1=Yes
-F1MEDTAM,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 40,F1_MEDS_TAMOXIFEN; Medications/drugs: tamoxifen; codes: 1=Yes/-1=Not on questionnaire
-F1MEDBEN,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 41,F1_MEDS_BENDRO; Medications/drugs: bendrofluazide; codes: 1=Yes
-F1MEDAML,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 42,F1_MEDS_AMLODIPINE; Medications/drugs: amplodipine (Istin); codes: 1=Yes/-1=Not on questionnaire
-F1MEDDIG,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 43,F1_MEDS_DIGOXIN; Medications/drugs: digoxin; codes: 1=Yes
-F1MEDPAR,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 44,F1_MEDS_PARACET; Medications/drugs: paracetamol; codes: 1=Yes/-1=Not on questionnaire
-F1MEDPRO,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 45,F1_MEDS_PROPRANOLOL; Medications/drugs: propranolol; codes: 1=Yes
-F1MEDATN,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 46,F1_MEDS_ATENOLOL; Medications/drugs: atenolol; codes: 1=Yes
-F1MEDWAR,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 47,F1_MEDS_WARFARIN; Medications/drugs: warfarin; codes: 1=Yes
-F1MEDPRE,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 48,F1_MEDS_PREDNIS; Medications/drugs: prednisolone; codes: 1=Yes/-1=Not on questionnaire
-F1MEDLOS,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 49,F1_MEDS_LOSECZOTON; Medications/drugs: Losec/Zoton; codes: 1=Yes/-1=Not on questionnaire
-F1MEDPRZ,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 50,F1_MEDS_PROZAC; Medications/drugs: Prozac; codes: 1=Yes
-F1MEDINS,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 51,F1_MEDS_INSULIN; Medications/drugs: insulin; codes: 1=Yes
-F1MEDCOP,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 52,F1_MEDS_COPROX; Medications/drugs: co-proxamol (Distalgesic); codes: 1=Yes/-1=Not on questionnaire
-F1MEDAMI,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 53,F1_MEDS_AMITRYP; Medications/drugs: amitryptiline (Tryptizol); codes: 1=Yes/-1=Not on questionnaire
-F1MEDSLE,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 54,F1_MEDS_SLEEPING; Medications/drugs: sleeping pills; codes: 1=Yes
-F1MEDLIT,resurvey_3yr,medications,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 55,F1_MEDS_LITHIUM; Medications/drugs: lithium; codes: 1=Yes/-1=Not on questionnaire
-F1FQORGN,resurvey_3yr,behavioral,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 56,F1_FREQ_ORGANIC; How often: eat organic food; codes: 1=Never/2=Sometimes/3=Usually/4=Always/-1=Not on questionnaire
-F15YDIET,resurvey_3yr,behavioral,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 57,"F1_NEWDIET; Major diet changes in last 5 years?; codes: 1=Yes, because of illness/2=No/3=Yes, for some other reason"
-F1ALCNUM,resurvey_3yr,behavioral,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 58,F1_ALCOHOL_DRINKS; Alcohol: number of alcoholic drinks per week; codes: 97=Unknown (lots/many/too much/97+ etc)/99=Unknown (tick/?/varies etc) 
-F1ALCEAT,resurvey_3yr,behavioral,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 59,F1_ALCOHOL_WITHMEAL; Alcohol: drink with meals; codes: 1=Yes/2=No/3=It varies
-F1ALCDAY,resurvey_3yr,behavioral,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 60,F1_ALCOHOL_FREQ; Alcohol: number of drinking days per week
-F1DRTEA,resurvey_3yr,behavioral,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 61,F1_QTY_TEA; Drinks (cups/glasses per day): tea; codes: 97=Unknown (lots/many/too much/97+ etc)/99=Unknown (tick/?/varies etc) 
-F1DRCOF,resurvey_3yr,behavioral,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 62,F1_QTY_COFFEE; Drinks (cups/glasses per day): coffee; codes: 97=Unknown (lots/many/too much/97+ etc)/99=Unknown (tick/?/varies etc) 
-F1SIZE,resurvey_3yr,anthropometric,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 63,F1_CLOTHES; Clothes size now: average clothes size (derived variable); codes: 1=10 or less/2=10/12/3=12/4=12/14/5=14/6=14/16/7=16/8=16/18/9=18/10=18/20+/11=20
-F1BRA,resurvey_3yr,anthropometric,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 64,F1_BRA; Bra size now: average bra size (derived variable); codes: 1=32/2=32/34/3=34/4=34/36/5=36/6=36/38/7=38/8=38/40/9=40/10=40/42+/11=42+
-F1CUP,resurvey_3yr,anthropometric,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 65,F1_CUP; Bra cup size now: average cup size (derived variable); codes: 1=AA/A/2=A/B/3=B/4=B/C/5=C/6=C/D/7=D/8=D/DD+/9=DD+
-F1WST,resurvey_3yr,anthropometric,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 66,F1_WAIST; Waist now: cm (calculated from inches); range [60-110]
-F1HIPS,resurvey_3yr,anthropometric,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 67,F1_HIPS; Hips now: cm (calculated from inches); range [80-130]
-F1WGT,resurvey_3yr,anthropometric,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 68,F1_WEIGHT; Weight now: kg (calculated from stones/pounds); range [35-195]
-F1BMI,resurvey_3yr,anthropometric,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 69,F1_BMI; Body mass index (kg/m2)
-F1BWGTKG,resurvey_3yr,early_life,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 70,F1_BIRTH_WEIGHT; Birth weight (kg) (calculated from pounds/ounces); range [0.5-10]
-F1BRFED,resurvey_3yr,early_life,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 71,F1_BREASTFED; Breastfed as a baby (yes/no); codes: 1=Yes/2=No/3=Do not know
-F1MSMBTH,resurvey_3yr,early_life,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 72,F1_MOTHER_SMOKE_BIRTH; Parental smoking: mother smoked at birth; codes: 1=Yes/2=No/3=Do not know
-F1FSMBTH,resurvey_3yr,early_life,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 73,F1_FATHER_SMOKE_BIRTH; Parental smoking: father smoked at birth; codes: 1=Yes/2=No/3=Do not know
-F1MSM10,resurvey_3yr,early_life,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 74,F1_MOTHER_SMOKE_AGE10; Parental smoking: mother smoked when aged 10; codes: 1=Yes/2=No/3=Do not know
-F1FSM10,resurvey_3yr,early_life,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 75,F1_FATHER_SMOKE_AGE10; Parental smoking: father smoked when aged 10; codes: 1=Yes/2=No/3=Do not know
-F1BODY10,resurvey_3yr,early_life,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 76,F1_BODYSIZE_AGE_10; Body size at age 10 compared to average; codes: 1=Thinner/2=Plumper/3=About average
-F1SZ20,resurvey_3yr,early_life,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 77,F1_CLOTHES20; Clothes size when aged 20: average clothes size (derived variable); codes: 1=8 or less/2=8/10/3=10/4=10/12/5=12/6=12/14/7=14/8=14/16/9=16/10=16/18+/11=18+
-F1MALIVE,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 78,F1_MOTHER_ALIVE; Mother: still alive; codes: 1=Yes/2=No/3=Do not know
-F1MAGE,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 79,F1_MOTHER_AGE; Mother: age now (if alive)
-F1MDAGE,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 80,F1_MOTHER_AGE_DIED; Mother: age when died
-F1MDHRT,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 81,F1_MOTHER_COD_HEARTDIS; Mother (cause of death): heart disease; codes: 1=Yes
-F1MDSTR,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 82,F1_MOTHER_COD_STROKE; Mother (cause of death): stroke; codes: 1=Yes
-F1MDPNU,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 83,"F1_MOTHER_COD_CHESTINF; Mother (cause of death): chest infection, pneumonia; codes: 1=Yes"
-F1MDOLD,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 84,F1_MOTHER_COD_OLDAGE; Mother (cause of death): old age; codes: 1=Yes/-1=Not on questionnaire
-F1MDCABR,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 85,F1_MOTHER_COD_BREASTCA; Mother (cause of death): cancer (breast); codes: 1=Yes
-F1MDCAWO,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 86,F1_MOTHER_COD_WOMBCA; Mother (cause of death): cancer (womb); codes: 1=Yes/-1=Not on questionnaire
-F1MDCAOV,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 87,F1_MOTHER_COD_OVARYCA; Mother (cause of death): cancer (ovary); codes: 1=Yes
-F1MHDIS,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 88,F1_MOTHER_HEARTDIS; Family history (mother): heart disease; codes: 1=Yes
-F1FHDIS,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 89,F1_FATHER_HEARTDIS; Family history (father): heart disease; codes: 1=Yes/-1=Not on questionnaire
-F1MSTROK,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 90,F1_MOTHER_STROKE; Family history (mother): stroke; codes: 1=Yes
-F1FSTROK,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 91,F1_FATHER_STROKE; Family history (father): stroke; codes: 1=Yes/-1=Not on questionnaire
-F1MBP,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 92,F1_MOTHER_BP; Family history (mother): high blood pressure; codes: 1=Yes
-F1FBP,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 93,F1_FATHER_BP; Family history (father): high blood pressure; codes: 1=Yes/-1=Not on questionnaire
-F1MDIAB,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 94,F1_MOTHER_DIABETES; Family history (mother): diabetes; codes: 1=Yes
-F1FDIAB,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 95,F1_FATHER_DIABETES; Family history (father): diabetes; codes: 1=Yes/-1=Not on questionnaire
-F1MALZ,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 96,F1_MOTHER_ALZ; Family history (mother): Alzheimer's; codes: 1=Yes
-F1FALZ,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 97,F1_FATHER_ALZ; Family history (father): Alzheimer's; codes: 1=Yes/-1=Not on questionnaire
-F1MPARK,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 98,F1_MOTHER_PARKINSONS; Family history (mother): Parkinson's; codes: 1=Yes
-F1FPARK,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 99,F1_FATHER_PARKINSONS; Family history (father): Parkinson's; codes: 1=Yes/-1=Not on questionnaire
-F1MDEPR,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 100,F1_MOTHER_DEPRESSION; Family history (mother): severe depression; codes: 1=Yes/-1=Not on questionnaire
-F1FDEPR,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 101,F1_FATHER_DEPRESSION; Family history (father): severe depression; codes: 1=Yes/-1=Not on questionnaire
-F1MCABR,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 102,F1_MOTHER_BREASTCA; Family history (mother): breast cancer; codes: 1=Yes
-F1FCABR,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 103,F1_FATHER_BREASTCA; Family history (father): breast cancer; codes: 1=Yes/-1=Not on questionnaire
-F1MBOWEL,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 104,F1_MOTHER_BOWELCA; Family history (mother): bowel cancer; codes: 1=Yes/-1=Not on questionnaire
-F1FBOWEL,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 105,F1_FATHER_BOWELCA; Family history (father): bowel cancer; codes: 1=Yes/-1=Not on questionnaire
-F1MLUNG,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 106,F1_MOTHER_LUNGCA; Family history (mother): lung cancer; codes: 1=Yes/-1=Not on questionnaire
-F1FLUNG,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 107,F1_FATHER_LUNGCA; Family history (father): lung cancer; codes: 1=Yes/-1=Not on questionnaire
-F1FPROS,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 108,F1_FATHER_PROSTATECA; Family history (father): prostate cancer; codes: 1=Yes/-1=Not on questionnaire
-F1MOSTEO,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 109,F1_MOTHER_OSTEOP; Family history (mother): osteoporosis; codes: 1=Yes
-F1FOSTEO,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 110,F1_FATHER_OSTEOP; Family history (father): osteoporosis; codes: 1=Yes/-1=Not on questionnaire
-F1MHIP,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 111,F1_MOTHER_HIPFRAC; Family history (mother): hip fracture; codes: 1=Yes/-1=Not on questionnaire
-F1FHIP,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 112,F1_FATHER_HIPFRAC; Family history (father): hip fracture; codes: 1=Yes/-1=Not on questionnaire
-F1MARTH,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 113,F1_MOTHER_ARTHRITIS; Family history (mother): severe arthritis; codes: 1=Yes
-F1FARTH,resurvey_3yr,family_history,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 114,F1_FATHER_ARTHRITIS; Family history (father): severe arthritis; codes: 1=Yes/-1=Not on questionnaire
-F1MHTCM,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 115,F1_MOTHER_HEIGHT; Mother: height (cm) (calculated from feet/inches); range [120-210]
-F1FHTCM,resurvey_3yr,parental_mortality,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 116,F1_FATHER_HEIGHT; Father: height (cm) (calculated from feet/inches); range [120-210]; codes: -1=Unable to derive (not asked on questionnaire)
-F1CIGSPD,resurvey_3yr,behavioral,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 117,F1_CIGS_PER_DAY; Smoking: average number of cigarettes smoked per day; codes: 1=None/2=Less than 5/3=5-9/4=10-14/5=15-19/6=20-24/7=25 or more
-F1SMOKE,resurvey_3yr,behavioral,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 118,F1_SMOKING_STATUS; Smoking: smoking status; codes: 1=Never/2=Past/3=Current
-F1MENO,resurvey_3yr,reproductive_hormonal,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 119,"F1_MENOPAUSE; Menopause: menopause yet?; codes: 1=Yes/2=No/3=Not sure (because periods irregular, taking HRT etc)/-1=Not on ques"
-F1MENOAG,resurvey_3yr,reproductive_hormonal,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 120,F1_MENOPAUSE_AGE; Menopause: age at menopause; codes: -1=Not asked on questionnaire/77=Turners syndrome/Never had periods/99=Unknown (
-F1WRK,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 121,"F1_WORK; Employment: currently in paid work; codes: 1=Yes, full time/2=No/3=Yes, part time"
-F1PART,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 122,F1_PARTNER; Currently married or living with husband/partner; codes: 1=Yes/2=No
-F1PARTSM,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 123,F1_PARTNER_SMOKE; Husband/partner smokes; codes: 1=Yes/2=No
-F1MOBFRQ,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 124,F1_MOBILE_PHONE; Mobile phone: current usage frequency; codes: 1=Never/2=Ever
-F1MOBYRS,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 125,F1_MOBILE_PHONE_YEARS; Mobile phone: duration (years) of use
-F1ACTREL,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 126,F1_ACTIVITY_RELIGIOUS; Social groups/activities: religious group; codes: 1=Yes
-F1ACTART,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 127,F1_ACTIVITY_ARTCRAFT; Social groups/activities: art/craft group; codes: 1=Yes
-F1ACTBIN,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 128,F1_ACTIVITY_BINGO; Social groups/activities: bingo; codes: 1=Yes/-1=Not on questionnaire
-F1ACTVOL,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 129,F1_ACTIVITY_VOLUNTARY; Social groups/activities: voluntary work; codes: 1=Yes
-F1ACTMUS,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 130,F1_ACTIVITY_MUSIC; Social groups/activities: music/singing group; codes: 1=Yes
-F1ACTEDU,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 131,F1_ACTIVITY_ADULTED; Social groups/activities: adult education; codes: 1=Yes
-F1ACTSPO,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 132,F1_ACTIVITY_SPORT; Social groups/activities: sports club; codes: 1=Yes
-F1ACTDAN,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 133,F1_ACTIVITY_DANCING; Social groups/activities: dancing group; codes: 1=Yes
-F1ACTYOG,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 134,F1_ACTIVITY_YOGA; Social groups/activities: yoga etc; codes: 1=Yes
-F1ACTOTH,resurvey_3yr,socioeconomic,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 135,F1_ACTIVITY_OTHER; Social groups/activities: other group activity; codes: 1=Yes
-F1HAPPY,resurvey_3yr,wellbeing_sleep,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 136,F1_FEEL_HAPPY; Frequency of: feeling happy; codes: 1=Rarely/never/2=Sometimes/3=Usually/4=Most of the time
-F1RELAX,resurvey_3yr,wellbeing_sleep,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 137,F1_FEEL_RELAXED; Frequency of: feeling relaxed; codes: 1=Rarely/never/2=Sometimes/3=Usually/4=Most of the time
-F1CONTRL,resurvey_3yr,wellbeing_sleep,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 138,F1_FEEL_CONTROL; Frequency of: feeling in control; codes: 1=Rarely/never/2=Sometimes/3=Usually/4=Most of the time
-F1STRESS,resurvey_3yr,wellbeing_sleep,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 139,F1_FEEL_STRESSED; Frequency of: feeling stressed; codes: 1=Rarely/never/2=Sometimes/3=Usually/4=Most of the time
-F1TIRED,resurvey_3yr,wellbeing_sleep,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 140,F1_FEEL_TIRED; Frequency of: feeling tired; codes: 1=Rarely/never/2=Sometimes/3=Usually/4=Most of the time
-F1NAP,resurvey_3yr,wellbeing_sleep,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 141,F1_NAP; Frequency of: daytime naps; codes: 1=Rarely/never/2=Sometimes/3=Usually
-F1SLEEP,resurvey_3yr,wellbeing_sleep,pending,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 142,F1_SLEEP; Total sleep duration every 24 hours; codes: 99=Unknown (tick/?/varies etc) 
-F1NKJ,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 8,"F1_NUTRIENT_KJ; Derived nutrients: energy (kJ/day); no stated range, all 'Derived'"
-F1NPROT,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 9,"F1_NUTRIENT_PROTEIN; Derived nutrients: protein (g/day); no stated range, all 'Derived'"
-F1NTFAT,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 10,"F1_NUTRIENT_FAT_TOTAL; Derived nutrients: total fat (g/day); no stated range, all 'Derived'"
-F1NCARB,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 11,"F1_NUTRIENT_CARB; Derived nutrients: carbohydate (g/day); no stated range, all 'Derived'"
-F1NSFAT,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 12,"F1_NUTRIENT_FAT_SAT; Derived nutrients: saturated fatty acids (g/day); no stated range, all 'Derived'"
-F1NEFIB,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 13,"F1_NUTRIENT_ENGLYST; Derived nutrients: englyst fibre (g/day); no stated range, all 'Derived'"
-F1NFSUG,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 14,"F1_NUTRIENT_FREE_SUGAR; Derived nutrients: free sugar (g/day); no stated range, all 'Derived'"
-F1NMEAT,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 15,"F1_NUTRIENT_MEAT; Derived foods: meat (g/day); no stated range, all 'Derived'"
-F1NMILK,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 16,"F1_NUTRIENT_MILK; Derived foods: milk (g/day); no stated range, all 'Derived'"
-F1NCHEES,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 17,"F1_NUTRIENT_CHEESE; Derived foods: cheese (g/day); no stated range, all 'Derived'"
-F1NYOG,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 18,"F1_NUTRIENT_YOGURT; Derived foods: yogurt (g/day); no stated range, all 'Derived'"
-F1NEGG,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 19,"F1_NUTRIENT_EGGS; Derived foods: eggs (g/day); no stated range, all 'Derived'"
-F1NFRUIT,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 20,"F1_NUTRIENT_FRUIT; Derived foods: fruit (g/day); no stated range, all 'Derived'"
-F1NVEG,resurvey_3yr,dietary,pending,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 21,"F1_NUTRIENT_VEG; Derived foods: vegetables (g/day); no stated range, all 'Derived'"
+F1HDIS,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 10,F1_HEART_DISEASE; Illnesses during past 5 years: heart disease/problem; codes: 1=Yes
+F1STRK,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 11,F1_STROKE; Illnesses during past 5 years: stroke; codes: 1=Yes
+F1DIAB,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 12,F1_DIABETES; Illnesses during past 5 years: diabetes; codes: 1=Yes
+F1CLEG,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 13,F1_CLOT_LEG; Illnesses during past 5 years: clot in leg; codes: 1=Yes
+F1COTH,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 14,F1_CLOT_OTHER; Illnesses during past 5 years: clot (other); codes: 1=Yes
+F1CHOL,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 15,F1_HIGH_CHOLESTEROL; Illnesses during past 5 years: high blood cholesterol; codes: 1=Yes
+F1BP,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 16,F1_HIGH_BP; Illnesses during past 5 years: high blood pressure; codes: 1=Yes
+F1AST,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 17,F1_ASTHMA; Illnesses during past 5 years: asthma; codes: 1=Yes
+F1GALL,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 18,F1_GALLSTONES; Illnesses during past 5 years: gallstones / gall bladder problems; codes: 1=Yes
+F1OPOR,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 19,F1_OSTEOPOROSIS; Illnesses during past 5 years: osteoporosis; codes: 1=Yes
+F1BRCA,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 20,F1_BREAST_CANCER; Illnesses during past 5 years: breast cancer; codes: 1=Yes
+F1OTCA,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 21,F1_OTHER_CANCER; Illnesses during past 5 years: other cancer; codes: 1=Yes
+F1TRBP,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 22,F1_TREATED_HIGH_BP; Treated now: high blood pressure; codes: 1=Yes
+F1TRHDIS,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 23,F1_TREATED_HEART; Treated now: heart disease; codes: 1=Yes
+F1TRDIAB,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 24,F1_TREATED_DIABETES; Treated now: diabetes; codes: 1=Yes
+F1TRAST,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 25,F1_TREATED_ASTHMA; Treated now: asthma; codes: 1=Yes
+F1TRRA,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 26,F1_TREATED_RARTHRITIS; Treated now: rheumatoid arthritis; codes: 1=Yes
+F1TROA,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 27,F1_TREATED_OARTHRITIS; Treated now: osteoarthritis; codes: 1=Yes
+F1TROPOR,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 28,F1_TREATED_OSTEOPOROSIS; Treated now: osteoporosis; codes: 1=Yes
+F1TRDEP,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 29,F1_TREATED_DEPRESSION; Treated now: depression/anxiety; codes: 1=Yes
+F1HEALTH,resurvey_3yr,medical_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 30,F1_HEALTH_NOW; Health now: overall; codes: 1=Excellent/2=Good/3=Fair/4=Poor/-1=Not on questionnaire
+F1HRTSTA,resurvey_3yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 31,F1_HRT_START; HRT: age start
+F1HTTYPE,resurvey_3yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 32,"F1_HRT_TYPE; HRT: Type of HRT, from reported brand(s) last used; codes: 1=Oestrogen only/2=Oestrogen + progestagen/3=Progestagen only/4=Tibolone/5=Other"
+F1HTNPC,resurvey_3yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 33,"F1_HRT_NPC; HRT: never/past/current; codes: 1=Never/2=Past/3=Current/4=Ever, status NK"
+F1HTLU,resurvey_3yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 34,F1_HRT_LAST_USE; HRT: time since last use (years); range [0-40]
+F1HTDUR,resurvey_3yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 35,F1_HRT_DURATION; HRT: total duration (years)
+F1MED,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 36,"F1_MEDS; Medications/drugs: used for most of the last 4 weeks (not HRT), yes/no; codes: 1=Yes/2=No"
+F1MEDTHY,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 37,F1_MEDS_THYROXINE; Medications/drugs: thyroxine; codes: 1=Yes
+F1MEDIBU,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 38,F1_MEDS_IBUPROFEN; Medications/drugs: ibuprofen; codes: 1=Yes
+F1MEDASP,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 39,F1_MEDS_ASPIRIN; Medications/drugs: aspirin; codes: 1=Yes
+F1MEDTAM,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 40,F1_MEDS_TAMOXIFEN; Medications/drugs: tamoxifen; codes: 1=Yes/-1=Not on questionnaire
+F1MEDBEN,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 41,F1_MEDS_BENDRO; Medications/drugs: bendrofluazide; codes: 1=Yes
+F1MEDAML,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 42,F1_MEDS_AMLODIPINE; Medications/drugs: amplodipine (Istin); codes: 1=Yes/-1=Not on questionnaire
+F1MEDDIG,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 43,F1_MEDS_DIGOXIN; Medications/drugs: digoxin; codes: 1=Yes
+F1MEDPAR,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 44,F1_MEDS_PARACET; Medications/drugs: paracetamol; codes: 1=Yes/-1=Not on questionnaire
+F1MEDPRO,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 45,F1_MEDS_PROPRANOLOL; Medications/drugs: propranolol; codes: 1=Yes
+F1MEDATN,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 46,F1_MEDS_ATENOLOL; Medications/drugs: atenolol; codes: 1=Yes
+F1MEDWAR,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 47,F1_MEDS_WARFARIN; Medications/drugs: warfarin; codes: 1=Yes
+F1MEDPRE,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 48,F1_MEDS_PREDNIS; Medications/drugs: prednisolone; codes: 1=Yes/-1=Not on questionnaire
+F1MEDLOS,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 49,F1_MEDS_LOSECZOTON; Medications/drugs: Losec/Zoton; codes: 1=Yes/-1=Not on questionnaire
+F1MEDPRZ,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 50,F1_MEDS_PROZAC; Medications/drugs: Prozac; codes: 1=Yes
+F1MEDINS,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 51,F1_MEDS_INSULIN; Medications/drugs: insulin; codes: 1=Yes
+F1MEDCOP,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 52,F1_MEDS_COPROX; Medications/drugs: co-proxamol (Distalgesic); codes: 1=Yes/-1=Not on questionnaire
+F1MEDAMI,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 53,F1_MEDS_AMITRYP; Medications/drugs: amitryptiline (Tryptizol); codes: 1=Yes/-1=Not on questionnaire
+F1MEDSLE,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 54,F1_MEDS_SLEEPING; Medications/drugs: sleeping pills; codes: 1=Yes
+F1MEDLIT,resurvey_3yr,medications,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 55,F1_MEDS_LITHIUM; Medications/drugs: lithium; codes: 1=Yes/-1=Not on questionnaire
+F1FQORGN,resurvey_3yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 56,F1_FREQ_ORGANIC; How often: eat organic food; codes: 1=Never/2=Sometimes/3=Usually/4=Always/-1=Not on questionnaire
+F15YDIET,resurvey_3yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 57,"F1_NEWDIET; Major diet changes in last 5 years?; codes: 1=Yes, because of illness/2=No/3=Yes, for some other reason"
+F1ALCNUM,resurvey_3yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 58,F1_ALCOHOL_DRINKS; Alcohol: number of alcoholic drinks per week; codes: 97=Unknown (lots/many/too much/97+ etc)/99=Unknown (tick/?/varies etc) 
+F1ALCEAT,resurvey_3yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 59,F1_ALCOHOL_WITHMEAL; Alcohol: drink with meals; codes: 1=Yes/2=No/3=It varies
+F1ALCDAY,resurvey_3yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 60,F1_ALCOHOL_FREQ; Alcohol: number of drinking days per week
+F1DRTEA,resurvey_3yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 61,F1_QTY_TEA; Drinks (cups/glasses per day): tea; codes: 97=Unknown (lots/many/too much/97+ etc)/99=Unknown (tick/?/varies etc) 
+F1DRCOF,resurvey_3yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 62,F1_QTY_COFFEE; Drinks (cups/glasses per day): coffee; codes: 97=Unknown (lots/many/too much/97+ etc)/99=Unknown (tick/?/varies etc) 
+F1SIZE,resurvey_3yr,anthropometric,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 63,F1_CLOTHES; Clothes size now: average clothes size (derived variable); codes: 1=10 or less/2=10/12/3=12/4=12/14/5=14/6=14/16/7=16/8=16/18/9=18/10=18/20+/11=20
+F1BRA,resurvey_3yr,anthropometric,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 64,F1_BRA; Bra size now: average bra size (derived variable); codes: 1=32/2=32/34/3=34/4=34/36/5=36/6=36/38/7=38/8=38/40/9=40/10=40/42+/11=42+
+F1CUP,resurvey_3yr,anthropometric,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 65,F1_CUP; Bra cup size now: average cup size (derived variable); codes: 1=AA/A/2=A/B/3=B/4=B/C/5=C/6=C/D/7=D/8=D/DD+/9=DD+
+F1WST,resurvey_3yr,anthropometric,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 66,F1_WAIST; Waist now: cm (calculated from inches); range [60-110]
+F1HIPS,resurvey_3yr,anthropometric,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 67,F1_HIPS; Hips now: cm (calculated from inches); range [80-130]
+F1WGT,resurvey_3yr,anthropometric,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 68,F1_WEIGHT; Weight now: kg (calculated from stones/pounds); range [35-195]
+F1BMI,resurvey_3yr,anthropometric,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 69,F1_BMI; Body mass index (kg/m2)
+F1BWGTKG,resurvey_3yr,early_life,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 70,F1_BIRTH_WEIGHT; Birth weight (kg) (calculated from pounds/ounces); range [0.5-10]
+F1BRFED,resurvey_3yr,early_life,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 71,F1_BREASTFED; Breastfed as a baby (yes/no); codes: 1=Yes/2=No/3=Do not know
+F1MSMBTH,resurvey_3yr,early_life,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 72,F1_MOTHER_SMOKE_BIRTH; Parental smoking: mother smoked at birth; codes: 1=Yes/2=No/3=Do not know
+F1FSMBTH,resurvey_3yr,early_life,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 73,F1_FATHER_SMOKE_BIRTH; Parental smoking: father smoked at birth; codes: 1=Yes/2=No/3=Do not know
+F1MSM10,resurvey_3yr,early_life,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 74,F1_MOTHER_SMOKE_AGE10; Parental smoking: mother smoked when aged 10; codes: 1=Yes/2=No/3=Do not know
+F1FSM10,resurvey_3yr,early_life,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 75,F1_FATHER_SMOKE_AGE10; Parental smoking: father smoked when aged 10; codes: 1=Yes/2=No/3=Do not know
+F1BODY10,resurvey_3yr,early_life,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 76,F1_BODYSIZE_AGE_10; Body size at age 10 compared to average; codes: 1=Thinner/2=Plumper/3=About average
+F1SZ20,resurvey_3yr,early_life,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 77,F1_CLOTHES20; Clothes size when aged 20: average clothes size (derived variable); codes: 1=8 or less/2=8/10/3=10/4=10/12/5=12/6=12/14/7=14/8=14/16/9=16/10=16/18+/11=18+
+F1MALIVE,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 78,F1_MOTHER_ALIVE; Mother: still alive; codes: 1=Yes/2=No/3=Do not know
+F1MAGE,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 79,F1_MOTHER_AGE; Mother: age now (if alive)
+F1MDAGE,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 80,F1_MOTHER_AGE_DIED; Mother: age when died
+F1MDHRT,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 81,F1_MOTHER_COD_HEARTDIS; Mother (cause of death): heart disease; codes: 1=Yes
+F1MDSTR,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 82,F1_MOTHER_COD_STROKE; Mother (cause of death): stroke; codes: 1=Yes
+F1MDPNU,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 83,"F1_MOTHER_COD_CHESTINF; Mother (cause of death): chest infection, pneumonia; codes: 1=Yes"
+F1MDOLD,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 84,F1_MOTHER_COD_OLDAGE; Mother (cause of death): old age; codes: 1=Yes/-1=Not on questionnaire
+F1MDCABR,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 85,F1_MOTHER_COD_BREASTCA; Mother (cause of death): cancer (breast); codes: 1=Yes
+F1MDCAWO,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 86,F1_MOTHER_COD_WOMBCA; Mother (cause of death): cancer (womb); codes: 1=Yes/-1=Not on questionnaire
+F1MDCAOV,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 87,F1_MOTHER_COD_OVARYCA; Mother (cause of death): cancer (ovary); codes: 1=Yes
+F1MHDIS,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 88,F1_MOTHER_HEARTDIS; Family history (mother): heart disease; codes: 1=Yes
+F1FHDIS,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 89,F1_FATHER_HEARTDIS; Family history (father): heart disease; codes: 1=Yes/-1=Not on questionnaire
+F1MSTROK,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 90,F1_MOTHER_STROKE; Family history (mother): stroke; codes: 1=Yes
+F1FSTROK,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 91,F1_FATHER_STROKE; Family history (father): stroke; codes: 1=Yes/-1=Not on questionnaire
+F1MBP,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 92,F1_MOTHER_BP; Family history (mother): high blood pressure; codes: 1=Yes
+F1FBP,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 93,F1_FATHER_BP; Family history (father): high blood pressure; codes: 1=Yes/-1=Not on questionnaire
+F1MDIAB,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 94,F1_MOTHER_DIABETES; Family history (mother): diabetes; codes: 1=Yes
+F1FDIAB,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 95,F1_FATHER_DIABETES; Family history (father): diabetes; codes: 1=Yes/-1=Not on questionnaire
+F1MALZ,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 96,F1_MOTHER_ALZ; Family history (mother): Alzheimer's; codes: 1=Yes
+F1FALZ,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 97,F1_FATHER_ALZ; Family history (father): Alzheimer's; codes: 1=Yes/-1=Not on questionnaire
+F1MPARK,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 98,F1_MOTHER_PARKINSONS; Family history (mother): Parkinson's; codes: 1=Yes
+F1FPARK,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 99,F1_FATHER_PARKINSONS; Family history (father): Parkinson's; codes: 1=Yes/-1=Not on questionnaire
+F1MDEPR,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 100,F1_MOTHER_DEPRESSION; Family history (mother): severe depression; codes: 1=Yes/-1=Not on questionnaire
+F1FDEPR,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 101,F1_FATHER_DEPRESSION; Family history (father): severe depression; codes: 1=Yes/-1=Not on questionnaire
+F1MCABR,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 102,F1_MOTHER_BREASTCA; Family history (mother): breast cancer; codes: 1=Yes
+F1FCABR,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 103,F1_FATHER_BREASTCA; Family history (father): breast cancer; codes: 1=Yes/-1=Not on questionnaire
+F1MBOWEL,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 104,F1_MOTHER_BOWELCA; Family history (mother): bowel cancer; codes: 1=Yes/-1=Not on questionnaire
+F1FBOWEL,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 105,F1_FATHER_BOWELCA; Family history (father): bowel cancer; codes: 1=Yes/-1=Not on questionnaire
+F1MLUNG,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 106,F1_MOTHER_LUNGCA; Family history (mother): lung cancer; codes: 1=Yes/-1=Not on questionnaire
+F1FLUNG,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 107,F1_FATHER_LUNGCA; Family history (father): lung cancer; codes: 1=Yes/-1=Not on questionnaire
+F1FPROS,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 108,F1_FATHER_PROSTATECA; Family history (father): prostate cancer; codes: 1=Yes/-1=Not on questionnaire
+F1MOSTEO,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 109,F1_MOTHER_OSTEOP; Family history (mother): osteoporosis; codes: 1=Yes
+F1FOSTEO,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 110,F1_FATHER_OSTEOP; Family history (father): osteoporosis; codes: 1=Yes/-1=Not on questionnaire
+F1MHIP,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 111,F1_MOTHER_HIPFRAC; Family history (mother): hip fracture; codes: 1=Yes/-1=Not on questionnaire
+F1FHIP,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 112,F1_FATHER_HIPFRAC; Family history (father): hip fracture; codes: 1=Yes/-1=Not on questionnaire
+F1MARTH,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 113,F1_MOTHER_ARTHRITIS; Family history (mother): severe arthritis; codes: 1=Yes
+F1FARTH,resurvey_3yr,family_history,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 114,F1_FATHER_ARTHRITIS; Family history (father): severe arthritis; codes: 1=Yes/-1=Not on questionnaire
+F1MHTCM,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 115,F1_MOTHER_HEIGHT; Mother: height (cm) (calculated from feet/inches); range [120-210]
+F1FHTCM,resurvey_3yr,parental_mortality,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 116,F1_FATHER_HEIGHT; Father: height (cm) (calculated from feet/inches); range [120-210]; codes: -1=Unable to derive (not asked on questionnaire)
+F1CIGSPD,resurvey_3yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 117,F1_CIGS_PER_DAY; Smoking: average number of cigarettes smoked per day; codes: 1=None/2=Less than 5/3=5-9/4=10-14/5=15-19/6=20-24/7=25 or more
+F1SMOKE,resurvey_3yr,behavioral,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 118,F1_SMOKING_STATUS; Smoking: smoking status; codes: 1=Never/2=Past/3=Current
+F1MENO,resurvey_3yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 119,"F1_MENOPAUSE; Menopause: menopause yet?; codes: 1=Yes/2=No/3=Not sure (because periods irregular, taking HRT etc)/-1=Not on ques"
+F1MENOAG,resurvey_3yr,reproductive_hormonal,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 120,F1_MENOPAUSE_AGE; Menopause: age at menopause; codes: -1=Not asked on questionnaire/77=Turners syndrome/Never had periods/99=Unknown (
+F1WRK,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 121,"F1_WORK; Employment: currently in paid work; codes: 1=Yes, full time/2=No/3=Yes, part time"
+F1PART,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 122,F1_PARTNER; Currently married or living with husband/partner; codes: 1=Yes/2=No
+F1PARTSM,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 123,F1_PARTNER_SMOKE; Husband/partner smokes; codes: 1=Yes/2=No
+F1MOBFRQ,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 124,F1_MOBILE_PHONE; Mobile phone: current usage frequency; codes: 1=Never/2=Ever
+F1MOBYRS,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 125,F1_MOBILE_PHONE_YEARS; Mobile phone: duration (years) of use
+F1ACTREL,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 126,F1_ACTIVITY_RELIGIOUS; Social groups/activities: religious group; codes: 1=Yes
+F1ACTART,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 127,F1_ACTIVITY_ARTCRAFT; Social groups/activities: art/craft group; codes: 1=Yes
+F1ACTBIN,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 128,F1_ACTIVITY_BINGO; Social groups/activities: bingo; codes: 1=Yes/-1=Not on questionnaire
+F1ACTVOL,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 129,F1_ACTIVITY_VOLUNTARY; Social groups/activities: voluntary work; codes: 1=Yes
+F1ACTMUS,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 130,F1_ACTIVITY_MUSIC; Social groups/activities: music/singing group; codes: 1=Yes
+F1ACTEDU,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 131,F1_ACTIVITY_ADULTED; Social groups/activities: adult education; codes: 1=Yes
+F1ACTSPO,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 132,F1_ACTIVITY_SPORT; Social groups/activities: sports club; codes: 1=Yes
+F1ACTDAN,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 133,F1_ACTIVITY_DANCING; Social groups/activities: dancing group; codes: 1=Yes
+F1ACTYOG,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 134,F1_ACTIVITY_YOGA; Social groups/activities: yoga etc; codes: 1=Yes
+F1ACTOTH,resurvey_3yr,socioeconomic,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 135,F1_ACTIVITY_OTHER; Social groups/activities: other group activity; codes: 1=Yes
+F1HAPPY,resurvey_3yr,wellbeing_sleep,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 136,F1_FEEL_HAPPY; Frequency of: feeling happy; codes: 1=Rarely/never/2=Sometimes/3=Usually/4=Most of the time
+F1RELAX,resurvey_3yr,wellbeing_sleep,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 137,F1_FEEL_RELAXED; Frequency of: feeling relaxed; codes: 1=Rarely/never/2=Sometimes/3=Usually/4=Most of the time
+F1CONTRL,resurvey_3yr,wellbeing_sleep,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 138,F1_FEEL_CONTROL; Frequency of: feeling in control; codes: 1=Rarely/never/2=Sometimes/3=Usually/4=Most of the time
+F1STRESS,resurvey_3yr,wellbeing_sleep,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 139,F1_FEEL_STRESSED; Frequency of: feeling stressed; codes: 1=Rarely/never/2=Sometimes/3=Usually/4=Most of the time
+F1TIRED,resurvey_3yr,wellbeing_sleep,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 140,F1_FEEL_TIRED; Frequency of: feeling tired; codes: 1=Rarely/never/2=Sometimes/3=Usually/4=Most of the time
+F1NAP,resurvey_3yr,wellbeing_sleep,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 141,F1_NAP; Frequency of: daytime naps; codes: 1=Rarely/never/2=Sometimes/3=Usually
+F1SLEEP,resurvey_3yr,wellbeing_sleep,converted,millionwomenstudydatadictionary-v1-21.xlsx 3-year resurvey row 142,F1_SLEEP; Total sleep duration every 24 hours; codes: 99=Unknown (tick/?/varies etc) 
+F1NKJ,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 8,"F1_NUTRIENT_KJ; Derived nutrients: energy (kJ/day); no stated range, all 'Derived'"
+F1NPROT,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 9,"F1_NUTRIENT_PROTEIN; Derived nutrients: protein (g/day); no stated range, all 'Derived'"
+F1NTFAT,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 10,"F1_NUTRIENT_FAT_TOTAL; Derived nutrients: total fat (g/day); no stated range, all 'Derived'"
+F1NCARB,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 11,"F1_NUTRIENT_CARB; Derived nutrients: carbohydate (g/day); no stated range, all 'Derived'"
+F1NSFAT,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 12,"F1_NUTRIENT_FAT_SAT; Derived nutrients: saturated fatty acids (g/day); no stated range, all 'Derived'"
+F1NEFIB,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 13,"F1_NUTRIENT_ENGLYST; Derived nutrients: englyst fibre (g/day); no stated range, all 'Derived'"
+F1NFSUG,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 14,"F1_NUTRIENT_FREE_SUGAR; Derived nutrients: free sugar (g/day); no stated range, all 'Derived'"
+F1NMEAT,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 15,"F1_NUTRIENT_MEAT; Derived foods: meat (g/day); no stated range, all 'Derived'"
+F1NMILK,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 16,"F1_NUTRIENT_MILK; Derived foods: milk (g/day); no stated range, all 'Derived'"
+F1NCHEES,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 17,"F1_NUTRIENT_CHEESE; Derived foods: cheese (g/day); no stated range, all 'Derived'"
+F1NYOG,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 18,"F1_NUTRIENT_YOGURT; Derived foods: yogurt (g/day); no stated range, all 'Derived'"
+F1NEGG,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 19,"F1_NUTRIENT_EGGS; Derived foods: eggs (g/day); no stated range, all 'Derived'"
+F1NFRUIT,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 20,"F1_NUTRIENT_FRUIT; Derived foods: fruit (g/day); no stated range, all 'Derived'"
+F1NVEG,resurvey_3yr,dietary,converted,millionwomenstudydatadictionary-v1-21.xlsx Dietary data at 3-year resurvey row 21,"F1_NUTRIENT_VEG; Derived foods: vegetables (g/day); no stated range, all 'Derived'"

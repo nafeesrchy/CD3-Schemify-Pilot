@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/medications.json",
+  "title": "MWS 3-year resurvey — Medications",
+  "description": "Whether the participant used any medication (other than HRT) for most of the last 4 weeks, and which specific medications, reported at the 3-year resurvey.",
+  "type": "object",
+  "x-variable-group": "medications",
+  "properties": {
+    "F1MED": {
+      "title": "Used any medication/drug (not HRT) for most of the last 4 weeks",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Steward confirmed this gates all 19 specific medication fields below, same shape as parental_mortality's F1MALIVE gate over its cause-of-death block (D071) -- the real questionnaire wording asks 'if yes, was it...' before listing the specific drugs, so a No answer here means the specific-drug checkboxes were never reached -- D075."
+    },
+    "F1MEDTHY": {
+      "title": "Medication: thyroxine",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style: the source documents only '1=Yes', no '2=No'. not_applicable is pinned when F1MED=2 (No medication) -- D075. Within the F1MED=1 universe, an unchecked box still falls to missing_numeric -- checkbox semantics mean most of the 19 fields are legitimately non-1 for any given participant, so no applicability rule forces this field real even when F1MED=1."
+    },
+    "F1MEDIBU": {
+      "title": "Medication: ibuprofen",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MEDTHY."
+    },
+    "F1MEDASP": {
+      "title": "Medication: aspirin",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MEDTHY."
+    },
+    "F1MEDTAM": {
+      "title": "Medication: tamoxifen",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MEDTHY, plus its own version-gated -1='Not on questionnaire' code (No on 9903/9907, Yes on 9909/0012), unenforced against F1QTYPE like the package's other such fields."
+    },
+    "F1MEDBEN": {
+      "title": "Medication: bendrofluazide",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MEDTHY."
+    },
+    "F1MEDAML": {
+      "title": "Medication: amlodipine (Istin)",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MEDTHY, plus its own version-gated -1 code (No on 9903/9907, Yes on 9909/0012)."
+    },
+    "F1MEDDIG": {
+      "title": "Medication: digoxin",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MEDTHY."
+    },
+    "F1MEDPAR": {
+      "title": "Medication: paracetamol",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MEDTHY, plus its own version-gated -1 code (No on 9903/9907, Yes on 9909/0012)."
+    },
+    "F1MEDPRO": {
+      "title": "Medication: propranolol",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MEDTHY."
+    },
+    "F1MEDATN": {
+      "title": "Medication: atenolol",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MEDTHY."
+    },
+    "F1MEDWAR": {
+      "title": "Medication: warfarin",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MEDTHY."
+    },
+    "F1MEDPRE": {
+      "title": "Medication: prednisolone",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MEDTHY, plus its own version-gated -1 code (No on 9903/9907, Yes on 9909/0012)."
+    },
+    "F1MEDLOS": {
+      "title": "Medication: Losec/Zoton",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MEDTHY, plus its own version-gated -1 code (No on 9903/9907, Yes on 9909/0012)."
+    },
+    "F1MEDPRZ": {
+      "title": "Medication: Prozac",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MEDTHY."
+    },
+    "F1MEDINS": {
+      "title": "Medication: insulin",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MEDTHY."
+    },
+    "F1MEDCOP": {
+      "title": "Medication: co-proxamol (Distalgesic)",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MEDTHY, plus its own version-gated -1 code (No on 9903/9907, Yes on 9909/0012)."
+    },
+    "F1MEDAMI": {
+      "title": "Medication: amitryptiline (Tryptizol)",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MEDTHY, plus its own version-gated -1 code (No on 9903/9907, Yes on 9909/0012)."
+    },
+    "F1MEDSLE": {
+      "title": "Medication: sleeping pills",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MEDTHY."
+    },
+    "F1MEDLIT": {
+      "title": "Medication: lithium",
+      "x-universe": "Participants who used a medication in the last 4 weeks (F1MED=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MEDTHY, plus its own version-gated -1 code (No on 9903/9907, Yes on 9909/0012)."
+    }
+  },
+  "required": ["F1MED", "F1MEDTHY", "F1MEDIBU", "F1MEDASP", "F1MEDTAM", "F1MEDBEN", "F1MEDAML", "F1MEDDIG", "F1MEDPAR", "F1MEDPRO", "F1MEDATN", "F1MEDWAR", "F1MEDPRE", "F1MEDLOS", "F1MEDPRZ", "F1MEDINS", "F1MEDCOP", "F1MEDAMI", "F1MEDSLE", "F1MEDLIT"]
+}

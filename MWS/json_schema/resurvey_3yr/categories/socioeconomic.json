@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/socioeconomic.json",
+  "title": "MWS 3-year resurvey — Socioeconomic",
+  "description": "Employment, partnership, mobile phone use, and social group/activity participation, reported at the 3-year resurvey.",
+  "type": "object",
+  "x-variable-group": "socioeconomic",
+  "properties": {
+    "F1WRK": {
+      "title": "Currently in paid work",
+      "oneOf": [
+        { "const": 1, "title": "Yes, full time" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "Yes, part time" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version. Independent of the other fields in this category."
+    },
+    "F1PART": {
+      "title": "Currently married or living with husband/partner",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Steward confirmed this gates F1PARTSM -- only a participant with a partner (F1PART=1) can answer whether that partner smokes."
+    },
+    "F1PARTSM": {
+      "title": "Husband/partner smokes",
+      "x-universe": "Participants who currently have a husband/partner (F1PART=1).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "not_applicable branch enforced by a mother-file skip pair keyed on F1PART -- D073, steward-confirmed."
+    },
+    "F1MOBFRQ": {
+      "title": "Mobile phone: current usage",
+      "oneOf": [
+        { "const": 1, "title": "Never" },
+        { "const": 2, "title": "Ever" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Not available on the 9903/9907 versions (mobile phones were newer technology at the earliest fielding dates) -- no source-documented -1 code for this field, though, so no such sentinel is added; transcribed as given, not invented."
+    },
+    "F1MOBYRS": {
+      "title": "Mobile phone: duration of use",
+      "x-unit": "years",
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 20 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Steward confirmed no skip pair is needed against F1MOBFRQ -- a participant who has never used a mobile phone answers 0 directly, a real value, same reasoning as the alcohol trio (D058). Source states no valid range; 0-20 years is an agent-decided plausibility ceiling, given mobile phones were still a relatively new technology at this wave's fielding dates. Not available on the 9903/9907 versions, same as F1MOBFRQ."
+    },
+    "F1ACTREL": {
+      "title": "Social groups/activities: religious group",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style 'tick all that apply' list: the source documents only '1=Yes' for this field, no '2=No', and there is no gating field over the 9 activity checkboxes (unlike parental_mortality's cause-of-death block, which is gated by F1MALIVE) -- any non-1 value is generic missing_numeric."
+    },
+    "F1ACTART": {
+      "title": "Social groups/activities: art/craft group",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1ACTREL."
+    },
+    "F1ACTBIN": {
+      "title": "Social groups/activities: bingo",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1ACTREL, but this field additionally documents its own -1='Not on questionnaire' code, lining up cleanly with its version-availability (No on 9903/9907, Yes on 9909/0012)."
+    },
+    "F1ACTVOL": {
+      "title": "Social groups/activities: voluntary work",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1ACTREL."
+    },
+    "F1ACTMUS": {
+      "title": "Social groups/activities: music/singing group",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1ACTREL."
+    },
+    "F1ACTEDU": {
+      "title": "Social groups/activities: adult education",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1ACTREL."
+    },
+    "F1ACTSPO": {
+      "title": "Social groups/activities: sports club",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1ACTREL."
+    },
+    "F1ACTDAN": {
+      "title": "Social groups/activities: dancing group",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1ACTREL."
+    },
+    "F1ACTYOG": {
+      "title": "Social groups/activities: yoga etc",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1ACTREL."
+    },
+    "F1ACTOTH": {
+      "title": "Social groups/activities: other group activity",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1ACTREL."
+    }
+  },
+  "required": ["F1WRK", "F1PART", "F1PARTSM", "F1MOBFRQ", "F1MOBYRS", "F1ACTREL", "F1ACTART", "F1ACTBIN", "F1ACTVOL", "F1ACTMUS", "F1ACTEDU", "F1ACTSPO", "F1ACTDAN", "F1ACTYOG", "F1ACTOTH"]
+}

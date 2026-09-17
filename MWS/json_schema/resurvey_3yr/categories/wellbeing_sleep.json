@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/wellbeing_sleep.json",
+  "title": "MWS 3-year resurvey — Wellbeing/Sleep",
+  "description": "Self-rated frequency of mood/wellbeing feelings, daytime napping, and total sleep duration, reported at the 3-year resurvey. All 7 fields are independent and available on every questionnaire version -- no skip patterns among them.",
+  "type": "object",
+  "x-variable-group": "wellbeing_sleep",
+  "properties": {
+    "F1HAPPY": {
+      "title": "Frequency of feeling happy",
+      "oneOf": [
+        { "const": 1, "title": "Rarely/never" },
+        { "const": 2, "title": "Sometimes" },
+        { "const": 3, "title": "Usually" },
+        { "const": 4, "title": "Most of the time" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version."
+    },
+    "F1RELAX": {
+      "title": "Frequency of feeling relaxed",
+      "oneOf": [
+        { "const": 1, "title": "Rarely/never" },
+        { "const": 2, "title": "Sometimes" },
+        { "const": 3, "title": "Usually" },
+        { "const": 4, "title": "Most of the time" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same 4-level shape as F1HAPPY, an independent question."
+    },
+    "F1CONTRL": {
+      "title": "Frequency of feeling in control",
+      "oneOf": [
+        { "const": 1, "title": "Rarely/never" },
+        { "const": 2, "title": "Sometimes" },
+        { "const": 3, "title": "Usually" },
+        { "const": 4, "title": "Most of the time" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same 4-level shape as F1HAPPY, an independent question."
+    },
+    "F1STRESS": {
+      "title": "Frequency of feeling stressed",
+      "oneOf": [
+        { "const": 1, "title": "Rarely/never" },
+        { "const": 2, "title": "Sometimes" },
+        { "const": 3, "title": "Usually" },
+        { "const": 4, "title": "Most of the time" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same 4-level shape as F1HAPPY, an independent question."
+    },
+    "F1TIRED": {
+      "title": "Frequency of feeling tired",
+      "oneOf": [
+        { "const": 1, "title": "Rarely/never" },
+        { "const": 2, "title": "Sometimes" },
+        { "const": 3, "title": "Usually" },
+        { "const": 4, "title": "Most of the time" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same 4-level shape as F1HAPPY, an independent question."
+    },
+    "F1NAP": {
+      "title": "Frequency of daytime naps",
+      "oneOf": [
+        { "const": 1, "title": "Rarely/never" },
+        { "const": 2, "title": "Sometimes" },
+        { "const": 3, "title": "Usually" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Only 3 levels (no 'Most of the time' option), unlike the 5 feeling-frequency fields above -- transcribed verbatim from the source's own code list."
+    },
+    "F1SLEEP": {
+      "title": "Total sleep duration",
+      "x-unit": "hours/24 hours",
+      "oneOf": [
+        { "type": "number", "minimum": 0, "maximum": 24 },
+        { "const": 99, "title": "Unknown (tick/?/varies etc)" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range, but the field's own 'every 24 hours' framing structurally caps it at 24 -- not a stated D/E bound, but a structural fact rather than a guess, same reasoning as F1ALCDAY's 7-day cap (D061). Type number since sleep duration can be fractional (e.g. 7.5 hours). The source's own 99 code is kept as its own const branch, not merged into missing_numeric, same treatment as F1MENOAG's 77/99 (D051)."
+    }
+  },
+  "required": ["F1HAPPY", "F1RELAX", "F1CONTRL", "F1STRESS", "F1TIRED", "F1NAP", "F1SLEEP"]
+}

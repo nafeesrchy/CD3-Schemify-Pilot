@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/anthropometric.json",
+  "title": "MWS 3-year resurvey — Anthropometric",
+  "description": "Clothes/bra/cup size, waist, hips, weight, and BMI reported or calculated at the 3-year resurvey. All 7 fields are derived or calculated, and available for every questionnaire version -- no not_on_questionnaire sentinel applies to this category, and no skip patterns exist among these independent measures.",
+  "type": "object",
+  "x-variable-group": "anthropometric",
+  "properties": {
+    "F1SIZE": {
+      "title": "Clothes size now",
+      "description": "Derived, average clothes size.",
+      "oneOf": [
+        { "const": 1, "title": "10 or less" },
+        { "const": 2, "title": "10/12" },
+        { "const": 3, "title": "12" },
+        { "const": 4, "title": "12/14" },
+        { "const": 5, "title": "14" },
+        { "const": 6, "title": "14/16" },
+        { "const": 7, "title": "16" },
+        { "const": 8, "title": "16/18" },
+        { "const": 9, "title": "18" },
+        { "const": 10, "title": "18/20+" },
+        { "const": 11, "title": "20+" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "No recruitment analogue -- clothes size was not asked at recruitment. Available on every questionnaire version."
+    },
+    "F1BRA": {
+      "title": "Bra size now",
+      "description": "Derived, average bra size.",
+      "oneOf": [
+        { "const": 1, "title": "32" },
+        { "const": 2, "title": "32/34" },
+        { "const": 3, "title": "34" },
+        { "const": 4, "title": "34/36" },
+        { "const": 5, "title": "36" },
+        { "const": 6, "title": "36/38" },
+        { "const": 7, "title": "38" },
+        { "const": 8, "title": "38/40" },
+        { "const": 9, "title": "40" },
+        { "const": 10, "title": "40/42+" },
+        { "const": 11, "title": "42+" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "No recruitment analogue. Available on every questionnaire version."
+    },
+    "F1CUP": {
+      "title": "Bra cup size now",
+      "description": "Derived, average cup size.",
+      "oneOf": [
+        { "const": 1, "title": "AA/A" },
+        { "const": 2, "title": "A/B" },
+        { "const": 3, "title": "B" },
+        { "const": 4, "title": "B/C" },
+        { "const": 5, "title": "C" },
+        { "const": 6, "title": "C/D" },
+        { "const": 7, "title": "D" },
+        { "const": 8, "title": "D/DD+" },
+        { "const": 9, "title": "DD+" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "No recruitment analogue. Available on every questionnaire version."
+    },
+    "F1WST": {
+      "title": "Waist now",
+      "x-unit": "cm",
+      "description": "Calculated from inches.",
+      "anyOf": [
+        { "type": "number", "minimum": 60, "maximum": 110 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Valid range 60-110 is source-stated. Type number (not integer) since an inches-to-cm conversion can be fractional, same reasoning as recruitment's RHEIGHT/RWGT (D017)."
+    },
+    "F1HIPS": {
+      "title": "Hips now",
+      "x-unit": "cm",
+      "description": "Calculated from inches.",
+      "anyOf": [
+        { "type": "number", "minimum": 80, "maximum": 130 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Valid range 80-130 is source-stated. Type number, same reasoning as F1WST."
+    },
+    "F1WGT": {
+      "title": "Weight now",
+      "x-unit": "kg",
+      "description": "Calculated from stones/pounds.",
+      "anyOf": [
+        { "type": "number", "minimum": 35, "maximum": 195 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Valid range 35-195 is source-stated (recruitment's RWGT had a narrower stated range of 35-150 -- transcribed as given, not reconciled). Type number, same reasoning as F1WST."
+    },
+    "F1BMI": {
+      "title": "Body mass index",
+      "x-unit": "kg/m2",
+      "anyOf": [
+        { "type": "number", "minimum": 10, "maximum": 80 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 10-80 reuses recruitment's RBMI bound (D018) for consistency rather than re-deriving a fresh one."
+    }
+  },
+  "required": ["F1SIZE", "F1BRA", "F1CUP", "F1WST", "F1HIPS", "F1WGT", "F1BMI"]
+}

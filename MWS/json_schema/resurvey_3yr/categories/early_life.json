@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/early_life.json",
+  "title": "MWS 3-year resurvey — Early Life",
+  "description": "Birth weight, breastfeeding, parental smoking, and childhood/young-adult body size, recalled retrospectively at the 3-year resurvey. All 8 fields are independent and available on every questionnaire version -- no skip patterns among them.",
+  "type": "object",
+  "x-variable-group": "early_life",
+  "properties": {
+    "F1BWGTKG": {
+      "title": "Birth weight",
+      "x-unit": "kg",
+      "description": "Calculated from pounds/ounces.",
+      "anyOf": [
+        { "type": "number", "minimum": 0.5, "maximum": 10 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Valid range 0.5-10 kg is source-stated."
+    },
+    "F1BRFED": {
+      "title": "Breastfed as a baby",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "Do not know" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version."
+    },
+    "F1MSMBTH": {
+      "title": "Mother smoked at participant's birth",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "Do not know" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version."
+    },
+    "F1FSMBTH": {
+      "title": "Father smoked at participant's birth",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "Do not know" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version."
+    },
+    "F1MSM10": {
+      "title": "Mother smoked when participant was aged 10",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "Do not know" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version. Independent of F1MSMBTH -- asks about a different point in the participant's childhood, not a routed follow-up."
+    },
+    "F1FSM10": {
+      "title": "Father smoked when participant was aged 10",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "Do not know" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version. Independent of F1FSMBTH, same reasoning as F1MSM10."
+    },
+    "F1BODY10": {
+      "title": "Body size at age 10, compared to average",
+      "oneOf": [
+        { "const": 1, "title": "Thinner" },
+        { "const": 2, "title": "Plumper" },
+        { "const": 3, "title": "About average" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Available on every questionnaire version."
+    },
+    "F1SZ20": {
+      "title": "Clothes size when aged 20",
+      "description": "Derived, average clothes size.",
+      "oneOf": [
+        { "const": 1, "title": "8 or less" },
+        { "const": 2, "title": "8/10" },
+        { "const": 3, "title": "10" },
+        { "const": 4, "title": "10/12" },
+        { "const": 5, "title": "12" },
+        { "const": 6, "title": "12/14" },
+        { "const": 7, "title": "14" },
+        { "const": 8, "title": "14/16" },
+        { "const": 9, "title": "16" },
+        { "const": 10, "title": "16/18+" },
+        { "const": 11, "title": "18+" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same 11-level shape as F1SIZE (current clothes size, anthropometric category) but a distinct code list -- transcribed verbatim, not merged or reconciled with F1SIZE."
+    }
+  },
+  "required": ["F1BWGTKG", "F1BRFED", "F1MSMBTH", "F1FSMBTH", "F1MSM10", "F1FSM10", "F1BODY10", "F1SZ20"]
+}

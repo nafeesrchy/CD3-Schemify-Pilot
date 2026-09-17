@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/parental_mortality.json",
+  "title": "MWS 3-year resurvey — Parental Mortality",
+  "description": "Mother's survival status, age, and cause of death (if deceased), plus mother's and father's height, reported at the 3-year resurvey.",
+  "type": "object",
+  "x-variable-group": "parental_mortality",
+  "properties": {
+    "F1MALIVE": {
+      "title": "Mother still alive",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "const": 2, "title": "No" },
+        { "const": 3, "title": "Do not know" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Steward corrected an earlier draft: although the real questionnaire prints no skip instruction, a real structural relationship still exists and belongs in the schema -- same reasoning as recruitment's inferred RPSTOPAG/RHYSTAG/ROOPHAGE/RSTERAGE skip pairs (D028/D030). A mother-alive-or-deceased gate is enforced against F1MAGE, F1MDAGE, and the 7 cause-of-death fields below -- D071. F1MALIVE=3 (Do not know) is deliberately left unconstrained, same treatment as ROOPH=3/D030 and F1HTNPC=4/D052 -- steward explicitly confirmed this stays unconstrained."
+    },
+    "F1MAGE": {
+      "title": "Mother's age now, if alive",
+      "x-unit": "years",
+      "x-universe": "Participants whose mother is alive (F1MALIVE=1).",
+      "anyOf": [
+        { "type": "integer", "minimum": 40, "maximum": 115 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 40-115 is an agent-decided plausibility bound. not_applicable branch enforced by a mother-file skip pair keyed on F1MALIVE -- D071, corrects the earlier no-skip draft."
+    },
+    "F1MDAGE": {
+      "title": "Mother's age when she died",
+      "x-unit": "years",
+      "x-universe": "Participants whose mother has died (F1MALIVE=2).",
+      "anyOf": [
+        { "type": "integer", "minimum": 0, "maximum": 115 },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Source states no valid range; 0-115 is an agent-decided plausibility bound (death can occur at any age, including childhood or childbirth). not_applicable branch enforced by a mother-file skip pair keyed on F1MALIVE -- D071, corrects the earlier no-skip draft."
+    },
+    "F1MDHRT": {
+      "title": "Mother's cause of death: heart disease",
+      "x-universe": "Participants whose mother has died (F1MALIVE=2).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style: the source documents only '1=Yes' for this field, no '2=No'. not_applicable is pinned when F1MALIVE=1 (mother alive) -- D071, steward's correction: distinguishing 'mother alive, structurally not applicable' from 'mother deceased of a different, unrecorded cause' matters and should not both collapse into missing_numeric. Within the deceased universe, an unchecked box still falls to missing_numeric -- checkbox semantics mean most of the 7 cause fields are legitimately non-1 for any given deceased mother, so no applicability rule forces this field to a real value even when F1MALIVE=2."
+    },
+    "F1MDSTR": {
+      "title": "Mother's cause of death: stroke",
+      "x-universe": "Participants whose mother has died (F1MALIVE=2).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MDHRT."
+    },
+    "F1MDPNU": {
+      "title": "Mother's cause of death: chest infection/pneumonia",
+      "x-universe": "Participants whose mother has died (F1MALIVE=2).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MDHRT."
+    },
+    "F1MDOLD": {
+      "title": "Mother's cause of death: old age",
+      "x-universe": "Participants whose mother has died (F1MALIVE=2).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MDHRT, but this field additionally documents its own -1='Not on questionnaire' code -- unusually, the source's own availability columns mark this field 'Yes' (available) on every questionnaire version, which sits oddly alongside a version-gated sentinel. Steward's call: keep -1 exactly as the source coded it rather than reinterpret or drop it -- most likely a documentation inconsistency in the source itself, not something to correct on our end. not_applicable added per D071 like the rest of the cause-of-death fields."
+    },
+    "F1MDCABR": {
+      "title": "Mother's cause of death: cancer (breast)",
+      "x-universe": "Participants whose mother has died (F1MALIVE=2).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MDHRT."
+    },
+    "F1MDCAWO": {
+      "title": "Mother's cause of death: cancer (womb)",
+      "x-universe": "Participants whose mother has died (F1MALIVE=2).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MDHRT. Unlike F1MDOLD, this field's own -1 code lines up cleanly with its version-availability columns (No on 9903/9907, Yes on 9909/0012) -- the ordinary version-gated meaning. not_applicable added per D071."
+    },
+    "F1MDCAOV": {
+      "title": "Mother's cause of death: cancer (ovary)",
+      "x-universe": "Participants whose mother has died (F1MALIVE=2).",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_applicable" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MDHRT."
+    },
+    "F1MHTCM": {
+      "title": "Mother's height",
+      "x-unit": "cm",
+      "description": "Calculated from feet/inches.",
+      "anyOf": [
+        { "type": "number", "minimum": 120, "maximum": 210 },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Valid range 120-210 cm is source-stated. Not available on the 9903/9907 versions (same as F1FHTCM), but unlike F1FHTCM the source documents no -1 code for this field -- transcribed as given, not invented, per the package's four laws."
+    },
+    "F1FHTCM": {
+      "title": "Father's height",
+      "x-unit": "cm",
+      "description": "Calculated from feet/inches.",
+      "anyOf": [
+        { "type": "number", "minimum": 120, "maximum": 210 },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Valid range 120-210 cm is source-stated, same as F1MHTCM. Source's own -1='Unable to derive (not asked on questionnaire)' code lines up with this field's own version-availability (No on 9903/9907) -- kept as the source-documented sentinel, unenforced against F1QTYPE like the package's other version-gated fields (e.g. F1FQORGN, D059)."
+    }
+  },
+  "required": ["F1MALIVE", "F1MAGE", "F1MDAGE", "F1MDHRT", "F1MDSTR", "F1MDPNU", "F1MDOLD", "F1MDCABR", "F1MDCAWO", "F1MDCAOV", "F1MHTCM", "F1FHTCM"],
+  "$comment": "Skip family enforced by the mother file, keyed on F1MALIVE -- D071: F1MALIVE=1 (alive) pins F1MDAGE and all 7 cause-of-death fields to not_applicable and requires F1MAGE to be real; F1MALIVE=2 (deceased) pins F1MAGE to not_applicable and requires F1MDAGE to be real. F1MALIVE=3 (Do not know) is deliberately left unconstrained -- steward-confirmed. Still not-enforceable even with this gate in place: within the deceased universe, an unchecked cause-of-death box cannot be distinguished between 'confirmed not this cause' and 'genuinely unrecorded' -- checkbox semantics mean most of the 7 fields are legitimately non-1 for any given deceased mother, so this residual ambiguity is not resolvable by the F1MALIVE gate alone and is documented here rather than forced."
+}

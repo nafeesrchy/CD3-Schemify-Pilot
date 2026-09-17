@@ -230,7 +230,7 @@
         { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 20-70 is an agent-decided plausibility bound -- D024. not_applicable branch enforced by a mother-file skip pair keyed on RPSTOPYN -- D028 (inferred routing, pending steward confirmation)."
+      "$comment": "Source states no valid range; 20-70 is an agent-decided plausibility bound -- D024. not_applicable branch enforced by a mother-file skip pair keyed on RPSTOPYN -- D028 (inferred routing, steward-confirmed)."
     }
   },
   "required": ["RANYCHLD", "RNUMFTP", "RAGEFB", "RAGELB", "RBFYN", "RBFNUM", "RBFDUR", "ROC", "ROCSTART", "ROCSTOP", "ROCDUR", "RHTNPC", "RHRTSTA", "RHTDUR", "RHRTSTO", "RHRTMP", "RHTTYPE", "RHTLU", "RMENARCH", "RPSTOPYN", "RPSTOPAG"],

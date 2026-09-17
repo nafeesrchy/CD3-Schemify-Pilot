@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/family_history.json",
+  "title": "MWS 3-year resurvey — Family History",
+  "description": "Family history of specific health conditions in the participant's mother and father, reported at the 3-year resurvey. 13 conditions asked of both parents, plus prostate cancer asked of the father only. All fields are independent checkbox-style items with no gating field -- steward confirmed no relationship to parental_mortality's F1MALIVE (family history of a condition is not tied to whether the parent is currently alive).",
+  "type": "object",
+  "x-variable-group": "family_history",
+  "properties": {
+    "F1MHDIS": {
+      "title": "Family history (mother): heart disease",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style: the source documents only '1=Yes', no '2=No', and no gating field applies -- any non-1 value is generic missing_numeric. Available on every questionnaire version."
+    },
+    "F1FHDIS": {
+      "title": "Family history (father): heart disease",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MHDIS, plus its own version-gated -1='Not on questionnaire' code (No on 9903/9907, Yes on 9909/0012) -- every one of the 14 father fields in this category carries this same code, cleanly matching its own version-availability."
+    },
+    "F1MSTROK": {
+      "title": "Family history (mother): stroke",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MHDIS."
+    },
+    "F1FSTROK": {
+      "title": "Family history (father): stroke",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1MBP": {
+      "title": "Family history (mother): high blood pressure",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MHDIS."
+    },
+    "F1FBP": {
+      "title": "Family history (father): high blood pressure",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1MDIAB": {
+      "title": "Family history (mother): diabetes",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MHDIS."
+    },
+    "F1FDIAB": {
+      "title": "Family history (father): diabetes",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1MALZ": {
+      "title": "Family history (mother): Alzheimer's",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MHDIS."
+    },
+    "F1FALZ": {
+      "title": "Family history (father): Alzheimer's",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1MPARK": {
+      "title": "Family history (mother): Parkinson's",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MHDIS."
+    },
+    "F1FPARK": {
+      "title": "Family history (father): Parkinson's",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1MDEPR": {
+      "title": "Family history (mother): severe depression",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MHDIS. Notably not available on the 9903/9907 versions (unlike most other mother fields in this category), but the source documents no -1 code for it here either -- steward confirmed to keep this asymmetry as given, not invent a matching sentinel."
+    },
+    "F1FDEPR": {
+      "title": "Family history (father): severe depression",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1MCABR": {
+      "title": "Family history (mother): breast cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MHDIS."
+    },
+    "F1FCABR": {
+      "title": "Family history (father): breast cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1MBOWEL": {
+      "title": "Family history (mother): bowel cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MHDIS. Not available on 9903/9907, no -1 documented -- same steward-confirmed asymmetry as F1MDEPR."
+    },
+    "F1FBOWEL": {
+      "title": "Family history (father): bowel cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1MLUNG": {
+      "title": "Family history (mother): lung cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MHDIS. Not available on 9903/9907, no -1 documented -- same steward-confirmed asymmetry as F1MDEPR."
+    },
+    "F1FLUNG": {
+      "title": "Family history (father): lung cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1FPROS": {
+      "title": "Family history (father): prostate cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS. No mother analogue -- prostate cancer is father-only, consistent with the anatomy."
+    },
+    "F1MOSTEO": {
+      "title": "Family history (mother): osteoporosis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MHDIS."
+    },
+    "F1FOSTEO": {
+      "title": "Family history (father): osteoporosis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1MHIP": {
+      "title": "Family history (mother): hip fracture",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1MHDIS. Not available on 9903/9907, no -1 documented -- same steward-confirmed asymmetry as F1MDEPR."
+    },
+    "F1FHIP": {
+      "title": "Family history (father): hip fracture",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    },
+    "F1MARTH": {
+      "title": "Family history (mother): severe arthritis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1MHDIS."
+    },
+    "F1FARTH": {
+      "title": "Family history (father): severe arthritis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same treatment as F1FHDIS."
+    }
+  },
+  "required": ["F1MHDIS", "F1FHDIS", "F1MSTROK", "F1FSTROK", "F1MBP", "F1FBP", "F1MDIAB", "F1FDIAB", "F1MALZ", "F1FALZ", "F1MPARK", "F1FPARK", "F1MDEPR", "F1FDEPR", "F1MCABR", "F1FCABR", "F1MBOWEL", "F1FBOWEL", "F1MLUNG", "F1FLUNG", "F1FPROS", "F1MOSTEO", "F1FOSTEO", "F1MHIP", "F1FHIP", "F1MARTH", "F1FARTH"]
+}

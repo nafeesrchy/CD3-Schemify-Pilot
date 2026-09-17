@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.org/cd3-mws-pilot/resurvey_3yr/categories/medical_history.json",
+  "title": "MWS 3-year resurvey — Medical History",
+  "description": "Illnesses in the past 5 years, conditions currently being treated, and overall self-rated health, reported at the 3-year resurvey. 5 of the 8 'treated now' fields have a matching 'illness in the past 5 years' field, but steward confirmed no skip logic is needed -- same reasoning as recruitment's medical_history (D032): an illness answer of No does not force the corresponding treated-now field to a structural-NA code.",
+  "type": "object",
+  "x-variable-group": "medical_history",
+  "properties": {
+    "F1HDIS": {
+      "title": "Illness in past 5 years: heart disease/problem",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style: only '1=Yes' documented, no '2=No', no skip pattern -- D079. Available on every questionnaire version."
+    },
+    "F1STRK": {
+      "title": "Illness in past 5 years: stroke",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS."
+    },
+    "F1DIAB": {
+      "title": "Illness in past 5 years: diabetes",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS."
+    },
+    "F1CLEG": {
+      "title": "Illness in past 5 years: clot in leg",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS."
+    },
+    "F1COTH": {
+      "title": "Illness in past 5 years: clot (other)",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS."
+    },
+    "F1CHOL": {
+      "title": "Illness in past 5 years: high blood cholesterol",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS."
+    },
+    "F1BP": {
+      "title": "Illness in past 5 years: high blood pressure",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS. No skip pair against F1TRBP (treated now: high blood pressure) -- steward-confirmed, D079."
+    },
+    "F1AST": {
+      "title": "Illness in past 5 years: asthma",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS. No skip pair against F1TRAST -- steward-confirmed, D079."
+    },
+    "F1GALL": {
+      "title": "Illness in past 5 years: gallstones / gall bladder problems",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS."
+    },
+    "F1OPOR": {
+      "title": "Illness in past 5 years: osteoporosis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS. No skip pair against F1TROPOR -- steward-confirmed, D079."
+    },
+    "F1BRCA": {
+      "title": "Illness in past 5 years: breast cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS."
+    },
+    "F1OTCA": {
+      "title": "Illness in past 5 years: other cancer",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Same checkbox-style treatment as F1HDIS."
+    },
+    "F1TRBP": {
+      "title": "Treated now: high blood pressure",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1HDIS. Has a matching illness field (F1BP), but steward confirmed no skip logic is needed -- D079."
+    },
+    "F1TRHDIS": {
+      "title": "Treated now: heart disease",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1HDIS. Has a matching illness field (F1HDIS), no skip logic -- D079."
+    },
+    "F1TRDIAB": {
+      "title": "Treated now: diabetes",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1HDIS. Has a matching illness field (F1DIAB), no skip logic -- D079."
+    },
+    "F1TRAST": {
+      "title": "Treated now: asthma",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1HDIS. Has a matching illness field (F1AST), no skip logic -- D079."
+    },
+    "F1TRRA": {
+      "title": "Treated now: rheumatoid arthritis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1HDIS. No matching illness field in this sheet at all -- no trigger variable exists to gate this field regardless."
+    },
+    "F1TROA": {
+      "title": "Treated now: osteoarthritis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1HDIS. No matching illness field in this sheet."
+    },
+    "F1TROPOR": {
+      "title": "Treated now: osteoporosis",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1HDIS. Has a matching illness field (F1OPOR), no skip logic -- D079."
+    },
+    "F1TRDEP": {
+      "title": "Treated now: depression/anxiety",
+      "oneOf": [
+        { "const": 1, "title": "Yes" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Checkbox-style, same as F1HDIS. No matching illness field in this sheet."
+    },
+    "F1HEALTH": {
+      "title": "Overall health now",
+      "oneOf": [
+        { "const": 1, "title": "Excellent" },
+        { "const": 2, "title": "Good" },
+        { "const": 3, "title": "Fair" },
+        { "const": 4, "title": "Poor" },
+        { "$ref": "../../common/defs.json#/$defs/not_on_questionnaire" },
+        { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
+      ],
+      "$comment": "Not available on the 9903/9907 versions -- its own version-gated -1='Not on questionnaire' code lines up cleanly, unenforced against F1QTYPE like the package's other such fields. Unlike the other 20 fields in this category, this is a genuine 4-level rating scale, not a checkbox."
+    }
+  },
+  "required": ["F1HDIS", "F1STRK", "F1DIAB", "F1CLEG", "F1COTH", "F1CHOL", "F1BP", "F1AST", "F1GALL", "F1OPOR", "F1BRCA", "F1OTCA", "F1TRBP", "F1TRHDIS", "F1TRDIAB", "F1TRAST", "F1TRRA", "F1TROA", "F1TROPOR", "F1TRDEP", "F1HEALTH"]
+}

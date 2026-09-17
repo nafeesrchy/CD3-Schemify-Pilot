@@ -23,7 +23,7 @@
         { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 10-90 is an agent-decided plausibility bound -- D029. not_applicable branch enforced by a mother-file skip pair keyed on RHYST -- D030 (inferred routing, pending steward confirmation)."
+      "$comment": "Source states no valid range; 10-90 is an agent-decided plausibility bound -- D029. not_applicable branch enforced by a mother-file skip pair keyed on RHYST -- D030 (inferred routing, steward-confirmed)."
     },
     "ROOPH": {
       "title": "Bilateral oophorectomy (ever)",
@@ -37,13 +37,13 @@
     "ROOPHAGE": {
       "title": "Age at bilateral oophorectomy",
       "x-unit": "years",
-      "x-universe": "Participants who have had a bilateral oophorectomy (ROOPH=1). Whether ROOPH=3 (Not sure) also forces this not-applicable is pending steward confirmation -- D030.",
+      "x-universe": "Participants who have had a bilateral oophorectomy (ROOPH=1). ROOPH=3 (Not sure) deliberately does NOT also force this not-applicable -- steward-confirmed, D030.",
       "anyOf": [
         { "type": "integer", "minimum": 10, "maximum": 90 },
         { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states no valid range; 10-90 is an agent-decided plausibility bound -- D029. not_applicable branch enforced by a mother-file skip pair keyed on ROOPH -- D030 (inferred routing, pending steward confirmation)."
+      "$comment": "Source states no valid range; 10-90 is an agent-decided plausibility bound -- D029. not_applicable branch enforced by a mother-file skip pair keyed on ROOPH -- D030 (inferred routing, steward-confirmed)."
     },
     "RSTER": {
       "title": "Sterilised (ever)",
@@ -62,7 +62,7 @@
         { "$ref": "../../common/defs.json#/$defs/not_applicable" },
         { "$ref": "../../common/defs.json#/$defs/missing_numeric" }
       ],
-      "$comment": "Source states a valid range of From=10 only (To is blank/unstated). Minimum 10 is source-stated; maximum 60 is an agent-decided plausibility ceiling -- D029. not_applicable branch enforced by a mother-file skip pair keyed on RSTER -- D030 (inferred routing, pending steward confirmation)."
+      "$comment": "Source states a valid range of From=10 only (To is blank/unstated). Minimum 10 is source-stated; maximum 60 is an agent-decided plausibility ceiling -- D029. not_applicable branch enforced by a mother-file skip pair keyed on RSTER -- D030 (inferred routing, steward-confirmed)."
     }
   },
   "required": ["RHYST", "RHYSTAG", "ROOPH", "ROOPHAGE", "RSTER", "RSTERAGE"]

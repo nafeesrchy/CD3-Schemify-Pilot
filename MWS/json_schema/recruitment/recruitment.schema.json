@@ -186,7 +186,7 @@
         }
       },
       {
-        "$comment": "Skip pattern: no bilateral oophorectomy means age at oophorectomy is structurally not applicable -- D030, steward-confirmed. Deliberately does NOT include ROOPH=3 (Not sure) -- whether that also forces not_applicable is an open question.",
+        "$comment": "Skip pattern: no bilateral oophorectomy means age at oophorectomy is structurally not applicable -- D030, steward-confirmed. Deliberately does NOT include ROOPH=3 (Not sure) -- steward confirmed this stays unconstrained.",
         "if": {
           "required": ["ROOPH"],
           "properties": { "ROOPH": { "const": 2 } }
